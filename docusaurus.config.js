@@ -101,7 +101,7 @@ themes: [
                 type: 'localeDropdown',
                 position: 'right',
             },
-            /* {
+          /*{
             type: 'doc',
             docId: 'https://www.9z.cloud',
             position: 'left',
