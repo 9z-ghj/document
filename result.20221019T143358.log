@@ -1,0 +1,35 @@
+----------------------------------------
+进入仓库...
+成功！
+拉取远程最新数据...
+更新 3b6b4bf..9377041
+Fast-forward
+ .../current/intro.md                               |  2 +-
+ result..log                                        | 32 ++++++++++++++++++++++
+ 2 files changed, 33 insertions(+), 1 deletion(-)
+成功！
+构建html文件...
+
+> my-website@0.0.0 build
+> docusaurus build
+
+[INFO] Website will be built for all these locales: 
+- zh-Hans
+- en
+[INFO] [zh-Hans] Creating an optimized production build...
+ℹ Compiling Client
+ℹ Compiling Server
+✔ Client: Compiled successfully in 2.18s
+✔ Server: Compiled successfully in 4.63s
+[SUCCESS] Generated static files in "build".
+[INFO] [en] Creating an optimized production build...
+ℹ Compiling Client
+ℹ Compiling Server
+✔ Client: Compiled successfully in 3.37s
+✔ Server: Compiled successfully in 6.04s
+[SUCCESS] Generated static files in "build/en".
+[INFO] Use `npm run serve` command to test your build locally.
+成功！
+重启WEB服务器进程...
+成功！
+----------------------------------------
