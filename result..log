@@ -25,3 +25,35 @@ Already up-to-date.
 [INFO] Use `npm run serve` command to test your build locally.
 重启WEB服务器进程：
 ----------------------------------------
+----------------------------------------
+进入仓库:
+拉取远程最新数据：
+更新 5f2f131..3b6b4bf
+Fast-forward
+ .../current/intro.md                               |  2 +-
+ result..log                                        | 27 ++++++++++++++++++++++
+ 2 files changed, 28 insertions(+), 1 deletion(-)
+ create mode 100644 result..log
+构建html文件：
+
+> my-website@0.0.0 build
+> docusaurus build
+
+[INFO] Website will be built for all these locales: 
+- zh-Hans
+- en
+[INFO] [zh-Hans] Creating an optimized production build...
+ℹ Compiling Client
+ℹ Compiling Server
+✔ Client: Compiled successfully in 2.19s
+✔ Server: Compiled successfully in 4.52s
+[SUCCESS] Generated static files in "build".
+[INFO] [en] Creating an optimized production build...
+ℹ Compiling Client
+ℹ Compiling Server
+✔ Client: Compiled successfully in 3.34s
+✔ Server: Compiled successfully in 6.07s
+[SUCCESS] Generated static files in "build/en".
+[INFO] Use `npm run serve` command to test your build locally.
+重启WEB服务器进程：
+----------------------------------------
