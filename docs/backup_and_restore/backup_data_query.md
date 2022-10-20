@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # 查询备份数据
 
-基于自研的计算存储引擎，玖章云数据备份服务可实现任意时间点备份数据的快速查询。当业务库发生数据丢失时，可通过此功能快速完成数据的查询及恢复。
+基于自研的计算存储引擎，NineData数据备份服务可实现任意时间点备份数据的快速查询。当业务库发生数据丢失时，可通过此功能快速完成数据的查询及恢复。
 
 ### 前提条件
 
@@ -12,9 +12,9 @@ sidebar_position: 5
 
 ### 操作步骤
 
-1. 登录[玖章云控制台](https://console.9z.cloud)。
+1. 登录[NineData控制台](https://console.9z.cloud)。
 
-2. 在左侧导航栏单击**备份与恢复**>**备份数据查询**。![backup_query_steps](./image/backup_query_steps.png)
+2. 在左侧导航栏单击**备份与恢复**>**备份数据查询**。
 
 3. 在**备份数据查询**页签，根据下表进行配置，并单击**开始查询**。
 
@@ -27,7 +27,11 @@ sidebar_position: 5
 
 4. 页面跳转至SQL窗口，您可以在这里通过查询语句查询备份数据中的内容。您可以单击**备份集**或**时间点**切换查询方式。![data_query](./image/data_query.png)
 
-   > SQL窗口的使用方法，请参见[SQL窗口](../sqldev/sql_console.md)。
+   :::tip
+   
+   SQL窗口的使用方法，请参见[SQL窗口](../sqldev/sql_console.md)。
+   
+   :::
 
 ### 相关文档
 

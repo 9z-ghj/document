@@ -10,17 +10,17 @@ sidebar_position: 2
 
 ### 前提条件
 
-已将目标需要管理的数据库添加到玖章云。如何添加，请参见[新增数据源](configuration/datasource.md)。
+已将目标需要管理的数据库添加到NineData。如何添加，请参见[新增数据源](configuration/datasource.md)。
 
 ### 操作步骤
 
-1. 登录[玖章云控制台](https://console.9z.cloud)。![homepage](./image/homepage.png)
+1. 登录[NineData控制台](https://console.9z.cloud)。
 
-2. 在左侧导航栏单击**SQL开发**>**SQL窗口**。![sql_console](./image/sql_console.png)
+2. 在左侧导航栏单击**SQL开发**>**SQL窗口**。
    
    > 如果之前登录过数据源且没有关闭，则会自动进入该数据源页面。
    
-3. 单击**SQL开发**下方文本框，会弹出您已添加的数据源，单击目标数据源，并单击**开始查询**，跳转到SQL窗口。![select_datasource](./image/select_datasource.png)
+3. 单击**SQL开发**下方文本框，会弹出您已添加的数据源，单击目标数据源，并单击**开始查询**，跳转到SQL窗口。
 
    > 如果有多个数据源，您可以在框中输入全部或部分关键词进行精确查找或模糊查找。支持搜索的字段如下：
    >
