@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # 管理组织
 
-对于企业用户，玖章云的个人模式无法满足业务需求，通过管理组织，可以有效进行多用户协同合作，通过角色来管理每个用户的权限。本文介绍如何管理组织。
+对于企业用户，NineData的个人模式无法满足业务需求，通过管理组织，可以有效进行多用户协同合作，通过角色来管理每个用户的权限。本文介绍如何管理组织。
 
 <h2 id="creation"></h2>
 
@@ -14,13 +14,13 @@ sidebar_position: 2
 
 **前提条件**
 
-已注册玖章云账号。更多信息，请参见[注册玖章云账号](../quick_start.md#步骤一注册玖章云账号)。
+已注册NineData账号。更多信息，请参见[注册NineData账号](../quick_start.md#步骤一注册NineData账号)。
 
 **操作步骤**
 
-1. 登录[玖章云控制台](https://console.9z.cloud)。
+1. 登录[NineData控制台](https://console.9z.cloud)。
 
-2. 在玖章云控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**>**创建组织**。![create_organization](./image/create_organization.png)
+2. 在NineData控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**>**创建组织**。![create_organization](./image/create_organization.png)
 
 3. 在**创建组织**页面，根据下表配置参数。
 
@@ -41,11 +41,15 @@ sidebar_position: 2
 
 **操作步骤**
 
-1. 登录[玖章云控制台](https://console.9z.cloud)。
-2. 在玖章云控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**，在**组织**下选择创建完成的组织。
+1. 登录[NineData控制台](https://console.9z.cloud)。
+2. 在NineData控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**，在**组织**下选择创建完成的组织。
 3. 此时已经从个人模式切换至组织模式，在左侧导航栏中单击**账户管理**，在这里，您可以进行账户相关的管理操作。![account_management](./image/account_management.png)
 
-> 仅系统管理员用户显示**用户管理**、**角色管理**以及**审计日志**等账户管理权限，其他角色用户无该权限。更多关于角色对应的权限信息，请参见[预置角色权限列表](manage_role.md#role_list)。
+:::tip
+
+仅系统管理员用户显示**用户管理**、**角色管理**以及**审计日志**等账户管理权限，其他角色用户无该权限。更多关于角色对应的权限信息，请参见[预置角色权限列表](manage_role.md#role_list)。
+
+:::
 
 ### 查看或编辑组织信息
 
@@ -56,7 +60,7 @@ sidebar_position: 2
 
 **操作步骤**
 
-1. 登录[玖章云控制台](https://console.9z.cloud)。
+1. 登录[NineData控制台](https://console.9z.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**组织信息**，即可查看当前组织的信息。
 
