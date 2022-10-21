@@ -94,7 +94,7 @@ themes: [
         title: '',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/9z.png',
+          src: 'img/logo.svg',
         },
         items: [
             {
