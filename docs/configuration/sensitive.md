@@ -56,7 +56,7 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 
 3. 单击**敏感列**页签，这里会列出当前 NineData 账号下所有数据源中的敏感列，您可以做如下操作：
 
-   - 查看：查看当前 NineData 账号下所有敏感列。
+   - 查看当前 NineData 账号下所有敏感列。
    - 修改敏感列的**数据类型**和**脱敏算法**。
    - 修改敏感列的**敏感级别**：**敏感级别**修改为**普通**后，该列将自动从**敏感列**列表移除。
 
@@ -121,20 +121,21 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 | password                                    | <ul><li>列的数据类型为为下列其中一种：`varchar`、`char`、`binary`，并且列的长度大于等于 16。</li><li>列名中包含 **password** 字符，或者列名注解中包含下列字符中的其中一种：**password**、**密码**、**口令**、**密钥**。</li></ul> | mask-full                                  |
 | phone                                       | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 11。</li><li>列名中包含下列字符中的其中一种：**phone**、**mobile**，或者列名注解中包含下列字符中的其中一种：**phone**、**电话**、**mobile**、**手机**。</li></ul> | mask-full                                  |
 
-### <span id="algorism">附录 2：脱敏算法</span>
+### 附录 2：脱敏算法
 
-| 算法名称<div style={{width:'70pt'}}></div> | 替换值                                                       | 描述<div style={{width:'200pt'}}></div> |
-| :----------------------------------------- | :----------------------------------------------------------- | :-------------------------------------- |
-| mask-full                                  | \*\*\****                                                    | 用六个星号全部覆盖。                    |
-| three-stars                                | ***                                                          | 用三个星号全部覆盖。                    |
-| email                                      | concat('\*\*\*',mid({value},LOCATE('@',{value})))            | 对邮箱进行脱敏。                        |
-| phone                                      | concat(left({value},length({value})-8),'\*\*\*\*',right({value},4)) | 对电话号码进行脱敏。                    |
-| MD5                                        | md5({value})                                                 | 对 MD5 值进行脱敏。                       |
-| SHA1                                       | sha1({value})                                                | 对 SHA1 值进行脱敏。                      |
-| AES                                        | TO_BASE64(AES_ENCRYPT({value},'my_password'))                | 对 AES 值进行脱敏。                       |
-| cn_name                                    | case CHAR_LENGTH({value}) when 2 then concat('\*',right({value},1)) else concat('\*',right({value},2)) end | 对中文姓名进行脱敏。                    |
-| cn_address                                 | concat(left({value},GREATEST(LOCATE('市',{value}),LOCATE('区',{value}),LOCATE('县',{value}))),'\*\*\*\*\*') | 对中文详细地址进行脱敏。                |
-| id_number                                  | concat(left({value},3),'\*\*\*\*\*\*\*\*\*\*\*\*\*',right({value},2)) | 对中国身份证号码进行脱敏。              |
-| credit_card                                | concat(left({value},4),'\*\*\*\*\*\*\*\*',right({value},4))  | 对银行卡号进行脱敏。                    |
-| ipv4                                       | concat(SUBSTRING_INDEX({value},'.',1),'.\*\*\*.\*\*\*.',SUBSTRING_INDEX({value},'.',-1)) | 对 IPV4 地址进行脱敏。                    |
-| plate_number                               | concat(left({value},2),'***',right({value},2))               | 对中国车牌号进行脱敏。                  |
+| 算法名称<div style={{width:'40pt'}}></div> | 描述<div style={{width:'160pt'}}></div> | 替换值<div style={{width:'60pt'}}></div>                     |
+| :----------------------------------------- | :-------------------------------------- | :----------------------------------------------------------- |
+| mask-full                                  | 用六个星号全部覆盖。                    | \*\*\****                                                    |
+| three-stars                                | 用三个星号全部覆盖。                    | ***                                                          |
+| email                                      | 对邮箱进行脱敏。                        | concat('\*\*\*',mid({value},LOCATE('@',{value})))            |
+| phone                                      | 对电话号码进行脱敏。                    | concat(left({value},length({value})-8),'\*\*\*\*',right({value},4)) |
+| MD5                                        | 对 MD5 值进行脱敏。                     | md5({value})                                                 |
+| SHA1                                       | 对 SHA1 值进行脱敏。                    | sha1({value})                                                |
+| AES                                        | 对 AES 值进行脱敏。                     | TO_BASE64(AES_ENCRYPT({value},'my_password'))                |
+| cn_name                                    | 对中文姓名进行脱敏。                    | case CHAR_LENGTH({value}) when 2 then concat('\*',right({value},1)) else concat('\*',right({value},2)) end |
+| cn_address                                 | 对中文详细地址进行脱敏。                | concat(left({value},GREATEST(LOCATE('市',{value}),LOCATE('区',{value}),LOCATE('县',{value}))),'\*\*\*\*\*') |
+| id_number                                  | 对中国身份证号码进行脱敏。              | concat(left({value},3),'\*\*\*\*\*\*\*\*\*\*\*\*\*',right({value},2)) |
+| credit_card                                | 对银行卡号进行脱敏。                    | concat(left({value},4),'\*\*\*\*\*\*\*\*',right({value},4))  |
+| ipv4                                       | 对 IPV4 地址进行脱敏。                  | concat(SUBSTRING_INDEX({value},'.',1),'.\*\*\*.\*\*\*.',SUBSTRING_INDEX({value},'.',-1)) |
+| plate_number                               | 对中国车牌号进行脱敏。                  | concat(left({value},2),'***',right({value},2))               |
+

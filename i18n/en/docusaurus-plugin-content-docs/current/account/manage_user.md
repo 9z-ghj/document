@@ -9,18 +9,18 @@ sidebar_position: 3
 ### 前提条件
 
 * 已创建或加入组织。更多信息，请参见[管理组织](manage_organization.md)。
-* NineData控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#switch)。
-* 您的角色为系统管理员。更多关于角色的信息，请参见[角色](intro_account.md#role)。
+* NineData 控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
+* 您的角色为系统管理员。更多关于角色的信息，请参见[角色](intro_account.md#角色)。
 
 ### <span id="invitation">邀请用户</span>
 
-1. 登录[NineData控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.9z.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**用户管理**。
 
    :::tip
 
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#switch)。
+   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
 
    :::
 
@@ -34,19 +34,19 @@ sidebar_position: 3
 
    :::
 
-4. 单击**确定**，即可完成用户邀请。此时，NineData会发送邀请邮件至用户的电子邮箱，用户接受邀请后完成注册或登录即可加入到组织中。
+4. 单击**确定**，即可完成用户邀请。此时，NineData 会发送邀请邮件至用户的电子邮箱，用户接受邀请后完成注册或登录即可加入到组织中。
 
 ### 查看用户列表或移除用户
 
 您可以根据实际业务需求移除组织内的成员，例如成员出项、离职等场景。
 
-1. 登录[NineData控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.9z.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**用户管理**，即可查看当前组织中的所有用户。
 
    :::tip
 
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#switch)。
+   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
 
    :::
 
@@ -62,15 +62,15 @@ sidebar_position: 3
 
 ### 配置用户个人权限
 
-NineData支持为用户单独设置个人权限， 个人权限与用户被赋予的角色权限为互补关系，不存在优先级。
+NineData 支持为用户单独设置个人权限， 个人权限与用户被赋予的角色权限为互补关系，不存在优先级。
 
-1. 登录[NineData控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.9z.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**用户管理**。
 
    :::tip
 
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#switch)。
+   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
 
    :::
 
@@ -78,7 +78,7 @@ NineData支持为用户单独设置个人权限， 个人权限与用户被赋�
 
    :::tip
 
-   关于权限的详细信息，请参见[权限](intro_account.md#permission)。
+   关于权限的详细信息，请参见[权限](intro_account.md#权限)。
 
    :::
 

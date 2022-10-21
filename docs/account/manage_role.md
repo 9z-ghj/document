@@ -128,8 +128,6 @@ sidebar_position: 4
 - [管理组织](manage_organization.md)
 - [管理用户](manage_user.md)
 
-<h2 id="role_list"></h2>
-
 ### 附录：预置角色权限列表
 
 <table>
