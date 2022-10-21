@@ -4,13 +4,13 @@ sidebar_position: 2
 
 # 快速开始
 
-本文引导您快速上手使用NineData。
+本文引导您快速上手使用 NineData。
 
-### 步骤一：注册NineData账号
+### 步骤一：注册 NineData 账号
 
-1. 打开[NineData注册页面](https://console.9z.cloud/user/register)。![registration](./image/registration.png)
+1. 打开 [NineData 注册页面](https://console.9z.cloud/user/register)。![registration](./image/registration.png)
 
-2. 输入您的手机号码并单击**获取验证码**，收到NineData系统发送的验证码后输入该验证码。
+2. 输入您的手机号码并单击**获取验证码**，收到 NineData 系统发送的验证码后输入该验证码。
 
    > **说明**：当前仅支持中国大陆地区的手机号码。
 
@@ -19,15 +19,15 @@ sidebar_position: 2
    > **说明**：密码强度的要求如下：
    >
    > - 密码中可以包含英文字母、数字以及特殊字符。
-   > - 长度为8~16个字符。
+   > - 长度为 8~16 个字符。
    > - 必须包含英文字母和数字。
    > - 不可以包含空字符（空格）。
 
 4. 输入电子邮箱和公司名称，阅读并勾选《服务条款》和《隐私条款》，单击**注册**，等待通过审核。通过以后，您可以继续执行步骤二。
 
-### 步骤二：登录NineData
+### 步骤二：登录 NineData
 
-1. 打开[NineData登录页面](https://console.9z.cloud/)。![login](./image/login.png)
+1. 打开[NineData 登录页面](https://console.9z.cloud/)。![login](./image/login.png)
 
 2. 您可以选择通过**密码登录**或**验证码登录**。
 
@@ -35,24 +35,24 @@ sidebar_position: 2
 
    > 如果您忘记了登录密码，可以单击右下角的**忘记密码**进行**重置密码**。
 
-   **验证码登录**：单击**验证码登录**，输入注册时使用的手机号码，单击**获取验证码**，并输入NineData系统发送的验证码，然后单击**登录**。
+   **验证码登录**：单击**验证码登录**，输入注册时使用的手机号码，单击**获取验证码**，并输入 NineData 系统发送的验证码，然后单击**登录**。
 
 ### 步骤三：申请免费数据源并生成测试数据
 
-NineData为每个用户以及组织提供了2个免费的MySQL测试数据源，在正式添加企业的数据库到NineData之前，您可以申请免费数据源作为功能测试用途。
+NineData 为每个用户以及组织提供了 2 个免费的 MySQL 测试数据源，在正式添加企业的数据库到 NineData 之前，您可以申请免费数据源作为功能测试用途。
 
-免费数据源中会自动生成MySQL官方提供的**Employees Sample Database**数据库，更多信息，请参见[官方文档](https://dev.mysql.com/doc/employee/en/employees-preface.html)。
+免费数据源中会自动生成 MySQL 官方提供的 **Employees Sample Database** 数据库，更多信息，请参见[官方文档](https://dev.mysql.com/doc/employee/en/employees-preface.html)。
 
 **限制**
 
-- 免费数据源自申请日开始可使用3个月，过期自动删除。
-- 免费数据源的存储大小限制为1 GB，超出后可读不可写。
-- 免费数据源仅供NineData功能测试，请勿用于其他用途。
-- 每个[用户](./account/intro_account#user)（个人模式）或[组织](./account/intro_account#organization)（组织模式）最多可申请2个免费数据源。
+- 免费数据源自申请日开始可使用 3 个月，过期自动删除。
+- 免费数据源的存储大小限制为 1 GB，超出后可读不可写。
+- 免费数据源仅供 NineData 功能测试，请勿用于其他用途。
+- 每个[用户](./account/intro_account#user)（个人模式）或[组织](./account/intro_account#organization)（组织模式）最多可申请 2 个免费数据源。
 
 **操作步骤**
 
-1. 在NineData控制台左侧导航栏，单击**基础配置**>**数据源**，并单击页面右上角的**申请数据源**。
+1. 在 NineData 控制台左侧导航栏，单击**基础配置**>**数据源**，并单击页面右上角的**申请数据源**。
 
    :::tip
 
@@ -60,20 +60,20 @@ NineData为每个用户以及组织提供了2个免费的MySQL测试数据源，
 
    :::
 
-2. 在**申请免费数据源**页面，选择**申请数据源数量**下的数据源个数，最多2个。
+2. 在**申请免费数据源**页面，选择**申请数据源数量**下的数据源个数，最多 2 个。
 
-3. 单击**申请数据源**，即可完成免费数据源的申请，并跳转到该数据源的**SQL窗口**页面，此时系统开始导入测试数据集，该过程将持续约30秒。导入完成后，SQL窗口中将提示**测试集导入成功！**。
+3. 单击**申请数据源**，即可完成免费数据源的申请，并跳转到该数据源的 **SQL 窗口**页面，此时系统开始导入测试数据集，该过程将持续约 30 秒。导入完成后，SQL 窗口中将提示**测试集导入成功！**。
 
    :::tip
 
-   你还可以单击**SQL窗口**页面右上角的**导入测试数据集**，并单击**确定**，手动导入测试数据集。
+   你还可以单击 **SQL 窗口**页面右上角的**导入测试数据集**，并单击**确定**，手动导入测试数据集。
 
    :::
 
 ### 下一步
 
 * [添加数据源](/configuration/datasource.md)
-* [使用SQL开发](/sqldev/intro_sqldev.md)
+* [使用 SQL 开发](/sqldev/intro_sqldev.md)
 * [执行备份与恢复](/backup_and_restore/intro_back.md)
 * [执行数据复制](/replication/intro_repli.md)
 * [执行数据对比](/compare/intro_comp.md)
