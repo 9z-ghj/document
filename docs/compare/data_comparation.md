@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# 执行数据对比
+# 数据对比
 
 NineData 数据库对比功能支持数据对比，即用户数据（UserData）的对比，用于对比两个数据库中的数据是否一致。通常用于备份恢复、数据迁移、数据同步后两端的数据一致性对比。本文介绍如何进行数据对比。
 
@@ -11,7 +11,7 @@ NineData 数据库对比功能支持数据对比，即用户数据（UserData）
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**数据库对比**>**数据对比**。
 
@@ -67,7 +67,7 @@ NineData 数据库对比功能支持数据对比，即用户数据（UserData）
 
  ### 查看对比结果
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**数据库对比**>**数据对比**。
 

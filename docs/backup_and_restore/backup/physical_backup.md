@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# 执行物理备份
+# 备份数据（物理备份）
 
 NineData 数据备份服务物理备份支持对数据源执行全量备份、增量备份操作。
 
@@ -13,7 +13,7 @@ NineData 数据备份服务物理备份支持对数据源执行全量备份、�
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**备份与恢复**>**数据备份**。
 

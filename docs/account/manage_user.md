@@ -14,7 +14,7 @@ sidebar_position: 3
 
 ### <span id="invitation">邀请用户</span>
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**用户管理**。
 
@@ -40,7 +40,7 @@ sidebar_position: 3
 
 您可以根据实际业务需求移除组织内的成员，例如成员出项、离职等场景。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**用户管理**，即可查看当前组织中的所有用户。
 
@@ -64,7 +64,7 @@ sidebar_position: 3
 
 NineData 支持为用户单独设置个人权限， 个人权限与用户被赋予的角色权限为互补关系，不存在优先级。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**用户管理**。
 

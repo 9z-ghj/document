@@ -14,7 +14,7 @@ NineData 提供告警功能，您需要创建告警策略，以开启告警信�
 
 **操作步骤**
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**运维监控**>**告警策略**。
 
@@ -34,7 +34,7 @@ NineData 提供告警功能，您需要创建告警策略，以开启告警信�
 
 ### <span id="rule">创建告警规则</span>
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**运维监控**>**告警策略**。
 

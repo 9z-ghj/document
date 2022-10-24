@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ### 步骤一：注册 NineData 账号
 
-1. 打开 [NineData 注册页面](https://console.9z.cloud/user/register)。![registration](./image/registration.png)
+1. 打开 [NineData 注册页面](https://https://console.ninedata.cloud/user/register)。![registration](./image/registration.png)
 
 2. 输入您的手机号码并单击**获取验证码**，收到 NineData 系统发送的验证码后输入该验证码。
 
@@ -38,7 +38,7 @@ sidebar_position: 2
 
 ### 步骤二：登录 NineData
 
-1. 打开[NineData 登录页面](https://console.9z.cloud/)。![login](./image/login.png)
+1. 打开[NineData 登录页面](https://console.ninedata.cloud)。![login](./image/login.png)
 
 2. 您可以选择通过**密码登录**或**验证码登录**。
 
@@ -56,7 +56,7 @@ sidebar_position: 2
 
 NineData 为每个用户以及组织提供了 2 个免费的 MySQL 测试数据源，在正式添加企业的数据库到 NineData 之前，您可以申请免费数据源作为功能测试用途。
 
-免费数据源中会自动生成 MySQL 官方提供的 **Employees Sample Database** 数据库，更多信息，请参见[官方文档](https://dev.mysql.com/doc/employee/en/employees-preface.html)。
+免费数据源中会自动生成 MySQL 官方提供的 **Employees Sample Database** 数据库，有关该数据库的更多信息，请参见[官方文档](https://dev.mysql.com/doc/employee/en/employees-preface.html)。
 
 **限制**
 
@@ -71,7 +71,7 @@ NineData 为每个用户以及组织提供了 2 个免费的 MySQL 测试数据�
 
    :::tip
 
-   新注册的用户也可以在登录后，单击**工作台**页面的**申请免费数据源，快速体验**。
+   新注册的用户也可以在登录后，单击**工作台**页面的**申请免费数据源，快速体验**。该入口仅在当前用户或组织下没有添加任何数据源时显示。
 
    :::
 

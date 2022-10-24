@@ -16,7 +16,7 @@ sidebar_position: 5
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**备份与恢复**>**备份数据查询**。
 
