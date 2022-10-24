@@ -36,9 +36,9 @@ sidebar_position: 2
 
    :::
 
-4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql 窗口功能介绍)。
+4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql-窗口功能介绍)。
 
-### <span id="SQLConsole">SQL 窗口功能介绍</span>
+### SQL 窗口功能介绍
 
 ![image-20220921114448614](./image/interface.png)
 
