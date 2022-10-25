@@ -36,7 +36,14 @@ sidebar_position: 2
 
    :::
 
-4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql-窗口功能介绍)。
+4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。如下图所示：![execute_sql](./image/execute_sql.png)
+   SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql-窗口功能介绍)。
+
+   :::tip
+
+   如果目标数据源中添加了[敏感数据列](../configuration/sensitive.md)，您将无法完整查看敏感列的内容。如需查看，请先[申请敏感列权限](../account/manage_workflow.md#申请敏感数据权限)。![sensitive_data](./image/sensitive_data.png)
+
+   :::
 
 ### SQL 窗口功能介绍
 
