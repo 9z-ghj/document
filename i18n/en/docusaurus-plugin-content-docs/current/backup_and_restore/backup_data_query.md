@@ -10,9 +10,13 @@ sidebar_position: 5
 
 已经完成一次完整的备份，如何备份数据，请参见[执行逻辑备份](backup/logical_backup.md)或[执行物理备份](backup/physical_backup.md)。
 
+### 使用限制
+
+当前不支持视图（VIEW）相关操作。
+
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**备份与恢复**>**备份数据查询**。
 

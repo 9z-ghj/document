@@ -2,9 +2,7 @@
 sidebar_position: 2
 ---
 
-
-
-# 执行结构对比
+# 结构对比
 
 NineData 数据库对比功能支持结构对比，即元数据（metadata）的对比，用于对比两个数据库中对象的定义是否一致。本文介绍如何进行结构对比。
 
@@ -14,7 +12,7 @@ NineData 数据库对比功能支持结构对比，即元数据（metadata）的
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**数据库对比**>**结构对比**。
 
@@ -68,7 +66,7 @@ NineData 数据库对比功能支持结构对比，即元数据（metadata）的
 
  ### 查看对比结果
 
-1. 登录  [NineData 控制台](https://console.9z.cloud)。
+1. 登录  [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**数据库对比**>**结构对比**。
 

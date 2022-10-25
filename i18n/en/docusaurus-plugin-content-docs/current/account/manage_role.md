@@ -19,7 +19,7 @@ sidebar_position: 4
 
 ### 查看或新增角色
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**角色管理**。在打开的页面左侧，可以看到当前组织下的所有角色。
 
@@ -45,7 +45,7 @@ sidebar_position: 4
 
 您可以编辑**系统管理员**以外的所有角色，可编辑内容包括角色名称和具体权限。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**角色管理**。您可以选择重命名角色名称，或编辑角色的权限。
 
@@ -75,7 +75,7 @@ sidebar_position: 4
 
 您可以删除**系统管理员**以外的所有角色。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**角色管理**。
 
@@ -107,7 +107,7 @@ sidebar_position: 4
 
 角色只有在绑定到目标用户之后才会发挥作用，绑定之前，您需要确保目标用户已经加入组织。更多信息，请参见[邀请用户](manage_user.md#邀请用户)。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**角色管理**。
 

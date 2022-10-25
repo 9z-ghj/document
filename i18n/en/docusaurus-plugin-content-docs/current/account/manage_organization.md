@@ -11,11 +11,11 @@ sidebar_position: 2
 
 **前提条件**
 
-已注册 NineData 账号。更多信息，请参见[注册 NineData 账号](../quick_start.md#步骤一注册-NineData-账号)。
+已注册 NineData 账号。更多信息，请参见[注册 NineData 账号](../quick_start/1_registration.md)。
 
 **操作步骤**
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**>**创建组织**。![create_organization](./image/create_organization.png)
 
@@ -31,11 +31,11 @@ sidebar_position: 2
 
 **前提条件**
 
-已创建组织。更多信息，请参见[创建组织](#creation)。
+已创建组织。更多信息，请参见[创建组织](#创建组织)。
 
 **操作步骤**
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**，在**组织**下选择创建完成的组织。
 3. 此时已经从个人模式切换至组织模式，在左侧导航栏中单击**账户管理**，在这里，您可以进行账户相关的管理操作。![account_management](./image/account_management.png)
 
@@ -54,7 +54,7 @@ sidebar_position: 2
 
 **操作步骤**
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**账户管理**>**组织信息**，即可查看当前组织的信息。
 

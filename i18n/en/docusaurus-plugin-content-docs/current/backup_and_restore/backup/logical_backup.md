@@ -2,9 +2,7 @@
 sidebar_position: 2
 ---
 
-
-
-# 执行逻辑备份
+# 备份数据（逻辑备份）
 
 NineData 数据备份服务的逻辑备份支持秒级 RPO、行级数据恢复以及在线备份数据查询功能。本文介绍如何对数据库执行逻辑备份。
 
@@ -20,7 +18,7 @@ NineData 数据备份服务的逻辑备份支持秒级 RPO、行级数据恢复�
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**备份与恢复**>**数据备份**。
 

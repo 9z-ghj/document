@@ -21,7 +21,7 @@ SQL 开发具有数据资产管理、数据查询、SQL 执行、数据编辑、
 ### 产品优势
 
 * 多数据源跨平台支持
-  * 支持的数据源：Oracle、Postgres、SQL Server、MySQL、MongoDB、Redis、Clickhouse 等。
+  * 支持的数据源：Oracle、Postgres、SQL Server、MySQL、<!--MongoDB、Redis、-->Clickhouse 等。
   * 支持的环境：阿里云、AWS、华为云、腾讯云、移动云、自建数据库等。
 
 

@@ -12,16 +12,17 @@ sidebar_position: 1
 
 ### 使用限制
 
-- 恢复的目标数据源必须和备份数据的数据源类型一致。例如，MySQL 的备份数据不支持恢复到 SQL Server 数据源。
+- 恢复的目标数据源必须和备份数据的数据源类型一致。例如，MySQL 的备份数据不支持恢复到 SQL Server 数据源。	
 - 恢复的目标数据源版本必须大于或等于备份数据的数据源版本。例如，MySQL 8.0 的备份数据不支持恢复到 MySQL 5.6 数据源。
 - 当前 SQL Server 数据源执行逻辑备份时不支持增量备份，因此不支持按时间点恢复。
 - 全量恢复时，如果数据库中包含视图（VIEW）、函数（FUNCTION）、存储过程（PROCEDURE）、触发器（TRIGGER），则请勿执行[步骤 5](#step5) 中的配置映射对象，否则任务失败。
+- 增量备份期间创建的触发器（TRIGGER）和事件（EVENT）无法恢复，但是其产生的数据会正常恢复。
 - 恢复时，如果数据库中包含视图（VIEW）、函数（FUNCTION）、存储过程（PROCEDURE）、触发器（TRIGGER）、事件（EVENT），则上述对象的定义者（DEFINER）信息将被修改为当前恢复任务中访问数据库的账号。
 - 恢复时，表中如果存在外键（FOREIGN KEY），则该外键约束不可用。
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**备份与恢复**>**数据恢复**。
 

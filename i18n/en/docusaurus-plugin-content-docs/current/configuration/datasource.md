@@ -12,7 +12,7 @@ NineData 支持将不同类型、不同环境的数据源添加到控制台中�
 
 ### 添加自建数据源
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**基础配置**>**数据源**。
 
@@ -33,7 +33,7 @@ NineData 支持将不同类型、不同环境的数据源添加到控制台中�
 
 ### 添加云厂商数据源
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**基础配置**>**数据源**。
 
@@ -58,7 +58,7 @@ NineData 支持将不同类型、不同环境的数据源添加到控制台中�
 
 为应对不同企业需求，NineData 除了提供默认的**生产**和**开发**环境以外，还支持您手动创建自定义环境。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏，单击**基础配置**>**数据源**。
 

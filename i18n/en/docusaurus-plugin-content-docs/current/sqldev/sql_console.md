@@ -12,7 +12,7 @@ sidebar_position: 2
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击 **SQL 开发**>**SQL 窗口**。
    
@@ -36,9 +36,16 @@ sidebar_position: 2
 
    :::
 
-4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql 窗口功能介绍)。
+4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。如下图所示：![execute_sql](./image/execute_sql.png)
+   SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql-窗口功能介绍)。
 
-### <span id="SQLConsole">SQL 窗口功能介绍</span>
+   :::tip
+
+   如果目标数据源中添加了[敏感数据列](../configuration/sensitive.md)，您将无法完整查看敏感列的内容。如需查看，请先[申请敏感列权限](../account/manage_workflow.md#申请敏感数据权限)。![sensitive_data](./image/sensitive_data.png)
+
+   :::
+
+### SQL 窗口功能介绍
 
 ![image-20220921114448614](./image/interface.png)
 

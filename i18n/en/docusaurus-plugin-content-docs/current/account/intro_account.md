@@ -10,7 +10,7 @@ NineData 提供企业多人协作能力，在创建或加入组织后，即可�
 
 ### <span id="organization">组织</span>
 
-通常情况下，您在[注册 NineData 账号](../quick_start.md#步骤一注册-NineData-账号)之后，默认为**个人模式**，此时，您可以无障碍使用 NineData 提供的四大模块功能（[SQL 开发](/sqldev/intro_sqldev.md)、[备份与恢复](/backup_and_restore/intro_back.md)、[数据复制](/replication/intro_repli.md)、[数据库对比](/compare/intro_comp.md)），个人模式适用于个人开发者，例如对自身的数据库进行备份恢复、同步、对比，以及配合 SQL 窗口进行日常开发等工作。
+通常情况下，您在[注册 NineData 账号](../quick_start/1_registration.md)之后，默认为**个人模式**，此时，您可以无障碍使用 NineData 提供的四大模块功能（[SQL 开发](/sqldev/intro_sqldev.md)、[备份与恢复](/backup_and_restore/intro_back.md)、[数据复制](/replication/intro_repli.md)、[数据库对比](/compare/intro_comp.md)），个人模式适用于个人开发者，例如对自身的数据库进行备份恢复、同步、对比，以及配合 SQL 窗口进行日常开发等工作。
 
 然而对于企业用户，存在多人协同开发的需求，在该场景下，有多种角色分别负责不同的业务，因此每种角色需要不同的权限以满足数据安全的需要。NineData 提供的**组织模式**支持对组织下的每个用户分配不同的角色和资源管理权限，适用于同一组织下多用户协同开发，在保证数据安全的同时，提升整体生产效率。
 

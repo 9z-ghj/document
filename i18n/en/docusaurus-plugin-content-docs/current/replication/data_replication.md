@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# 执行数据复制
+# 数据复制
 
 NineData 数据复制支持两个数据源之间的全量数据同步和增量数据同步。
 
@@ -52,7 +52,7 @@ NineData 数据复制支持两个数据源之间的全量数据同步和增量�
 
 ### 操作步骤
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**数据复制**。
 
@@ -103,7 +103,7 @@ NineData 数据复制支持两个数据源之间的全量数据同步和增量�
 
 ### 查看同步结果
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**数据复制**。
 

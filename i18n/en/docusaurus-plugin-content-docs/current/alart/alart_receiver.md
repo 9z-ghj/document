@@ -7,7 +7,7 @@ NineData 运维监控支持通过接收组或接收人的发送告警，本文�
 
 ### 创建告警接收组
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**运维监控**>**告警接收**。
 
@@ -31,7 +31,7 @@ NineData 运维监控支持通过接收组或接收人的发送告警，本文�
 
 ### <span id="receiver">创建告警接收方</span>
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**运维监控**>**告警接收**。
 

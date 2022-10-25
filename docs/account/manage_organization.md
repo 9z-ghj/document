@@ -11,7 +11,7 @@ sidebar_position: 2
 
 **前提条件**
 
-已注册 NineData 账号。更多信息，请参见[注册 NineData 账号](../quick_start.md#步骤一注册-NineData-账号)。
+已注册 NineData 账号。更多信息，请参见[注册 NineData 账号](../quick_start/1_registration.md)。
 
 **操作步骤**
 

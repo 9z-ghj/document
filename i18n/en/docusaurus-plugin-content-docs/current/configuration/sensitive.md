@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 添加敏感数据
+# 管理敏感数据
 
 NineData 支持对将数据源中的某一列或多个列设置为敏感列，未被授权查看敏感列的用户将无法查看该列的内容。
 
@@ -12,7 +12,7 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 
 ### 为数据源添加敏感列
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**基础配置**>**敏感数据**。
 
@@ -50,7 +50,7 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 
 ### 管理敏感列
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**基础配置**>**敏感数据**。
 
@@ -70,7 +70,7 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 
 识别规则用于系统自动扫描数据源中的敏感列，NineData 提供了 10 条默认的[识别规则](#附录-1识别规则)，这些规则无法被修改。您也可以根据如下步骤创建自定义识别规则。
 
-1. 登录 [NineData 控制台](https://console.9z.cloud)。
+1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
 2. 在左侧导航栏单击**基础配置**>**敏感数据**。
 
@@ -81,17 +81,17 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
    | 参数               | 说明                                                         |
    | ------------------ | ------------------------------------------------------------ |
    | **规则名称**       | 输入规则的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 16 个字符。 |
-   | **脱敏算法**       | 选择对敏感列进行脱敏的方式。关于脱敏算法的详细信息，请参见[脱敏算法](#附录-2脱敏算法)。<!--您可以使用系统提供的[脱敏算法](#algorism)，也可以[创建](#algorism_creation)自定义的脱敏算法。--> |
-   | **描述**（非必填） | 对识别规则进行说明，降低沟通成本。最多支持 100 个字符。        |
+   | **脱敏算法**       | 选择对敏感列进行脱敏的方式。关于脱敏算法的详细信息，请参见[脱敏算法](#附录-2脱敏算法和脱敏前后对比)。<!--您可以使用系统提供的[脱敏算法](#algorism)，也可以[创建](#algorism_creation)自定义的脱敏算法。--> |
+   | **描述**（非必填） | 对识别规则进行说明，降低沟通成本。最多支持 100 个字符。      |
    | **识别规则**       | 输入识别规则，规则的语法结构请参见页面右侧的**规则示例**。   |
 
 <!--
 
 <span id="algorism_creation">创建脱敏算法</span>（暂未支持）
 
-脱敏算法是对敏感列进行脱敏的方式，NineData 提供了 13 条默认的[脱敏算法](#algorism)，这些算法无法被修改。您也可以根据如下步骤创建自定义脱敏算法。
+脱敏算法是对敏感列进行脱敏的方式，NineData 提供了 13 条默认的[脱敏算法](#附录-2脱敏算法和脱敏前后对比)，这些算法无法被修改。您也可以根据如下步骤创建自定义脱敏算法。
 
-1. 登录[NineData 控制台](https://console.9z.cloud)。
+1. 登录[NineData 控制台](https://console.ninedata.cloud)。
 2. 在左侧导航栏单击**基础配置**>**敏感数据**。
 3. 单击**脱敏算法**页签，并在页面右上角单击**创建脱敏算法**。
 4. 根据下表进行配置，并单击
@@ -100,42 +100,39 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 
 
 
-### <span ID="rules">附录 1：识别规则</span>
+### 附录1：识别规则
 
-:::tip
+| 规则名称<div style={{width:'50pt'}}></div> | 对应脱敏算法 | 脱敏前后对比                                                 |
+| ------------------------------------------ | :----------- | ------------------------------------------------------------ |
+| 中文详细地址（address）                    | cn_address   | 脱敏前：某省某市某街道某小区1幢1单元101室<br />脱敏后：某省某市某街道某小区\*\*\*\*\* |
+| 加密 KEY（secret_key）                     | mask-full    | 脱敏前：a6eb56f80be8a120436d6f1c9b8d87ca<br />脱敏后：\*\*\*\*\*\* |
+| 银行卡（card_number）                      | credit_card  | 脱敏前：6222022207223257981<br />脱敏后：6222\*\*\*\*\*\*\*\*7981 |
+| 电子邮件（email）                          | email        | 脱敏前：000000*@*qq.com<br />脱敏后：\*\*\**@*qq.com         |
+| 身份证号码（id_number）                    | id_number    | 脱敏前：300900199909090099<br />脱敏后：300\*\*\*\*\*\*\*\*\*\*\*\*\*99 |
+| IP地址（ip_address）                       | ipv4         | 脱敏前：192.168.12.91<br />脱敏后：192.\*\*\*.\*\*\*.91      |
+| 中国车牌号（license_plate_number）         | plate_number | 脱敏前：天Z0AB92<br />脱敏后：天Z\*\*\*92                    |
+| MAC地址（mac_address）                     | mask-full    | 脱敏前：00-1A-2B-3C-4D-56<br />脱敏后：\*\*\*\*\*\*          |
+| 密码（password）                           | mask-full    | 脱敏前：abcde12345<br />脱敏后：\*\*\*\*\*\*                 |
+| 电话号码（phone）                          | phone        | 脱敏前：13800000000<br />脱敏后：138\*\*\*\*0000             |
 
-下列识别规则中，字符不区分大小写。
+### 附录 2：脱敏算法和脱敏前后对比
 
-:::
+| 算法名称<div style={{width:'40pt'}}></div> | 脱敏前后对比<div style={{width:'40pt'}}></div>               |
+| :----------------------------------------- | :----------------------------------------------------------- |
+| mask-full                                  | 脱敏前：测试内容<br />脱敏后：\*\*\****                      |
+| three-stars                                | 脱敏前：测试内容<br />脱敏后：\***                           |
+| email                                      | 脱敏前：000000*@*qq.com<br />脱敏后：***@qq.com              |
+| phone                                      | 脱敏前：13800000000<br />脱敏后：138\*\*\*\*0000             |
+| MD5                                        | 脱敏前：a6eb56f80be8a120436d6f1c9b8d87ca<br />脱敏后：0b450f4fe1a8d243c9a6d479a124f0ba |
+| SHA1                                       | 脱敏前：69c9a5c19c5c27e43cb0efc4c8644ed6d03a110b<br />脱敏后：79860cbad9b9eca05df8337a7ce45af926ca6392 |
+| AES                                        | 脱敏前：0A6187FF44BEB44F651AAD3BB4003360<br />脱敏后：nOQIIwB8L/V/bpnT1bbuoKQ22YrN9ti9brcrC1bti9bkCkIvV1APJfdX5EE69ZW/ |
+| cn_name                                    | 脱敏前：张三<br />脱敏后：*三                                |
+| cn_address                                 | 脱敏前：某省某市某街道某小区1幢1单元101室<br />脱敏后：某省某市某街道某小区\*\*\**** |
+| id_number                                  | 脱敏前：300900199909090099<br />脱敏后：900\*\*\*\*\*\*\*\*\*\*\*\*\*99 |
+| credit_card                                | 脱敏前：6222022207223257981<br />脱敏后：6222\*\*\*\*\*\*\*\*7981 |
+| ipv4                                       | 脱敏前：192.168.12.91<br />脱敏后：192.\*\*\*.\*\*\*.91      |
+| plate_number                               | 脱敏前：天Z00000<br />脱敏后：天Z\*\*\*00                    |
 
-| 规则名称<div style={{width:'140pt'}}></div> | 识别规则                                                     | 脱敏算法<div style={{width:'60pt'}}></div> |
-| :------------------------------------------ | :----------------------------------------------------------- | :----------------------------------------- |
-| 中文详细地址（address）                     | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 32。</li><li>列名中包含 **address** 字符或者列名注解（COMMENT）中包含下列字符中的其中一种：**address**、**地址**。</li></ul> | mask-full                                  |
-| 加密 KEY（secret_key）                      | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 11。</li><li>列名中包含下列字符中的其中一种：**access_key**、**secret_key**、**access_key_secret**，或者列名注解中包含下列字符中的其中一种：**access key**、**secret key**、**access key secret**、**访问 KEY**。</li></ul> | mask-full                                  |
-| 银行卡（card_number）                       | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 11。</li><li>列名或者列名注解中包含下列字符中的其中一种：**card number**、**card no**、**卡号**、**银行卡**、**信用卡**。</li></ul> | mask-full                                  |
-| 电子邮件（email）                           | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 12。</li><li>列名中包含 **email** 字符或者列名注解中包含下列字符中的其中一种：**email**、**邮箱**、**电子邮箱**、**电邮**。</li></ul> | mask-full                                  |
-| id_number                                   | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 15。</li><li>列名中包含下列字符中的其中一种：**id_number**、**identity_card**，或者列名注解中包含下列字符中的其中一种：**identity card**、**身份证**。</li></ul> | mask-full                                  |
-| ip_address                                  | <ul><li>列的数据类型为下列其中一种：`varchar`、`char`、`int`、`bigint`，并且列的长度大于等于 16。</li><li>列名中包含 **ip_address** 字符，或者列名注解中包含下列字符中的其中一种：**ip address**、**ip 地址**、**ipv6**。</li></ul> | mask-full                                  |
-| license_plate_number                        | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 6。</li><li>列名中包含下列字符中的其中一种：**car_number**、**plate_number**，或者列名注解中包含下列字符中的其中一种：**plate number**、**车牌**、**牌照**。</li></ul> | mask-full                                  |
-| mac_address                                 | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 16。</li><li>列名中包含 **mac_address** 字符，或者列名注解中包含下列字符中的其中一种：**mac address**、**MAC 地址**、**物理地址**。</li></ul> | mask-full                                  |
-| password                                    | <ul><li>列的数据类型为为下列其中一种：`varchar`、`char`、`binary`，并且列的长度大于等于 16。</li><li>列名中包含 **password** 字符，或者列名注解中包含下列字符中的其中一种：**password**、**密码**、**口令**、**密钥**。</li></ul> | mask-full                                  |
-| phone                                       | <ul><li>列的数据类型为 `varchar` 或者 `char`，并且列的长度大于等于 11。</li><li>列名中包含下列字符中的其中一种：**phone**、**mobile**，或者列名注解中包含下列字符中的其中一种：**phone**、**电话**、**mobile**、**手机**。</li></ul> | mask-full                                  |
 
-### 附录 2：脱敏算法
 
-| 算法名称<div style={{width:'40pt'}}></div> | 描述<div style={{width:'160pt'}}></div> | 替换值<div style={{width:'60pt'}}></div>                     |
-| :----------------------------------------- | :-------------------------------------- | :----------------------------------------------------------- |
-| mask-full                                  | 用六个星号全部覆盖。                    | \*\*\****                                                    |
-| three-stars                                | 用三个星号全部覆盖。                    | ***                                                          |
-| email                                      | 对邮箱进行脱敏。                        | concat('\*\*\*',mid({value},LOCATE('@',{value})))            |
-| phone                                      | 对电话号码进行脱敏。                    | concat(left({value},length({value})-8),'\*\*\*\*',right({value},4)) |
-| MD5                                        | 对 MD5 值进行脱敏。                     | md5({value})                                                 |
-| SHA1                                       | 对 SHA1 值进行脱敏。                    | sha1({value})                                                |
-| AES                                        | 对 AES 值进行脱敏。                     | TO_BASE64(AES_ENCRYPT({value},'my_password'))                |
-| cn_name                                    | 对中文姓名进行脱敏。                    | case CHAR_LENGTH({value}) when 2 then concat('\*',right({value},1)) else concat('\*',right({value},2)) end |
-| cn_address                                 | 对中文详细地址进行脱敏。                | concat(left({value},GREATEST(LOCATE('市',{value}),LOCATE('区',{value}),LOCATE('县',{value}))),'\*\*\*\*\*') |
-| id_number                                  | 对中国身份证号码进行脱敏。              | concat(left({value},3),'\*\*\*\*\*\*\*\*\*\*\*\*\*',right({value},2)) |
-| credit_card                                | 对银行卡号进行脱敏。                    | concat(left({value},4),'\*\*\*\*\*\*\*\*',right({value},4))  |
-| ipv4                                       | 对 IPV4 地址进行脱敏。                  | concat(SUBSTRING_INDEX({value},'.',1),'.\*\*\*.\*\*\*.',SUBSTRING_INDEX({value},'.',-1)) |
-| plate_number                               | 对中国车牌号进行脱敏。                  | concat(left({value},2),'***',right({value},2))               |
-
+<p class="tooltip tooltip-style">气泡弹框测试<span class="tooltip-content">弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试</span></p>
