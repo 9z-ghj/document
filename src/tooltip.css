@@ -1,40 +1,9 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #1890ff;
-  --ifm-color-primary-dark: #0082fb;
-  --ifm-color-primary-darker: #007bed;
-  --ifm-color-primary-darkest: #0065c3;
-  --ifm-color-primary-light: #349dff;
-  --ifm-color-primary-lighter: #42a4ff;
-  --ifm-color-primary-lightest: #6ebaff;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #1890ff;
-  --ifm-color-primary-dark: #0082fb;
-  --ifm-color-primary-darker: #007bed;
-  --ifm-color-primary-darkest: #0065c3;
-  --ifm-color-primary-light: #349dff;
-  --ifm-color-primary-lighter: #42a4ff;
-  --ifm-color-primary-lightest: #6ebaff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
 .tooltip{
 position:relative;
 /*color:#2f2f2f;*/
 font-weight:900;
 z-index: 999;
-/*width: 98px;*/
+width: 150px;
     display: inline-block;
     text-align: left;
 }
@@ -47,11 +16,11 @@ width:300px;/*设置文本框宽度*/
 /*height:200px;*/
 border-radius:25px;/*为文本框添加圆角*/
 border:2px solid #a1a1a1;/*设置文本框的边框*/
-padding:10px 10px;/*设置上下左右文本框的填充距离*/
+padding:10px 40px;/*设置上下左右文本框的填充距离*/
 background:#dddddd;/*设置文本框背景色*/
 bottom:100%;
-left:0%;
-/*margin-left:-50px;
+/*left:20%;
+margin-left:-50px;
 margin-bottom:20px;*/
 text-align:left; /*设置文本对齐方式*/
 /*padding-top:30px;*/

@@ -135,4 +135,3 @@ NineData 支持对将数据源中的某一列或多个列设置为敏感列，�
 
 
 
-<p class="tooltip tooltip-style">气泡弹框测试<span class="tooltip-content">弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试弹框内容测试</span></p>

@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ### 前提条件
 
-已将目标需要管理的数据库添加到 NineData。如何添加，请参见[新增数据源](configuration/datasource.md)。
+已将目标需要管理的数据库添加到 NineData。如何添加，请参见[管理数据源](configuration/datasource.md)。
 
 ### 操作步骤
 
