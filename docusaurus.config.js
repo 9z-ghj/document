@@ -1,6 +1,6 @@
 	// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+const path = require('path');
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -15,6 +15,9 @@ const config = {
   // onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
+  plugins: [
+    path.resolve(__dirname, 'src/plugins/crisp.js')
+  ],
     
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
