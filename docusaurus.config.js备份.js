@@ -8,18 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'NineData 文档',
   titleDelimiter: '-',
-  tagline: '构建全球领先的多云数据管理平台',
-  url: 'https://docs.ninedata.cloud/',
+  tagline: 'Dinosaurs are cool',
+  url: 'https://ghj1828.synology.me:9090/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   // onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  plugins: [
-    ['docusaurus-plugin-yandex-metrica', {
-      counterID: '86645179',
-    }],
-  ],
+    
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Documentation', // Usually your GitHub org/user name.
@@ -30,7 +26,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    locales: ['zh-Hans','en'],
     path: 'i18n',
     localeConfigs: {
         en: {
@@ -97,30 +93,14 @@ themes: [
       },
       navbar: {
         title: '',
-        hideOnScroll: true,
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
-            /*{
+            {
                 type: 'localeDropdown',
                 position: 'right',
-            },*/
-            {
-                type: 'dropdown',
-                label: '快捷入口',
-                position: 'left',
-                items: [
-                  {
-                    label: '主页',
-                    href: 'https://www.ninedata.cloud',
-                  },
-                  {
-                    label: '控制台',
-                    href: 'https://console.ninedata.cloud',
-                  },
-                ],
             },
           /*{
             type: 'doc',
@@ -129,6 +109,11 @@ themes: [
             label: '文档',
           },*/
           //{to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://www.9z.cloud',
+            label: '主页',
+            position: 'left',
+          },
         ],
       },
       footer: {
