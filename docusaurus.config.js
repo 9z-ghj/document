@@ -15,11 +15,7 @@ const config = {
   // onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  plugins: [
-    ['docusaurus-plugin-yandex-metrica', {
-      counterID: '86645179',
-    }],
-  ],
+    
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Documentation', // Usually your GitHub org/user name.
