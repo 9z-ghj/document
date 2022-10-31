@@ -34,9 +34,14 @@ sidebar_position: 5
 
    :::tip
    
-   SQL 窗口的使用方法，请参见 [SQL 窗口](../sqldev/sql_console.md)。
+   - SQL 窗口的使用方法，请参见 [SQL 窗口](../sqldev/sql_console.md)。
+   - 查询到需要的数据后，可以通过结果集中的**导出**功能，将数据导出并恢复到到目标数据库。![export](./image/export.png)
    
    :::
+
+### 附录：支持的查询语法
+
+当前支持
 
 ### 相关文档
 
