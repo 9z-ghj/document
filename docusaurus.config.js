@@ -97,8 +97,9 @@ themes: [
         title: '',
         hideOnScroll: true,
         logo: {
-          alt: 'My Site Logo',
+          alt: 'NineData',
           src: 'img/logo.svg',
+          href: 'https://www.ninedata.cloud',
         },
         items: [
             /*{
@@ -111,8 +112,8 @@ themes: [
                 position: 'left',
                 items: [
                   {
-                    label: '主页',
-                    href: 'https://www.ninedata.cloud',
+                    label: '新品发布页',
+                    href: 'https://www.ninedata.cloud/newproduct',
                   },
                   {
                     label: '控制台',

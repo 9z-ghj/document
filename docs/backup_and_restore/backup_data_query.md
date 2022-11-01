@@ -41,7 +41,173 @@ sidebar_position: 5
 
 ### 附录：支持的查询语法
 
-当前支持
+当前支持的查询语法如下表。
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+
+<Tabs>
+  <TabItem value="mysql" label="MySQL" default>
+
+<table>
+<thead>
+  <tr>
+    <th width='260pt'>语句</th>
+    <th width='700pt'>选项</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="9">SELECT（查询）</td>
+    <td>ALL | DISTINCT</td>
+  </tr>
+  <tr>
+    <td>FROM</td>
+  </tr>
+  <tr>
+    <td>WHERE</td>
+  </tr>
+  <tr>
+    <td>GROUP BY</td>
+  </tr>
+  <tr>
+    <td>HAVING</td>
+  </tr>
+  <tr>
+    <td>WINDOW AS</td>
+  </tr>
+  <tr>
+    <td>ORDER BY</td>
+  </tr>
+  <tr>
+    <td>ASC | DESC</td>
+  </tr>
+  <tr>
+    <td>LIMIT</td>
+  </tr>
+  <tr>
+    <td>SHOW（查看对象列表）</td>
+    <td>TABLES</td>
+  </tr>
+  <tr>
+    <td rowspan="6">SHOW CREATE（查看对象结构定义语法）</td>
+    <td>TABLE</td>
+  </tr>
+  <tr>
+    <td>VIEW</td>
+  </tr>
+  <tr>
+    <td>FUNCTION</td>
+  </tr>
+  <tr>
+    <td>PROCEDURE</td>
+  </tr>
+  <tr>
+    <td>TRIGGER</td>
+  </tr>
+  <tr>
+    <td>EVENT</td>
+  </tr>
+</tbody>
+</table>
+
+  </TabItem>
+  <TabItem value="mssql" label="SQL Server">
+
+<table>
+<thead>
+  <tr>
+    <th width='260pt'>语句</th>
+    <th width='700pt'>选项</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="9">SELECT（查询）</td>
+    <td>ALL | DISTINCT | DISTINCTROW</td>
+  </tr>
+  <tr>
+    <td>FROM</td>
+  </tr>
+  <tr>
+    <td>WHERE</td>
+  </tr>
+  <tr>
+    <td>GROUP BY</td>
+  </tr>
+  <tr>
+    <td>HAVING</td>
+  </tr>
+  <tr>
+    <td>WINDOW AS</td>
+  </tr>
+  <tr>
+    <td>ORDER BY</td>
+  </tr>
+  <tr>
+    <td>ASC | DESC</td>
+  </tr>
+  <tr>
+    <td>LIMIT</td>
+  </tr>
+  <tr>
+    <td rowspan="7">SHOW（查看对象列表）</td>
+    <td>TABLES</td>
+  </tr>
+  <tr>
+    <td>FUNCTIONS</td>
+  </tr>
+  <tr>
+    <td>PROCEDURES</td>
+  </tr>
+  <tr>
+    <td>TRIGGERS</td>
+  </tr>
+  <tr>
+    <td>VIEWS</td>
+  </tr>
+  <tr>
+    <td>SYNONYMS</td>
+  </tr>
+  <tr>
+    <td>ASSONBLIES</td>
+  </tr>
+  <tr>
+    <td rowspan="8">SHOW CREATE（查看对象结构定义语法）</td>
+    <td>TABLE</td>
+  </tr>
+  <tr>
+    <td>VIEW</td>
+  </tr>
+  <tr>
+    <td>FUNCTION</td>
+  </tr>
+  <tr>
+    <td>PROCEDURE</td>
+  </tr>
+  <tr>
+    <td>TRIGGER</td>
+  </tr>
+  <tr>
+    <td>EVENT</td>
+  </tr>
+  <tr>
+    <td>DATA TYPE</td>
+  </tr>
+  <tr>
+    <td>SYNONYM</td>
+  </tr>
+</tbody>
+</table>
+
+  </TabItem>
+</Tabs>
+
+
+
+
 
 ### 相关文档
 
