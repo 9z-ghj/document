@@ -30,12 +30,17 @@ sidebar_position: 5
    | **备份集**                             | **查询方式**为**全量备份集**时可配置，选择全量备份集。       |
    | **查询时间点**                         | **查询方式**为**按时间点查询**时可配置，选择查询哪个时间段的数据。<ul><li>逻辑备份：达到秒级 RPO，可查询备份开始至当前时间点前几秒之间的任意时间点的数据。</li><li>物理备份：分钟级 RPO，可查询备份开始至当前时间点前几分钟到 30 分钟之间的任意时间点的数据。</li></ul> |
 
-4. 页面跳转至 SQL 窗口，您可以在这里通过查询语句查询备份数据中的内容。您可以单击**备份集**或**时间点**切换查询方式。![data_query](./image/data_query.png)
+4. 页面跳转至 SQL 窗口，您可以在这里通过查询语句查询备份数据中的内容。您可以单击**备份集**或**时间点**切换查询方式。
 
+   ![data_query](./image/data_query.png)
+   
    :::tip
    
    - SQL 窗口的使用方法，请参见 [SQL 窗口](../sqldev/sql_console.md)。
-   - 查询到需要的数据后，可以通过结果集中的**导出**功能，将数据导出并恢复到到目标数据库。![export](./image/export.png)
+   
+   - 查询到需要的数据后，可以通过结果集中的**导出**功能，将数据导出并恢复到到目标数据库。
+   
+     ![export](./image/export.png)
    
    :::
 
@@ -88,8 +93,20 @@ import TabItem from '@theme/TabItem';
     <td>LIMIT</td>
   </tr>
   <tr>
-    <td>SHOW（查看对象列表）</td>
+    <td rowspan="5">SHOW（查看对象列表）</td>
     <td>TABLES</td>
+  </tr>
+    <tr>
+    <td>FUNCTIONS</td>
+  </tr>
+  <tr>
+    <td>PROCEDURES</td>
+  </tr>
+  <tr>
+    <td>TRIGGERS</td>
+  </tr>
+  <tr>
+    <td>EVENTS</td>
   </tr>
   <tr>
     <td rowspan="6">SHOW CREATE（查看对象结构定义语法）</td>
@@ -126,7 +143,7 @@ import TabItem from '@theme/TabItem';
 <tbody>
   <tr>
     <td rowspan="9">SELECT（查询）</td>
-    <td>ALL | DISTINCT | DISTINCTROW</td>
+    <td>ALL | DISTINCT</td>
   </tr>
   <tr>
     <td>FROM</td>
@@ -153,7 +170,7 @@ import TabItem from '@theme/TabItem';
     <td>LIMIT</td>
   </tr>
   <tr>
-    <td rowspan="7">SHOW（查看对象列表）</td>
+    <td rowspan="4">SHOW（查看对象列表）</td>
     <td>TABLES</td>
   </tr>
   <tr>
@@ -166,16 +183,7 @@ import TabItem from '@theme/TabItem';
     <td>TRIGGERS</td>
   </tr>
   <tr>
-    <td>VIEWS</td>
-  </tr>
-  <tr>
-    <td>SYNONYMS</td>
-  </tr>
-  <tr>
-    <td>ASSONBLIES</td>
-  </tr>
-  <tr>
-    <td rowspan="8">SHOW CREATE（查看对象结构定义语法）</td>
+    <td rowspan="5">SHOW CREATE（查看对象结构定义语法）</td>
     <td>TABLE</td>
   </tr>
   <tr>
@@ -189,15 +197,6 @@ import TabItem from '@theme/TabItem';
   </tr>
   <tr>
     <td>TRIGGER</td>
-  </tr>
-  <tr>
-    <td>EVENT</td>
-  </tr>
-  <tr>
-    <td>DATA TYPE</td>
-  </tr>
-  <tr>
-    <td>SYNONYM</td>
   </tr>
 </tbody>
 </table>

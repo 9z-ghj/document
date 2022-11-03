@@ -29,20 +29,25 @@ sidebar_position: 2
    如果有多个数据源，您可以在框中输入全部或部分关键词进行精确查找或模糊查找。支持搜索的字段如下：
 
    - 数据源名称
-
    - IP 地址
 
    ![search](./image/search.png "=200x")
 
    :::
 
-4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。如下图所示：![execute_sql](./image/execute_sql.png)
+4. 打开 SQL 窗口后，即可对数据源执行 SQL 操作。如下图所示：
+   
+   ![execute_sql](./image/execute_sql.png)
    SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql-窗口功能介绍)。
 
    :::tip
 
-   如果目标数据源中添加了[敏感数据列](../configuration/sensitive.md)，您将无法完整查看敏感列的内容。如需查看，请先[申请敏感列权限](../account/manage_workflow.md#申请敏感数据权限)。![sensitive_data](./image/sensitive_data.png)
-
+   - 请在每个语句后面加上英文冒号（;)，以分隔多条语句。
+   
+   - 如果目标数据源中添加了[敏感数据列](../configuration/sensitive.md)，您将无法完整查看敏感列的内容。如需查看，请先[申请敏感列权限](../account/manage_workflow.md#申请敏感数据权限)。
+   
+     ![sensitive_data](./image/sensitive_data.png)
+   
    :::
 
 ### SQL 窗口功能介绍

@@ -17,7 +17,9 @@ sidebar_position: 2
 
 1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 
-2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**>**创建组织**。![create_organization](./image/create_organization.png)
+2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**>**创建组织**。
+
+   ![create_organization](./image/create_organization.png)
 
 3. 在**创建组织**页面，根据下表配置参数。
 
@@ -36,8 +38,12 @@ sidebar_position: 2
 **操作步骤**
 
 1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+
 2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**，在**组织**下选择创建完成的组织。
-3. 此时已经从个人模式切换至组织模式，在左侧导航栏中单击**账户管理**，在这里，您可以进行账户相关的管理操作。![account_management](./image/account_management.png)
+
+3. 此时已经从个人模式切换至组织模式，在左侧导航栏中单击**账户管理**，在这里，您可以进行账户相关的管理操作。
+
+   ![account_management](./image/account_management.png)
 
 :::tip
 
@@ -58,15 +64,17 @@ sidebar_position: 2
 
 2. 在左侧导航栏，单击**账户管理**>**组织信息**，即可查看当前组织的信息。
 
-3. 在**组织信息**页面，您可以进行如下操作。![edit_organization](./image/edit_organization.png)
+3. 在**组织信息**页面，您可以进行如下操作。
 
+   ![edit_organization](./image/edit_organization.png)
+   
    | 序号<div style={{width:'25pt'}}></div> | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
    | -------------------------------------- | -------------------------------------- | ------------------------------------------------------------ |
    | 1                                      | 修改组织名称（仅限系统管理员操作）     | 可以修改组织名称。最多支持 24 个字符。修改完成后需要单击**保存修改**。 |
    | 2                                      | 更换 Logo（仅限系统管理员操作）         | 单击**更换 Logo** 可以上传组织的 Logo。上传完成后需要单击**保存修改**。 |
    | 3                                      | **退出组织**                           | 退出当前组织。如果您是该组织中唯一的系统管理员，则需要先将系统管理员转移给组织中的其他成员，才能退出。 |
    | 4                                      | 删除组织（仅限系统管理员操作）         | 删除当前组织。<br />**警告**：删除后，组织中的所有数据源、成员等都会丢失，且删除组织操作无法撤销，请谨慎操作。 |
-
+   
    
 
 ### 下一步
