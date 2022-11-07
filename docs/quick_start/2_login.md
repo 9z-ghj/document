@@ -8,9 +8,7 @@ sidebar_position: 2
 
 ### 操作步骤
 
-1. 打开 [NineData 登录页面](https://console.ninedata.cloud)。
-
-   ![login](../image/login.png)
+1. 打开 [NineData 登录页面](https://console.ninedata.cloud)。![login](../image/login.png)
 
 2. 您可以选择通过**密码登录**或**验证码登录**。
 
