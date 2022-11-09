@@ -26,8 +26,8 @@ sysbench --db-driver=mysql --mysql-host=1.1.1.1 --mysql-port=3306 --mysql-user=s
 
 ### 测试方法
 
-- 全量备份：通过 NineData 平台对数据库进行全量备份。
-- 全量恢复：通过 NineData 平台将备份后的文件全量恢复至数据库。
+- 全量备份：通过 NineData 平台对数据库进行全量逻辑备份。记录备份时长以及每秒数据量。操作流程请参见[备份数据（逻辑备份）](/backup_and_restore/backup/logical_backup.md)。
+- 全量恢复：通过 NineData 平台将备份后的文件全量恢复至数据库。记录恢复时长以及每秒数据量。操作流程请参见[恢复逻辑备份数据](/backup_and_restore/restore/restore_logical_backup.md)。
 
 ### 测试结果
 
