@@ -2,8 +2,6 @@
 sidebar_position: 1
 ---
 
-
-
 # 术语
 
 本文对使用 NineData 产品过程中碰到的术语进行介绍。
