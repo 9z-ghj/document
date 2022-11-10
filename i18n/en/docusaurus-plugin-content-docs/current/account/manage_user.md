@@ -12,7 +12,7 @@ sidebar_position: 3
 * NineData 控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
 * 您的角色为系统管理员。更多关于角色的信息，请参见[角色](intro_account.md#角色)。
 
-### <span id="invitation">邀请用户</span>
+### 邀请用户
 
 1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
 

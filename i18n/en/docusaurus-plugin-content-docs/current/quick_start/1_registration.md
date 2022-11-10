@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # 步骤一：注册 NineData 账号
@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ### 操作步骤
 
-1. 打开 [NineData 注册页面](https://https://console.ninedata.cloud/user/register)。![registration](../image/registration.png)
+1. 打开 [NineData 注册页面](https://console.ninedata.cloud/user/register)。![registration](../image/registration.png)
 
 2. 输入您的手机号码并单击**获取验证码**，收到 NineData 系统发送的验证码后输入该验证码。
 
