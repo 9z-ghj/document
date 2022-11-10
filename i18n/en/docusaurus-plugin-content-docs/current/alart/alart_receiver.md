@@ -1,54 +1,54 @@
 ---
 sidebar_position: 2
 ---
-# 配置告警接收
+# Configure Alarm Receiving
 
-NineData 运维监控支持通过接收组或接收人的发送告警，本文介绍如何创建告警接收组或告警接收方。
+NineData operation and maintenance monitoring supports sending alarms through receiving groups or receivers. This article describes how to create an alarm receiving group or an alarm receiver.
 
-### 创建告警接收组
+### Create an alarm receiving group
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**运维监控**>**告警接收**。
+2. In the left navigation pane, click **O&M Monitoring** > **Alarm Receiving** .
 
-3. 在**告警接收组**页签，单击右上角的**创建接收组**。
+3. On the **Alarm Receiving Groups** tab, click **Create Receiving Group** in the upper right corner .
 
-4. 在**创建接收组**页面，根据下表进行配置。
+4. On the **Create Receiving Group** page, configure according to the following table.
 
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **接收组名称**                         | 输入告警接收组的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 24 个字符。 |
-   | **添加接收方**（短信、电话、邮箱）     | 单击**添加接收方**下方的输入框，会弹出已创建的告警接收人列表。依次单击您需要添加的接收方名称进行添加。您还可以在输入框中输入接收方的部分关键词进行模糊搜索，快速定位目标接收方。<br />**说明**：如果您还未创建接收方，可单击列表下方的**立即创建**创建告警接收方。 |
-   | **飞书/钉钉/企业微信 Webhook**         | 在左侧框中输入群组机器人的 Webhook 地址，如果该 Webhook 地址开启了签名验证，还需要在右侧框中输入签名密钥（如未开启签名验证则留空），单击**验证可用性**可以测试输入的 Webhook 地址是否可用。<br />如何获取 Webhook 地址，请参见如下官方文档：<ul><li>[飞书 Webhook](https://www.feishu.cn/hc/zh-CN/articles/244506653275)</li><li>[钉钉 Webhook](https://help.aliyun.com/document_detail/251838.htm)</li><li>[企业微信 Webhook](https://open.work.weixin.qq.com/help2/pc/14931)</li></ul><br />**说明：**如需同时添加多个 Webhook，可单击**添加**按钮。 |
+   | Parameters <div style={{width:'50pt'}}>       | illustrate                                                   |
+   | --------------------------------------------- | ------------------------------------------------------------ |
+   | **receiving group name**                      | Enter the name of the alarm receiving group. To facilitate subsequent search and management, try to use a meaningful name. Up to 24 characters are supported. |
+   | **Add recipient** (SMS, phone, email)         | Click the input box under **Add recipient,** and a list of created alarm recipients will pop up. Click on the recipient name you want to add to add it. You can also enter some keywords of the recipient in the input box to perform a fuzzy search to quickly locate the target recipient. **Note** : If you have not created a recipient, you can click **Create Now below the list to create** an alarm recipient. |
+   | **Feishu/DingTalk/Enterprise WeChat Webhook** | Enter the webhook address of the group robot in the left box. If signature verification is enabled for the webhook address, you also need to enter the signature key in the right box (leave it blank if signature verification is not enabled). Click **Verify Availability** to test Whether the entered webhook address is available. How to obtain the webhook address, please refer to the following official documents:[Feishu Webhook](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://www.feishu.cn/hc/zh-CN/articles/244506653275)[DingTalk Webhook](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://help.aliyun.com/document_detail/251838.htm)[Enterprise WeChat Webhook](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://open.work.weixin.qq.com/help2/pc/14931) **Note: \**To add multiple Webhooks at the same time, click the\** Add** button. |
 
-5. 单击**创建接收组**。
+5. Click **Create Receiving Group** .
 
    :::tip
-   
-   NineData 提供了一个默认的接收组 `默认告警组`，您也可以直接单击该接收组右侧**操作**列的**编辑**，将接收方或 Webhook 加入到该组，编辑方法请参见上述表格。
-   
+
+   NineData provides a default receiver group `默认告警组`. You can also directly click **Edit in the** **operation** column on the right side of the receiver group to add receivers or Webhooks to the group. For the editing method, see the table above.
+
    :::
 
-### <span id="receiver">创建告警接收方</span>
+### Create an alert recipient
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**运维监控**>**告警接收**。
+2. In the left navigation pane, click **O&M Monitoring** > **Alarm Receiving** .
 
-3. 单击**告警接收方**页签，并单击页面右上角的**创建接收方**。
+3. Click **the Alert Recipients** tab and click **Create Recipient in the** upper right corner of the page .
 
-4. 在**创建接收方**页面，根据下表进行配置。
+4. On the **Create Receiver** page, configure according to the following table.
 
-   | 参数<div style={{width:'50pt'}}></div>         | 说明                                                         |
-   | ---------------------------------------------- | ------------------------------------------------------------ |
-   | **接收方名称**                                 | 输入告警接收组的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 24 个字符。 |
-   | **配置方式**                                   | <ul><li>**手动配置**：手动输入接收方的**手机号**和**邮箱**（可选）。</li><li>**NineData 用户**：选择已加入至 NineData 的用户，可自动填充该用户的**手机号**和**邮箱**。</li></ul> |
-   | **手机号**（**配置方式**为**手动配置**时可见） | 输入接收方的手机号码，当前仅支持中国大陆地区的手机号码。<br />**说明**：输入完成后可单击右侧的**验证可用性**，验证输入的手机号码是否可用。 |
-   | **邮箱**（**配置方式**为**手动配置**时可见）   | （可选）输入接收方的邮箱地址。<br />**说明**：输入完成后可单击右侧的**验证可用性**，验证输入的邮箱是否可用。 |
-   | **加入告警接收组**                             | （可选）单击**加入告警接收组**下方的输入框，会弹出已创建的告警接收组列表。依次单击您需要添加的接收组名称进行添加。您还可以在输入框中输入接收组的部分关键词进行模糊搜索，快速定位目标接收组。<br />**说明**：如果您还未创建接收组，可单击列表下方的**立即创建**创建告警接收组。 |
+   | Parameters <div style={{width:'50pt'}}>                      | illustrate                                                   |
+   | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | **recipient name**                                           | Enter the name of the alarm receiving group. To facilitate subsequent search and management, try to use a meaningful name. Up to 24 characters are supported. |
+   | **Configuration method**                                     | **Manual configuration** : Manually enter the recipient's **mobile phone number** and **email address** (optional).**NineData User** : Select a user who has joined NineData to automatically fill in the user's **mobile phone number** and **email** address . |
+   | **Mobile phone number** ( visible when the **configuration method** is **manual configuration )** | Enter the recipient's mobile phone number, currently only mobile phone numbers in mainland China are supported. **Note** : After the input is complete, you can click **Verify Availability** on the right to verify whether the entered mobile phone number is available. |
+   | **Mailbox** ( visible when the **configuration method** is **manual configuration )** | (Optional) Enter the recipient's email address. **Note** : After the input is complete, you can click **Verify Availability** on the right to verify whether the entered email address is available. |
+   | **Join the alarm receiving group**                           | (Optional) Click the input box under **Join Alarm Receiving Group** , and a list of created alarm receiving groups will pop up. Click the name of the receiving group you want to add to add it. You can also enter some keywords of the receiving group in the input box to perform a fuzzy search to quickly locate the target receiving group. **Note** : If you have not created a receiving group, you can click **Create Now below the list to create** an alarm receiving group. |
 
-5. 单击**创建接收方**。
+5. Click **Create Recipient** .
 
-### 下一步
+### Next step
 
-[配置告警策略](alart_rule.md)
+[Configure an alert policy](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_rule.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

@@ -2,26 +2,26 @@
 sidebar_position: 2
 ---
 
-# 步骤二：登录 NineData
+# Step 2: Log in to NineData
 
-本文介绍如何登录 NineData。
+This article describes how to log in to NineData.
 
-### 操作步骤
+### Steps
 
-1. 打开 [NineData 登录页面](https://console.ninedata.cloud)。![login](../image/login.png)
+1. Open the [NineData login page](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .[![login](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/image/login.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/image/login.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-2. 您可以选择通过**密码登录**或**验证码登录**。
+2. You can choose to log in with a **password** or a **verification code** .
 
-   **密码登录**：输入注册时使用的手机号码，并输入密码，单击**登录**。
+   **Password login** : Enter the mobile phone number used during registration, enter the password, and click **Login** .
 
    :::tip
 
-   如果您忘记了登录密码，可以单击右下角的**忘记密码**进行**重置密码**。
-   
+   If you forget your login password, you can click **Forgot Password** in the lower right corner to **reset your password** .
+
    :::
-   
-   **验证码登录**：单击**验证码登录**，输入注册时使用的手机号码，单击**获取验证码**，并输入 NineData 系统发送的验证码，然后单击**登录**。
 
-### 下一步
+   **Login with verification code** : Click on the **verification code to log** in, enter the mobile phone number used for registration, click **Get verification code** , enter the verification code sent by the NineData system, and then click **Login** .
 
-[申请免费数据源并生成测试数据](3_demo_datasource.md)
+### Next step
+
+[Request free data sources and generate test data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/quick_start/3_demo_datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

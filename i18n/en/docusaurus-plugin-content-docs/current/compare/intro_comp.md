@@ -2,29 +2,28 @@
 sidebar_position: 1
 ---
 
-# 数据库对比简介
+# Introduction to Database Comparison
 
-NineData 数据库对比功能支持对两个数据源之间的内容进行一致性对比，不一致的情况下还支持自动生成变更 SQL，您可以直接复制并在目标端执行，实现数据与结构的一致性。
+The NineData database comparison function supports the consistency comparison between two data sources. In case of inconsistency, it also supports automatic generation of change SQL. You can directly copy and execute it on the target side to achieve data and structure consistency.
 
-### 功能介绍
+### Features
 
-* [结构对比](structure_comparation.md)：结构对比即元数据（MetaData）的对比，用于对比两个数据库中对象的定义是否一致。例如，对比两个表中的列（column）、索引（index），约束（主键、外键、constraint）等是否一致。
-* [数据对比](data_comparation.md)：数据对比即用户数据（UserData）的对比，用于对比两个数据库中的数据是否一致。通常用于备份恢复、数据迁移、数据同步后两端的数据一致性对比。
+- [Structural comparison](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/structure_comparation.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) : Structural comparison is the comparison of metadata (MetaData), which is used to compare whether the definitions of objects in the two databases are consistent. For example, compare whether the columns, indexes, and constraints (primary keys, foreign keys, and constraints) in the two tables are consistent.
+- [Data comparison](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/data_comparation.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) : Data comparison is the comparison of user data (UserData), which is used to compare whether the data in the two databases are consistent. It is usually used for backup and recovery, data migration, and data consistency comparison between the two ends after data synchronization.
 
-### 产品架构
+### Product Architecture
 
-![structure](./image/structure.png)
+[![structure](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/compare/image/structure.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/image/structure.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-### 使用场景
+### scenes to be used
 
-| 场景                               | 说明                                                         |
-| ---------------------------------- | ------------------------------------------------------------ |
-| 跨部门、跨地域校验数据库架构一致性 | 企业用户在管理多项目或多模块的同类数据库时，由于组织或团队的分散或独立性，数据库结构和对象的变化没有及时同步到所有的数据中心或子项目，应用程序报错后才被发现。<br />**NineData 数据结构对比**服务定期对比源端和目标端的元数据，保证整个所有数据库节点的数据结构一致性，并且提供修复建议，避免业务崩溃。 |
-| 跨地域、跨云多活数据校验           | 为实现低延迟就近读写、数据库多活再被能力，企业通常会在不同地域或云平台之间搭建数据复制和同步。然而由于系统架构的局限性等多种因素影响，可能会出现数据不一致的情况，因此周期性的数据校验必不可少。而在数据量庞大的情况下，全量对比是比较昂贵低效的方法。<br />**NineData 数据结构对比**服务基于**分组混检**和**快速哈希**，提供了高效的数据一致性检查，同时针对不一致的情况，提供 SQL 变更脚本，在目标端执行即可保证两端数据一致。 |
-| ELT/ETL 过程中数据的完整性          | 经典的 ETL 和云原生时代的 ELT，都要求把多种数据源的数据导入到某个数据仓库中，用来支持 OLAP 和 BI 分析。<br />然而源端和目标端通常是异构的，数据聚合和架构转换过程中可能会影响数据的一致性。**NineData 数据结构对比**服务支持同构、异构数据库之间的数据对比，很大程度上降低了在该过程中出现数据不一致的风险。 |
+| Scenes                                                       | illustrate                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Check database schema consistency across departments and regions | When enterprise users manage multi-project or multi-module databases of the same type, due to the dispersion or independence of organizations or teams, changes in database structures and objects are not synchronized to all data centers or sub-projects in time, and application errors are reported only after they are discovered. **The NineData data structure comparison** service regularly compares the metadata of the source and target ends to ensure the consistency of the data structure of all database nodes, and provides repair suggestions to avoid business crashes. |
+| Cross-region, cross-cloud multi-active data verification     | In order to achieve low-latency reading and writing at the nearest location, and the ability of databases to be active and reused, enterprises usually build data replication and synchronization between different regions or cloud platforms. However, due to the limitations of the system architecture and other factors, data inconsistency may occur, so periodic data verification is essential. In the case of a huge amount of data, full comparison is a more expensive and inefficient method. **NineData data structure comparison** service is based on **group mixed inspection** and **fast hashing** , which provides efficient data consistency check. At the same time, for inconsistencies, it provides SQL change scripts, which can be executed on the target side to ensure the consistency of data at both ends. |
+| Integrity of data during ELT/ETL process                     | Both classic ETL and ELT in the cloud-native era require data from multiple data sources to be imported into a data warehouse to support OLAP and BI analysis. However, the source and destination are usually heterogeneous, and data consistency may be affected during data aggregation and schema transformation. **NineData data structure comparison** service supports data comparison between homogeneous and heterogeneous databases, which greatly reduces the risk of data inconsistency in the process. |
 
-### 相关文档
+### Related Documentation
 
-- [执行数据对比](data_comparation.md)
-
-- [执行结构对比](structure_comparation.md)
+- [Perform data comparison](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/data_comparation.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Execution structure comparison](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/structure_comparation.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

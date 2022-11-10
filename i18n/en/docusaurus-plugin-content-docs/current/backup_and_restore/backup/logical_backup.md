@@ -2,71 +2,71 @@
 sidebar_position: 2
 ---
 
-# 备份数据（逻辑备份）
+# Backup data (logical backup)
 
-NineData 数据备份服务的逻辑备份支持秒级 RPO、行级数据恢复以及在线备份数据查询功能。本文介绍如何对数据库执行逻辑备份。
+The logical backup of NineData data backup service supports second-level RPO, row-level data recovery, and online backup data query functions. This article describes how to perform a logical backup of a database.
 
-### 前提条件
+### Preconditions
 
-- 已将数据源添加至 NineData。如何添加，请参见[添加数据源](../../configuration/datasource.md)。
-- MySQL 数据源的版本为 8.0、5.7、5.6。
-- SQL Server 数据源的版本为 2019、2017、2016、2014、2012、2008R2。
+- Added data source to NineData. For how to add, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- The version of the MySQL data source is 8.0, 5.7, 5.6.
+- The version of the SQL Server data source is 2019, 2017, 2016, 2014, 2012, 2008R2.
 
-### 使用限制
+### usage restrictions
 
-当前仅 MySQL 支持全量和增量备份，SQL Server 仅支持全量备份。
+Currently, only MySQL supports full and incremental backups, and SQL Server only supports full backups.
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**备份与恢复**>**数据备份**。
+2. On the left navigation bar, click **Backup & Restore** > **Data Backup** .
 
-3. 在**备份任务**页面，单击右上角的**创建备份**。
+3. On the **Backup Tasks** page, click **Create Backup** in the upper right corner .
 
-4. 在**数据源与目标**页面，按照下表进行配置，并单击**下一步**。
+4. On the **Data Sources and Targets** page, configure according to the table below and click **Next** .
 
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **任务名称**                           | 输入备份任务的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 64 个字符。 |
-   | **数据源**                             | 选择您希望进行备份的数据源，如果您刚添加了新的数据源，可以单击右侧的**刷新**获取最新的数据源列表。 |
-   | **备份方式**（仅 SQL Server 支持）       | 选择**逻辑备份**。<ul><li>**逻辑备份**：以数据库对象（例如表、索引等）为备份对象的备份方式。支持全量备份、增量备份、结构备份等多种备份类型。</li><li>**物理备份**：以数据库中的文件为备份对象的备份方式。</li></ul> |
-   | **备份类型**                           | 支持如下备份类型：<ul><li>**表结构+全量数据+日志数据**（仅 MySQL 支持）：备份数据中包含全量和增量数据。</li><li>**表结构+全量数据**：备份数据中包含全量数据。</li><li>**表结构**：仅备份表结构。</li></ul> |
-   | **存储目标**                           | 选择备份数据的存储位置，请根据数据源所在位置就近选择。NineData 提供多个云厂商以及多个地域，支持**阿里云**、**腾讯云**、**华为云**和**AWS**，支持的地域请参见控制台。 |
-   
-5. 在**备份对象与周期**页面，按照下表进行配置，并单击**保存并预检查**。
+   | Parameters <div style={{width:'50pt'}}>          | illustrate                                                   |
+   | ------------------------------------------------ | ------------------------------------------------------------ |
+   | **mission name**                                 | Enter the name of the backup task. For the convenience of subsequent search and management, please try to use a meaningful name. Up to 64 characters are supported. |
+   | **data source**                                  | Select the data source you want to back up. If you just added a new data source, you can click **Refresh** on the right to get the latest list of data sources. |
+   | **Backup method** (only supported by SQL Server) | Select **Logical Backup** .**Logical backup** : A backup method that uses database objects (such as tables, indexes, etc.) as backup objects. Support full backup, incremental backup, structure backup and other backup types.**Physical backup** : A backup method that takes the files in the database as the backup object. |
+   | **Backup type**                                  | The following backup types are supported:**Table structure + full data + log data** (only supported by MySQL): The backup data includes full and incremental data.**Table structure + full data** : The backup data contains full data.**Table Structure** : Only the table structure is backed up. |
+   | **storage target**                               | Select the storage location of the backup data, according to the location of the data source. NineData provides multiple cloud vendors and multiple regions, and supports Alibaba **Cloud** , **Tencent Cloud** , **Huawei Cloud** , and **AWS** . For the supported regions, see the console. |
 
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **备份对象**                           | 需要备份的内容，支持全选和自定义。<ul><li>**所有数据库及对象**：备份该数据源中所有的数据库以及对象。</li><li>**自定义对象**：手动选择需要备份的数据库及对象。</li></ul><br /> |
-   | **备份策略**                           | <ul><li>**时区**：选择您所在地域的时区，系统会根据您所选择时区的时间点启动备份，默认为北京时区。</li><li>**备份频率**：选择多长时间备份一次，可选周一到周日、00:00 到 23:59 的任意时间段。也可以勾选**每天**，每天备份一次。</li><li>**保存时间**：备份文件（包含备份文件和日志文件）的保存时长，到期后会被自动删除。可选时间为 **7 天、30 天、60 天、90 天、半年、1 年、2 年**，默认为**7 天**。</li></ul> |
+5. On the **Backup Objects and Periods** page, configure according to the following table, and click **Save and Precheck** .
 
-6. 在**预检查**页面，系统会自动进行兼容性检查，检查结果会显示在页面上，全部成功后单击**启动任务**。
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **Backup object**                       | The content that needs to be backed up can be selected and customized.**All databases and objects** : Backup all databases and objects in this data source.**Custom Objects** : Manually select the databases and objects to be backed up. |
+   | **backup strategy**                     | **Time zone** : Select the time zone of your region, the system will start the backup according to the time point in the time zone you selected, the default is Beijing time zone.**Backup frequency** : Choose how often to back up. You can choose any time period from Monday to Sunday, 00:00 to 23:59. You can also check **Daily** to back up once a day.**Storage time** : The storage time of backup files (including backup files and log files), which will be automatically deleted after expiration. The options are **7 days, 30 days, 60 days, 90 days, half a year, 1 year, 2 years** , and the default is **7 days** . |
 
-   :::tip
-
-   如果检查未通过，您需要对未通过的检查项进行手动排查，完成后再重新根据此操作步骤配置备份任务。
-
-   :::
-
-7. 在**启动任务**页面提示**启动成功**后，数据备份服务会在您设定的备份周期自动启动备份。您也可以单击**立即备份**立即进行一次备份。
+6. On the **pre-check** page, the system will automatically perform a compatibility check, and the check result will be displayed on the page. After all are successful, click **Start the task** .
 
    :::tip
 
-   您也可以按照下列两种方式立即备份数据：
-
-   - 在左侧导航栏单击**数据备份**，并在**备份任务**页面单击该任务右侧**操作**列的**立即备份**来启动备份。
-   - 在左侧导航栏单击**数据备份**，在**备份任务**页面单击目标任务ID，并在**备份详情**页单击右上角的**立即备份**。
+   If the check fails, you need to manually check the failed check items, and then reconfigure the backup task according to these steps.
 
    :::
 
-8. 在左侧导航栏单击**数据备份**，在**备份任务**页面单击目标**任务 ID**，即可查看备份任务的详细状态。
+7. After the **startup task** page prompts that **the startup is successful** , the data backup service will automatically start the backup in the backup cycle you set. You can also click **Backup** Now to make a backup immediately.
 
-### 相关文档
+   :::tip
 
-- [数据备份简介](../intro_back.md)
-- [执行物理备份](physical_backup.md)
-- [恢复逻辑备份数据](../restore/restore_logical_backup.md)
-- [恢复物理备份数据](../restore/restore_physical_backup.md)
-- [查看备份集](../view_backup_sets.md)
-- [查询备份数据](../backup_data_query.md)
+   You can also back up your data immediately in the following two ways:
+
+   - On the left navigation bar, click **Data Backup** , and on the **Backup Tasks** page, click **Backup Now in the** **Action** column on the right side of the task to start the backup.
+   - **Click Data Backup** on the left navigation bar , click the target job ID on the **Backup Jobs page, and click** **Backup Now in the upper right corner of the** **Backup Details** page .
+
+   :::
+
+8. **Click Data Backup** in the left navigation bar , and click the target **task ID** on the **backup task** page to view the detailed status of the backup task.
+
+### Related Documentation
+
+- [Introduction to Data Backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Perform physical backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring logical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring physical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [View backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/view_backup_sets.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Query backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

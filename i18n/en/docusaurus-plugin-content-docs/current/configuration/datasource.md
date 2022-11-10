@@ -1,75 +1,75 @@
 ---
 sidebar_position: 1
 ---
-# 管理数据源
+# Manage data sources
 
-NineData 支持将不同类型、不同环境的数据源添加到控制台中进行统一管理，您可以对已经添加后的数据源使用 SQL 开发、备份与恢复、数据复制、数据库对比等功能。
+NineData supports adding data sources of different types and environments to the console for unified management. You can use SQL development, backup and recovery, data replication, database comparison and other functions for the added data sources.
 
-### 注意事项
+### Precautions
 
-- 当前支持的云厂商：阿里云、腾讯云、华为云、AWS<!--、移动云-->
-- 当前支持的数据库类型：MySQL、SQL Server、ClickHouse
+- Currently supported cloud vendors: Alibaba Cloud, Tencent Cloud, Huawei Cloud, AWS
+- Currently supported database types: MySQL, SQL Server, ClickHouse
 
-### 添加自建数据源
+### Add self-built data source
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**数据源管理**>**数据源**。
+2. In the left navigation bar, click **Data Source Management** > **Data Sources** .
 
-3. 在**创建数据源**页面，根据下表配置参数。
+3. On the **Create Data Source** page, configure the parameters according to the following table.
 
-   | 参数<div style={{width:'60pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **数据源名称**                         | 输入数据源的名称，为了方便后续查找和管理，请尽量使用有意义的名称。 |
-   | **数据源位置**                         | 选择**公网/自建/他云**。                                     |
-   | **环境**                               | 根据该数据源的实际业务用途进行选择，作为数据源的环境标识。默认提供**生产**和**开发**环境，同时支持您[创建自定义环境](#附录创建环境)。<br />**说明**：在[组织模式](../account/intro_account.md#organization)下，数据库环境还可应用于权限策略管理，例如，默认情况下的**生产环境管理员**角色仅支持访问**生产**环境下的数据源，无法访问其他环境的数据源。更多信息，请参见[管理角色](../account/manage_role.md)。 |
-   | **数据库类型**                         | 选择数据源的数据库类型，支持 **MySQL**、**SQL Server**、**ClickHouse** 三种数据源。 |
-   | **连接方式**                           | 选择数据源的接入方式。支持通过**公网地址**、**网关**、**SSH Tunnel 连接**三种方式接入。<ul><li>**公网地址**：通过公网地址接入数据源，需要在**连接地址**中输入数据源的公网连接地址。</li><li>**网关**：NineData 提供的安全快捷的内网访问方式，需先将数据源所在主机接入，接入方式请参见[添加网关](gateway.md)。然后在下方选择已接入的**网关**和**连接地址**，**连接地址**可以写成 **localhost** 或者内网 IP。</li><li>**SSH Tunnel 连接**：通过 SSH 隧道接入数据源。你还需要输入 **SSH 主机**和对应端口、**SSH 认证方式**、**SSH 用户名**以及 SSH 方式的**连接地址**。</li></ul> |
-   | **用户名**                             | 数据源的用户名。                                             |
-   | **密码**                               | 数据源的密码。                                               |
-   | **加密传输**                           | 是否使用 SSL 加密方式访问数据源。单击**加密传输**左侧的**>**可以展开详细配置。 |
+   | Parameters <div style={{width:'60pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **data source name**                    | Enter the name of the data source. For the convenience of subsequent search and management, please try to use a meaningful name. |
+   | **Data source location**                | Select **public network/self-built/other cloud** .           |
+   | **surroundings**                        | It is selected according to the actual business purpose of the data source as the environment identifier of the data source. **Production** and **development** environments are provided by default , while enabling you [to create custom environments](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录创建环境) . **Note** : In [organizational mode , the database environment can also be applied to permission policy management. For example, the ](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/intro_account.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#organization)**production environment administrator** role by default only supports access to data sources in the **production** environment and cannot access data sources in other environments. For more information, see [Managing Roles](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_role.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+   | **database type**                       | Select the database type of the data source, **MySQL** , **SQL Server** , **ClickHouse** three data sources are supported. |
+   | **Connection method**                   | Select the access method of the data source. Supports access through **public network address** , **gateway** , and **SSH Tunnel connection** .**Public network address** : To access the data source through the public network address, you need to enter the public network connection **address** of the data source in the connection address.**Gateway** : A safe and fast intranet access method provided by NineData. You need to connect the host where the data source is located first. For the access method, see [Adding a Gateway](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/gateway.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . Then select the connected **gateway** and **connection address** below . The **connection address** can be written as **localhost** or intranet IP.**SSH Tunnel connection** : Access the data source through the SSH tunnel. You also need to enter the **SSH host** and corresponding port, **SSH authentication method** , **SSH user name** and SSH **connection address** . |
+   | **username**                            | The username of the data source.                             |
+   | **password**                            | Password for the data source.                                |
+   | **encrypted transmission**              | Whether to use SSL encryption to access the data source. Click **>** on the left side of **encrypted transmission to expand detailed configuration.** |
 
-4. 全部配置完成后，单击**密码**右侧的**连接测试**可以测试该数据源是否可以正常访问，提示**连接成功**即可单击**创建数据源**，完成数据源的添加。否则请重新检查连接设置，直到连接测试成功为止。
+4. After all configurations are completed, click the **connection test** to the right of the **password** to test whether the data source can be accessed normally, and if the **connection is successful** , click **Create data source** to complete the addition of the data source. Otherwise, recheck the connection settings until the connection test is successful.
 
-### 添加云厂商数据源
+### Add cloud vendor data source
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**数据源管理**>**数据源**。
+2. In the left navigation bar, click **Data Source Management** > **Data Sources** .
 
-3. 在**创建数据源**页面，根据下表配置参数。在**创建数据源**页面，根据下表配置参数。
+3. On the **Create Data Source** page, configure the parameters according to the following table. On the **Create Data Source** page, configure the parameters according to the following table.
 
-   | 参数<div style={{width:'60pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **数据源名称**                         | 输入数据源的名称，为了方便后续查找和管理，请尽量使用有意义的名称。 |
-   | **数据源位置**                         | 选择您数据源对应的云厂商，支持**阿里云**、**腾讯云**、**华为云**、**AWS**。本文以**阿里云**为例进行说明。 |
-   | **环境**                               | 根据该数据源的实际业务用途进行选择，作为数据源的环境标识。默认提供**生产**和**开发**环境，同时支持您[创建自定义环境](#附录创建环境)。<br />**说明**：在[组织模式](../account/intro_account.md#组织)下，数据库环境还可应用于权限策略管理，例如，默认情况下的**生产环境管理员**角色仅支持访问**生产**环境下的数据源，无法访问其他环境的数据源。更多信息，请参见[管理角色](../account/manage_role.md)。 |
-   | **实例类型**                           | 数据源实例的类型，需要您根据自身的实例类型进行选择。支持如下数据库类型：<ul><li>**ECS 自建**（AWS 为 **EC2 自建**）：建立在云厂商 ECS 实例上的自建数据库。</li><li>**通过专线/VPN 网关/智能网关接入自建数据库**：通过阿里云的网络连接服务接入的自建数据库。</li><li>**云数据库 RDS**：云厂商的关系型数据库实例。</li><li>**PolarDB**：阿里云的云原生关系型数据库实例。</li><li>**云数据库 ClickHouse**：阿里云的 ClickHouse 实例。</li><li>**TDSQL-C**：腾讯云的云原生关系型数据库实例。</li><li>**GaussDB**：华为云的 GaussDB 分布式数据库实例。</li><li>**Aurora**：AWS 的云原生关系型数据库实例。</li></ul> |
-   | **数据库类型**                         | 选择数据源的数据库类型，根据云厂商的不同，支持的数据源也不同。详情请参见配置页面。 |
-   | **连接方式**                           | 选择数据源的接入方式。<ul><li>**私网**（当前仅支持阿里云）：通过云厂商的私网连接地址进行连接，需先将该私网地址接入 NineData。接入方式请参见[添加私网地址](private_link.md)。然后在下方选择已接入的**私网连接**。</li><li>**公网地址**：通过公网地址接入数据源，需要在**连接地址**中输入实例的公网连接地址。</li><li>**网关**（仅支持自建库）：NineData 提供的安全快捷的内网访问方式，需先将数据源所在主机接入，接入方式请参见[添加网关](gateway.md)。后在下方选择已接入的**网关**和**连接地址**，**连接地址**可以写成 **localhost** 或者内网 IP。</li><li>**SSH Tunnel 连接**：通过 SSH 隧道接入数据源。你还需要输入 **SSH 主机**和对应端口、**SSH 认证方式**、**SSH 用户名**以及 SSH 方式的**连接地址**。</li></ul> |
-   | **接入方式**                           | 选择接入方式，支持以**实例 ID**或**连接地址**的形式接入。<ul><li>**实例 ID**：通过 ECS（EC2）或云数据库的实例 ID 接入。选择此项还需要选择**云厂商访问凭证**、**接入地域**以及**实例 ID** 等参数。**云厂商访问凭证**需要提前配置，配置方法请参见[配置云厂商访问凭证](access_credentials.md)。</li><li>**连接地址**：通过实例的连接地址接入，根据**连接方式**不同，**连接地址**不尽相同，详情请参见上方**连接方式**的说明。</li></ul> |
-   | **用户名**                             | 数据源的用户名。                                             |
-   | **密码**                               | 数据源的密码。                                               |
-   | **加密传输**                           | 是否使用 SSL 加密方式访问数据源。单击**加密传输**左侧的**>**可以展开详细配置。 |
+   | Parameters <div style={{width:'60pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **data source name**                    | Enter the name of the data source. For the convenience of subsequent search and management, please try to use a meaningful name. |
+   | **Data source location**                | Select the cloud vendor corresponding to your data source , Alibaba **Cloud** , **Tencent Cloud** , **Huawei Cloud** , and **AWS** are supported . This article uses **Alibaba Cloud** as an example. |
+   | **surroundings**                        | It is selected according to the actual business purpose of the data source as the environment identifier of the data source. **Production** and **development** environments are provided by default , while enabling you [to create custom environments](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录创建环境) . **Note** : In [organizational mode , the database environment can also be applied to permission policy management. For example, the ](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/intro_account.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#组织)**production environment administrator** role by default only supports access to data sources in the **production** environment and cannot access data sources in other environments. For more information, see [Managing Roles](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_role.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+   | **instance type**                       | The type of the data source instance, you need to choose according to your own instance type. The following database types are supported:**ECS self** -built (AWS is **EC2 self** -built ): a self-built database built on the cloud vendor's ECS instance.**Access to self- built database through dedicated line/VPN gateway/smart gateway** : Self-built database accessed through Alibaba Cloud's network connection service.**ApsaraDB for RDS** : A relational database instance of cloud vendors.**PolarDB** : Alibaba Cloud's cloud-native relational database instance.**ApsaraDB for ClickHouse** : Alibaba Cloud's ClickHouse instance.**TDSQL-C** : Tencent Cloud's cloud-native relational database instance.**GaussDB** : HUAWEI CLOUD's GaussDB distributed database instance.**Aurora** : AWS' cloud-native relational database instance. |
+   | **database type**                       | Select the database type of the data source. Depending on the cloud vendor, the supported data sources are also different. See the configuration page for details. |
+   | **Connection method**                   | Select the access method of the data source.**Private network** (currently only supports Alibaba Cloud): To connect through the private network connection address of the cloud manufacturer, you must first connect the private network address to NineData. For the access method, see [Adding a Private Network Address](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/private_link.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . Then select the connected **private network connection** below .**Public network address** : To access the data source through the public network address, you need to enter the public network connection **address** of the instance in the connection address.**Gateway** (only supports self-built database): A safe and fast intranet access method provided by NineData, you need to connect the host where the data source is located first. For the access method, see [Adding a Gateway](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/gateway.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . Then select the connected **gateway** and **connection address** below . The **connection address** can be written as **localhost** or intranet IP.**SSH Tunnel connection** : Access the data source through the SSH tunnel. You also need to enter the **SSH host** and corresponding port, **SSH authentication method** , **SSH user name** and SSH **connection address** . |
+   | **Access method**                       | Select the access method, which supports access in the form of **instance ID** or **connection address** .**Instance ID** : Access via the instance ID of ECS (EC2) or cloud database. To select this option, you also need to select parameters such as **cloud vendor access credentials** , **access region** , and **instance ID** . **Cloud vendor access credentials** need to be configured in advance. For the configuration method, see [Configuring Cloud Vendor Access Credentials](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/access_credentials.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .**Connection address** : Access through the connection address of the instance. The connection address varies according to the **connection** method **.** For details, please refer to the description of the **connection method** above . |
+   | **username**                            | The username of the data source.                             |
+   | **password**                            | Password for the data source.                                |
+   | **encrypted transmission**              | Whether to use SSL encryption to access the data source. Click **>** on the left side of **encrypted transmission to expand detailed configuration.** |
 
-4. 全部配置完成后，单击**密码**右侧的**连接测试**可以测试该数据源是否可以正常访问，提示**连接成功**即可单击**创建数据源**，完成数据源的添加。否则请重新检查连接设置，直到连接测试成功为止。
+4. After all configurations are completed, click the **connection test** to the right of the **password** to test whether the data source can be accessed normally, and if the **connection is successful** , click **Create data source** to complete the addition of the data source. Otherwise, recheck the connection settings until the connection test is successful.
 
-### 附录：创建环境
+### Appendix: Creating an Environment
 
-为应对不同企业需求，NineData 除了提供默认的**生产**和**开发**环境以外，还支持您手动创建自定义环境。
+To meet different enterprise needs, NineData not only provides default **production** and **development** environments, but also supports you to manually create custom environments.
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**数据源管理**>**数据源**。
+2. In the left navigation bar, click **Data Source Management** > **Data Sources** .
 
-3. 单击**环境**页签，此处展示当前[用户](../account/intro_account#用户)（个人模式）或[组织](../account/intro_account#组织)（组织模式）下的所有环境。您可以在这里**编辑**或**删除**自定义创建的环境。
+3. Click **the Environments** tab to display all environments under the current [user](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/intro_account?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#用户) (personal mode) or [organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/intro_account?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#组织) (organizational mode). Here you can **edit** or **delete** custom created environments.
 
-4. 单击页面右上角的**创建环境**。
+4. Click **Create Environment** in the upper right corner of the page .
 
-5. 输入**环境名称**以及该环境在控制台中展示的**颜色**，单击**确定**。
+5. Enter **a name for the environment and the** **color** that the environment will display in the console, and click **OK** .
 
    :::tip
 
-   **环境名称**作为环境的标识，需要具有一定的辨识度，请尽量使用有意义的名称，最多支持 16 个字符。
+   **The environment name** , as the identifier of the environment, needs to have a certain degree of recognition. Please use a meaningful name as much as possible, with a maximum of 16 characters.
 
    :::

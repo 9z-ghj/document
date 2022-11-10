@@ -2,21 +2,21 @@
 sidebar_position: 1
 ---
 
-# 术语
+# Terms
 
-本文对使用 NineData 产品过程中碰到的术语进行介绍。
+This article introduces the terminology encountered during the use of NineData products.
 
 ### S
 
-- 数据源：当前 SQL 开发中的数据源指数据库实例信息，包含数据库的连接串、登陆认证信息等。
-- 私网连接：私网连接允许用户在自己的 VPC 内通过私网访问云厂商服务、第三方服务或者自己发布的服务，这些服务都部署在服务提供方的 VPC 内。
-- SQL 任务：指对数据库进行变更操作的任务，主要包括 DDL（数据库定义语言）、DML（数据库操纵语言）等语句。由于涉及对数据库变更，需要对 SQL 任务有全周期的安全管控，包括提交、审批、执行、回滚等步骤。
+- Data source: The data source in current SQL development refers to database instance information, including database connection string, login authentication information, etc.
+- Private network connection: Private network connection allows users to access cloud vendor services, third-party services, or self-published services through the private network in their own VPC. These services are all deployed in the service provider's VPC.
+- SQL task: refers to the task of changing the database, mainly including DDL (Database Definition Language), DML (Database Manipulation Language) and other statements. Because it involves changes to the database, it is necessary to have full-cycle security management and control of SQL tasks, including steps such as submission, approval, execution, and rollback.
 
 ### W
 
-- 网关：支持私网数据库远程访问的数据库连接服务。通过网关，可以安全且低成本地将第三方云或本地的数据库接入至 NineData 平台。
+- Gateway: A database connection service that supports remote access to private network databases. Through the gateway, third-party cloud or local databases can be connected to the NineData platform securely and at low cost.
 
 ### Y
 
-- 云厂商访问凭证：云主机需要通过使用 Access Key（AK）和 Access Key Secret（SK）加密的方法来验证某个请求的发送者身份。AK 用于标示用户，SK 是用户用于加密认证字符串和云厂商用来验证认证字符串的密钥，SK 必须保密。
-- 元数据：元数据是数据库的组成部分，它包括数据库名称、数据库字符集、表名、表大小、表记录行数、表字符集、表索引、表备注、字段名称、字段类型、字段精度、字段备注等，这些信息部分保存在数据库的系统表中。例如，MySQL 元数据信息存储在 `information_schema` 等数据库中，其中如表的大小、表的行数可能不是非常精准，仅做数量级的参考。
+- Cloud Vendor Access Credentials: The cloud host needs to use the Access Key (AK) and Access Key Secret (SK) encryption methods to verify the identity of the sender of a request. AK is used to identify the user, SK is the key used by the user to encrypt the authentication string and the cloud vendor used to verify the authentication string, and the SK must be kept secret.
+- Metadata: Metadata is an integral part of the database, which includes database name, database character set, table name, table size, table record row count, table character set, table index, table remarks, field name, field type, field precision, Field remarks, etc., these information are partly saved in the system table of the database. For example, MySQL metadata information is stored `information_schema`in databases such as . The size of the table and the number of rows in the table may not be very accurate, so it is only an order of magnitude reference.

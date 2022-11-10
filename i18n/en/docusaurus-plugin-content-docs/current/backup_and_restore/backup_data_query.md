@@ -2,65 +2,59 @@
 sidebar_position: 5
 ---
 
-# 查询备份数据
+# Query backup data
 
-基于自研的计算存储引擎，NineData 数据备份服务可实现任意时间点备份数据的快速查询。当业务库发生数据丢失时，可通过此功能快速完成数据的查询及恢复。
+Based on the self-developed computing storage engine, NineData data backup service can realize fast query of backup data at any point in time. When data loss occurs in the business database, this function can be used to quickly complete data query and recovery.
 
-### 前提条件
+### Preconditions
 
-已经完成一次完整的逻辑备份，更多信息，请参见[执行逻辑备份](backup/logical_backup.md)。
+A complete logical backup has been completed. For more information, see [Performing Logical Backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-### 使用限制
+### usage restrictions
 
-- 当前不支持视图（VIEW）的查询。
-- 当前仅支持从逻辑备份数据进行查询。
+- VIEW queries are not currently supported.
+- Currently only queries from logical backup data are supported.
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**备份与恢复**>**备份数据查询**。
+2. In the left navigation bar, click **Backup and Restore** > **Backup Data Query** .
 
-3. 在**备份数据查询**页签，根据下表进行配置，并单击**开始查询**。
+3. On the **Backup Data Query** tab, configure according to the following table, and click **Start Query** .
 
-   | 参数<div style={{width:'85pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **请选择源数据源**                     | 备份的对象，您可以通过选择数据源快速找到**备份集**。         |
-   | **查询方式**                           | <ul><li>**全量备份集**：该方式基于全量备份数据，支持查询全量备份完成时间点前的所有数据，不包含增量数据。</li><li>**按时间点查询**：该方式基于全量备份数据和日志，可查询全量数据和后续产生的增量数据。具体可恢复时间段请参见控制台。</li></ul> |
-   | **备份集**                             | **查询方式**为**全量备份集**时可配置，选择全量备份集。       |
-   | **查询时间点**                         | **查询方式**为**按时间点查询**时可配置，选择查询哪个时间段的数据。<ul><li>逻辑备份：达到秒级 RPO，可查询备份开始至当前时间点前几秒之间的任意时间点的数据。</li><li>物理备份：分钟级 RPO，可查询备份开始至当前时间点前几分钟到 30 分钟之间的任意时间点的数据。</li></ul> |
+   | Parameters <div style={{width:'85pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **Please select a source data source**  | Backup objects, you can quickly find the **backup set** by selecting the data source . |
+   | **inquiry mode**                        | **Full backup set** : This method is based on full backup data, and supports querying all data before the full backup completion time point, excluding incremental data.**Query by point in time** : This method is based on full backup data and logs, and can query full data and subsequent incremental data. For the specific recovery time period, see the console. |
+   | **backup set**                          | **Configurable when the query mode** is **full backup set** , select full backup set. |
+   | **query time**                          | **The query method** is configurable when **querying by time point** , and you can choose which time period to query for data.Logical backup: When the second-level RPO is reached, the data at any point in time between the start of the backup and the current point in time can be queried.Physical backup: Minute-level RPO, which can query data from a few minutes to 30 minutes before the backup starts to the current time point. |
 
-4. 页面跳转至 SQL 窗口，您可以在这里通过查询语句查询备份数据中的内容。您可以单击**备份集**或**时间点**切换查询方式。![data_query](./image/data_query.png)
+4. The page jumps to the SQL window, where you can query the contents of the backup data through query statements. You can click the **backup set** or **point-in-time to** switch the query method.[![data_query](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/backup_and_restore/image/data_query.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/image/data_query.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
    :::tip
-   
-   - SQL 窗口的使用方法，请参见 [SQL 窗口](../sqldev/sql_console.md)。
-   - 查询到需要的数据后，可以通过结果集中的**导出**功能，将数据导出并恢复到到目标数据库。![export](./image/export.png)
-   
+
+   - For the usage of SQL window, please refer to [SQL window](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/sql_console.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+   - After querying the required data, you can export and restore the data to the target database through the **export function in the result set.**[![export](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/backup_and_restore/image/export.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/image/export.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+
    :::
 
-### 附录：支持的查询语法
+### Appendix: Supported Query Syntax
 
-当前支持的查询语法如下表。
+The currently supported query syntax is as follows.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-
-
-<Tabs>
-  <TabItem value="mysql" label="MySQL" default>
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 <table>
 <thead>
   <tr>
-    <th width='260pt'>语句</th>
-    <th width='700pt'>选项</th>
+    <th>statement</th>
+    <th>Options</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td rowspan="9">SELECT（查询）</td>
+    <td rowspan="9">SELECT (query)</td>
     <td>ALL | DISTINCT</td>
   </tr>
   <tr>
@@ -88,11 +82,11 @@ import TabItem from '@theme/TabItem';
     <td>LIMIT</td>
   </tr>
   <tr>
-    <td>SHOW（查看对象列表）</td>
+    <td>SHOW (view object list)</td>
     <td>TABLES</td>
   </tr>
   <tr>
-    <td rowspan="6">SHOW CREATE（查看对象结构定义语法）</td>
+    <td rowspan="6">SHOW CREATE (view object structure definition syntax)</td>
     <td>TABLE</td>
   </tr>
   <tr>
@@ -113,19 +107,16 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
-  </TabItem>
-  <TabItem value="mssql" label="SQL Server">
-
 <table>
 <thead>
   <tr>
-    <th width='260pt'>语句</th>
-    <th width='700pt'>选项</th>
+    <th>statement</th>
+    <th>Options</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td rowspan="9">SELECT（查询）</td>
+    <td rowspan="9">SELECT (query)</td>
     <td>ALL | DISTINCT | DISTINCTROW</td>
   </tr>
   <tr>
@@ -153,7 +144,7 @@ import TabItem from '@theme/TabItem';
     <td>LIMIT</td>
   </tr>
   <tr>
-    <td rowspan="7">SHOW（查看对象列表）</td>
+    <td rowspan="7">SHOW (view object list)</td>
     <td>TABLES</td>
   </tr>
   <tr>
@@ -175,7 +166,7 @@ import TabItem from '@theme/TabItem';
     <td>ASSONBLIES</td>
   </tr>
   <tr>
-    <td rowspan="8">SHOW CREATE（查看对象结构定义语法）</td>
+    <td rowspan="8">SHOW CREATE (view object structure definition syntax)</td>
     <td>TABLE</td>
   </tr>
   <tr>
@@ -202,18 +193,13 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
-  </TabItem>
-</Tabs>
 
 
+### Related Documentation
 
-
-
-### 相关文档
-
-- [数据备份简介](intro_back.md)
-- [执行逻辑备份](backup/logical_backup.md)
-- [执行物理备份](backup/physical_backup.md)
-- [恢复逻辑备份数据](restore/restore_logical_backup.md)
-- [恢复物理备份数据](restore/restore_physical_backup.md)
-- [查看备份集](view_backup_sets.md)
+- [Introduction to Data Backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [perform logical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Perform physical backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring logical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring physical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [View backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/view_backup_sets.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

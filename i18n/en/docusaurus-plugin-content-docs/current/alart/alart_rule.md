@@ -1,52 +1,52 @@
 ---
 sidebar_position: 3
 ---
-# 配置告警策略
+# Configure an alert policy
 
-NineData 提供告警功能，您需要创建告警策略，以开启告警信息的推送功能。本文介绍如何创建告警策略以及自定义告警规则。
+NineData provides an alarm function. You need to create an alarm policy to enable the push function of alarm information. This article describes how to create alert policies and customize alert rules.
 
-### 创建告警策略
+### Create an alert policy
 
-**前提条件**
+**Preconditions**
 
-- 已创建**告警接收方**或**告警接收组**。更多信息，请参见[配置告警接收](alart_receiver.md)。
-- 已创建需要进行监控的任务。如未创建，请先创建任务，支持的任务：[数据备份](../backup_and_restore/intro_back.md)、[数据恢复](../backup_and_restore/intro_back.md)、[数据复制](../replication/intro_repli.md)、[数据对比](../compare/intro_comp.md)、[结构对比](../compare/intro_comp.md)、[网关](../configuration/gateway.md)。
+- **An alarm recipient** or an **alarm recipient group** has been created . For more information, see [Configuring Alarm Receiving](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_receiver.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- A task that needs to be monitored has been created. If it has not been created, please create a task first. Supported tasks: [data backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) , [data recovery](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) , [data replication](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/intro_repli.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) , [data comparison](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/intro_comp.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) , [structure comparison](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/compare/intro_comp.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) , [gateway](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/gateway.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-**操作步骤**
+**Steps**
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**运维监控**>**告警策略**。
+2. In the left navigation pane, click **O&M Monitoring** > **Alarm Policy** .
 
-3. 在**告警策略**页签，单击右上角的**创建策略**。
+3. On the **Alarm Policy** tab, click **Create Policy** in the upper right corner .
 
-4. 在**创建策略**页面，根据下表进行配置。
+4. On the **Create Policy** page, configure according to the following table.
 
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **策略名称**                           | 输入策略的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 24 个字符。 |
-   | **任务类型**                           | 选择需要进行监控的任务类型，支持的任务类型如下：<ul><li>**数据备份**</li><li>**数据恢复**</li><li>**数据复制**</li><li>**数据对比**</li><li>**结构对比**</li><li>**网关**</li></ul> |
-   | **关联任务**                           | 选择需要进行监控的任务，单击不同的任务可进行多选。告警策略只能关联对应任务类型的任务，例如**任务类型**为**数据备份**时，此处仅展示**数据备份**的任务列表。<br />**说明**：只有在已经创建了对应任务的情况下才支持创建告警策略。 |
-   | **告警规则**                           | 选择告警规则，告警规则中包含了触发告警的条件，以及告警的推送方式。NineData 提供了一条默认的告警规则，仅通过短信的方式进行推送。如您需要[自定义告警规则](#创建告警规则)，请单击规则列表下方的**立即创建**。 |
-   | **告警接收方/组**                      | 选择告警推送的目标。支持如下选项：<ul><li>**用户**：已加入至 NineData 的用户。</li><li>**接收方**：已创建的接收人。如未创建，请单击接收方列表下方的**立即创建**。更多信息，请参见[配置告警接收](alart_receiver.md)。</li><li>**接收组**：已创建的接收组。如未创建，请单击接收方列表下方的**立即创建**。更多信息，请参见[配置告警接收](alart_receiver.md)。</li></ul> |
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **Policy name**                         | Enter the name of the policy. For the convenience of subsequent search and management, try to use a meaningful name. Up to 24 characters are supported. |
+   | **task type**                           | Select the task type to be monitored. The supported task types are as follows:**data backup****Data Recovery****data replication****Data comparison****Structural comparison****gateway** |
+   | **Associated tasks**                    | Select the tasks to be monitored, and click different tasks to make multiple selections. Alarm policies can only be associated with tasks of the corresponding task type. For example, when the **task type** is **data backup** , only the task list of **data backup** is displayed here . **Note** : Creation of an alarm policy is only supported when the corresponding task has been created. |
+   | **Alert rules**                         | Select an alarm rule. The alarm rule contains the conditions for triggering the alarm and the push method of the alarm. NineData provides a default alarm rule, which is only pushed through SMS. If you need to [customize alert rules](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_rule.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#创建告警规则) , click **Create Now** below the rules list . |
+   | **Alert recipient/group**               | Select the destination for alarm push. The following options are supported:**User** : User who has been added to NineData.**Recipient** : The recipient that has been created. **If not, click Create Now** below the recipient list . For more information, see [Configuring Alarm Receiving](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_receiver.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .**Receiving group** : The receiving group that has been created. **If not, click Create Now** below the recipient list . For more information, see [Configuring Alarm Receiving](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_receiver.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
 
-5. 单击**创建策略**。
+5. Click **Create Policy** .
 
-### <span id="rule">创建告警规则</span>
+### Create alert rules
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**运维监控**>**告警策略**。
+2. In the left navigation pane, click **O&M Monitoring** > **Alarm Policy** .
 
-3. 单击**告警规则**页签，并单击右上角的**创建规则**。
+3. Click the **Alert Rules** tab, and click **Create Rule** in the upper right corner .
 
-4. 在**创建规则**页面，根据下表进行配置。
+4. On the **Create Rule** page, configure according to the following table.
 
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **规则名称**                           | 输入策略的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 24 个字符。 |
-   | **任务类型**                           | 选择规则对应的任务类型，支持的任务类型如下：<ul><li>**数据备份**</li><li>**数据恢复**</li><li>**数据复制**</li><li>**数据对比**</li><li>**结构对比**</li><li>**网关**</li></ul> |
-   | **告警条件**                           | 选择告警的条件，控制台中以逻辑表达式的形式展现。包含：<ul><li>**任务状态**：任务运行失败时告警。</li><li>**全量备份时间**：全量备份时长大于阈值时告警。</li><li>**日志备份延时**：日志备份延时大于阈值时告警。</li><li>**复制延时**：复制延时大于阈值时告警。</li><li>**对比时间**：对比时长大于阈值时告警。</li><li>**对比结果**：对比结果为**不一致**时告警。</li><li>**网关状态**：网关状态异常时告警。</li></ul><br />**说明**：任务类型中存在多个条件时，可以单击**添加**，配置多个条件。 |
-   | **告警方式**                           | 选择告警方式，可以单选或多选。支持短信、电话、邮件、Webhook（钉钉、飞书、企业微信）。 |
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **rule name**                           | Enter the name of the policy. For the convenience of subsequent search and management, try to use a meaningful name. Up to 24 characters are supported. |
+   | **task type**                           | Select the task type corresponding to the rule. The supported task types are as follows:**data backup****Data Recovery****data replication****Data comparison****Structural comparison****gateway** |
+   | **Alarm condition**                     | Select the condition of the alarm, which is displayed in the form of a logical expression in the console. Include:**Task Status** : Alerts when the task fails to run.**Full backup time** : Alarms when the full backup time is greater than the threshold.**Log backup delay** : When the log backup delay is greater than the threshold, an alarm is issued.**Replication Delay** : Alarms when the replication delay is greater than the threshold.**Comparison time** : When the comparison time is greater than the threshold, an alarm is issued.**Comparison result** : When the comparison result is **inconsistent** , an alarm is issued.**Gateway Status** : Alerts when the gateway status is abnormal. **Note** : When there are multiple conditions in the task type, you can click **Add** to configure multiple conditions. |
+   | **Alarm mode**                          | Select the alarm method, which can be single or multiple. Support SMS, phone, email, Webhook (Dingding, Feishu, enterprise WeChat). |
 
-5. 单击**创建规则**。
+5. Click **Create Rule** .

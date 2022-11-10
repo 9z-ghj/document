@@ -2,73 +2,71 @@
 sidebar_position: 2
 ---
 
+# manage organization
 
+For enterprise users, NineData's personal model cannot meet business needs. By managing the organization, multi-user collaboration can be effectively carried out, and the permissions of each user can be managed through roles. This article describes how to manage an organization.
 
-# 管理组织
+### Create an organization
 
-对于企业用户，NineData 的个人模式无法满足业务需求，通过管理组织，可以有效进行多用户协同合作，通过角色来管理每个用户的权限。本文介绍如何管理组织。
-### 创建组织
+**Preconditions**
 
-**前提条件**
+A NineData account has been registered. For more information, see [Registering a NineData Account](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/quick_start/1_registration.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-已注册 NineData 账号。更多信息，请参见[注册 NineData 账号](../quick_start/1_registration.md)。
+**Steps**
 
-**操作步骤**
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+2. In the upper right corner of the NineData console page, move the mouse over the user avatar and click **Switch Identity** > **Create Organization** .[![create_organization](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/account/image/create_organization.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/image/create_organization.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**>**创建组织**。![create_organization](./image/create_organization.png)
+3. On the **Create Organization** page, configure the parameters according to the following table.
 
-3. 在**创建组织**页面，根据下表配置参数。
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **name of association**                 | Enter the name of the organization, usually the business name for easy identification. Up to 24 characters are supported. |
+   | **Invite users** (optional)             | Email: Enter the email addresses of the members you wish to invite to the organization.Role: Select the role of the corresponding user after joining the organization.Add: Add a user invitation record. This feature allows you to invite users to your organization in bulk. **Note** : You can also invite users after the organization is created. How to invite users, see [Inviting Users](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_user.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#邀请用户) . |
 
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **组织名称**                           | 输入组织的名称，为了便于辨认，通常使用企业名称。最多支持 24 个字符。 |
-   | **邀请用户**（可选）                   | <ul><li>电子邮箱：输入您希望邀请加入组织的成员电子邮箱。</li><li>角色：选择对应用户加入到组织后的角色。</li><li>添加：增加一条用户邀请记录。您可以通过该功能批量邀请用户加入组织。</li></ul><br />**说明**：您也可以在组织创建完成后，再邀请用户。如何邀请用户，请参见[邀请用户](manage_user.md#邀请用户)。 |
+4. Click **OK** to complete the creation of the organization.
 
-4. 单击**确定**，即可完成组织的创建。
-### 切换到组织
+### switch to organization
 
-**前提条件**
+**Preconditions**
 
-已创建组织。更多信息，请参见[创建组织](#创建组织)。
+Organization created. For more information, see [Creating Organizations](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#创建组织) .
 
-**操作步骤**
+**Steps**
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
-2. 在 NineData 控制台页面的右上角，将鼠标移动到用户头像上，单击**切换身份**，在**组织**下选择创建完成的组织。
-3. 此时已经从个人模式切换至组织模式，在左侧导航栏中单击**账户管理**，在这里，您可以进行账户相关的管理操作。![account_management](./image/account_management.png)
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
+2. In the upper right corner of the NineData console page, move the mouse over the user avatar, click **Switch Identity** , and select the created **organization** under Organization.
+3. **At this point, you have switched from personal mode to organizational mode. Click Account Management** in the left navigation bar . Here, you can perform account-related management operations.[![account_management](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/account/image/account_management.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/image/account_management.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
 :::tip
 
-仅系统管理员用户显示**用户管理**、**角色管理**<!--以及**审计日志**-->等管理入口，其他角色用户无该权限。更多关于角色对应的权限信息，请参见[预置角色权限列表](manage_role.md#附录预置角色权限列表)。
+Only system administrator users can display management portals such as **user management** and **role management** , and users with other roles do not have this permission. For more information about the permissions corresponding to roles, see the [list of preset role permissions](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_role.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录预置角色权限列表) .
 
 :::
 
-### 查看或编辑组织信息
+### View or edit organization information
 
-**前提条件**
+**Preconditions**
 
-- 已[创建组织](#创建组织)并[切换到组织](#切换到组织)。
-- 如需编辑组织信息，用户角色必须为**系统管理员**。
+- [Organization created](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#创建组织) and [switched to](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) organization .
+- To edit organization information, the user role must be **System Administrator** .
 
-**操作步骤**
+**Steps**
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**账户管理**>**组织信息**，即可查看当前组织的信息。
+2. In the left navigation bar, click **Account Management** > **Organization Information** to view the information of the current organization.
 
-3. 在**组织信息**页面，您可以进行如下操作。![edit_organization](./image/edit_organization.png)
+3. On the **Organization Information** page, you can perform the following operations.[![edit_organization](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/account/image/edit_organization.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/image/edit_organization.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-   | 序号<div style={{width:'25pt'}}></div> | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | -------------------------------------- | ------------------------------------------------------------ |
-   | 1                                      | 修改组织名称（仅限系统管理员操作）     | 可以修改组织名称。最多支持 24 个字符。修改完成后需要单击**保存修改**。 |
-   | 2                                      | 更换 Logo（仅限系统管理员操作）         | 单击**更换 Logo** 可以上传组织的 Logo。上传完成后需要单击**保存修改**。 |
-   | 3                                      | **退出组织**                           | 退出当前组织。如果您是该组织中唯一的系统管理员，则需要先将系统管理员转移给组织中的其他成员，才能退出。 |
-   | 4                                      | 删除组织（仅限系统管理员操作）         | 删除当前组织。<br />**警告**：删除后，组织中的所有数据源、成员等都会丢失，且删除组织操作无法撤销，请谨慎操作。 |
+   | Serial number <div style={{width:'25pt'}}> | Parameters <div style={{width:'50pt'}}>             | illustrate                                                   |
+   | ------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------ |
+   | 1                                          | Modify Organization Name (Administrator only)       | The organization name can be modified. Up to 24 characters are supported. After the modification is complete, you need to click **Save Modification** . |
+   | 2                                          | Replacing the Logo (Only for system administrators) | Click **Change Logo** to upload the organization's logo. After the upload is complete, you need to click **Save Modifications** . |
+   | 3                                          | **quit the organization**                           | Exit the current organization. If you are the only system administrator in the organization, you will need to transfer the system administrator to another member of the organization before you can leave. |
+   | 4                                          | Delete Organization (Administrator Action Only)     | Delete the current organization. **Warning** : After deletion, all data sources, members, etc. in the organization will be lost, and the operation of deleting the organization cannot be undone, please operate with caution. |
 
-   
+### Next step
 
-### 下一步
-
-[管理用户](manage_user.md)
+[Manage users](/account/manage_user.md)

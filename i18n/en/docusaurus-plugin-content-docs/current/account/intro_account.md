@@ -2,79 +2,75 @@
 sidebar_position: 1
 ---
 
+# Introduction to Account Management
 
+NineData provides multi-person collaboration capabilities for enterprises, which can be enabled after creating or joining an organization. This article introduces concepts such as organizations, users, roles, and more.
 
-# 账户管理简介
+### organize
 
-NineData 提供企业多人协作能力，在创建或加入组织后，即可开启该能力。本文介绍组织、用户、角色等多个概念。
+Under normal circumstances, after you [register a NineData account](/quick_start/1_registration.md) , the default is **personal mode** . At this time, you can use the four module functions ( [SQL window](/sqldev/sql_console.md) , [backup and recovery](/backup_and_restore/intro_back.md) , [data replication](/replication/intro_repli.md) , [database comparison](/compare/intro_comp.md) ) provided by NineData without barriers . Personal mode is suitable for Individual developers, such as backup, restore, synchronize, and compare their own databases, and perform daily development work with SQL windows.
 
-### 组织
+However, for enterprise users, there is a need for multi-person collaborative development. In this scenario, there are multiple roles responsible for different businesses, so each role requires different permissions to meet the needs of data security. **The organization model** provided by NineData supports the assignment of different roles and resource management permissions to each user under the organization, and is suitable for multi-user collaborative development under the same organization. It ensures data security and improves overall production efficiency.
 
-通常情况下，您在[注册 NineData 账号](../quick_start/1_registration.md)之后，默认为**个人模式**，此时，您可以无障碍使用 NineData 提供的四大模块功能（[SQL 窗口](/sqldev/sql_console.md)、[备份与恢复](/backup_and_restore/intro_back.md)、[数据复制](/replication/intro_repli.md)、[数据库对比](/compare/intro_comp.md)），个人模式适用于个人开发者，例如对自身的数据库进行备份恢复、同步、对比，以及配合 SQL 窗口进行日常开发等工作。
+You can place your mouse over the icon in the upper right corner of the page to see which mode you are currently in.
 
-然而对于企业用户，存在多人协同开发的需求，在该场景下，有多种角色分别负责不同的业务，因此每种角色需要不同的权限以满足数据安全的需要。NineData 提供的**组织模式**支持对组织下的每个用户分配不同的角色和资源管理权限，适用于同一组织下多用户协同开发，在保证数据安全的同时，提升整体生产效率。
+[![organization_mode](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/account/image/organization_mode.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/image/organization_mode.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-您可以将鼠标放置于页面右上角的图标处，查看当前所处的模式。
+How to manage organizations, see [Managing Organizations](/account/manage_organization.md) .
 
-![organization_mode](./image/organization_mode.png)
+### user
 
-如何管理组织，请参见[管理组织](manage_organization.md)。
+A user is an independent individual in NineData. In the personal mode, the user is yourself and has all the rights to resources, and you do not need to perceive the concept of a user. In organizational mode, a user is part of an organization, and the system administrator decides what role the user is and assigns corresponding resource permissions.
 
-### 用户
+You can place your mouse over the icon in the upper right corner of the page to see which mode you are currently in.
 
-用户是 NineData 中独立的个体，在个人模式下，用户即您自身，拥有资源的所有权限，您无需感知用户的概念。而在组织模式下，用户是组成一个组织的一部分，由系统管理员决定该用户是什么角色，并分配相应的资源权限。
+[![organization_mode1](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/account/image/organization_mode1.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/image/organization_mode1.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-您可以将鼠标放置于页面右上角的图标处，查看当前所处的模式。
+For more information about users, see [Managing Users](/account/manage_user.md) .
 
-![organization_mode1](./image/organization_mode1.png)
+### Role
 
-关于用户的更多信息，请参见[管理用户](manage_user.md)。
+The role determines the user's permission to use resources. NineData provides the following 5 preset roles:
 
-### 角色
-
-角色决定了用户对于资源的使用权限，NineData 提供了如下 5 个预置角色：
-
-- 系统管理员：创建组织的用户默认为系统管理员，拥有组织内数据源的所有权限；拥有组织内用户、角色的管理权限；<!--拥有查看审计日志（用户行为记录）的权限；-->拥有所有功能模块权限。
-- 生产环境管理员：默认拥有生产环境数据源和功能模块的所有权限。
-- 生产环境只读：默认拥有生产环境数据源的只读权限，以及所有功能模块权限。
-- 开发环境管理员：默认拥有开发环境数据源和功能模块的所有权限。
-- 普通成员：拥有所有功能模块权限。
+- System administrator: The user who creates the organization is the system administrator by default, and has all the permissions of the data sources in the organization; has the management rights of users and roles in the organization; has the permissions of all function modules.
+- Production environment administrator: By default, he has all the permissions of production environment data sources and function modules.
+- Production environment read-only: By default, it has read-only permissions for production environment data sources, as well as all function module permissions.
+- Development environment administrator: By default, it has all permissions for the development environment data sources and function modules.
+- Ordinary members: have all functional module permissions.
 
 :::tip
 
-- 系统管理员可以删除、编辑除**系统管理员**以外的所有预置角色，并且可以新增自定义角色。更多信息，请参见[管理角色](manage_role.md)。
-- 各预置角色对应的详细权限，请参见[附录：预置角色权限列表](manage_role.md#附录预置角色权限列表)。
+- System administrators can delete and edit all preset roles except **system administrators** , and can add custom roles. For more information, see [Managing Roles](/account/manage_role.md) .
+- For detailed permissions corresponding to each preset role, see [Appendix: List of preset role permissions](/account/manage_role.md#Appendix:List of Preset Role Permissions) .
 
 :::
 
-### 权限
+### permission
 
-NineData 中的权限分为四大类：
+The permissions in NineData are divided into four categories:
 
-- **管理权限**：管理当前组织中的用户以及角色。仅**系统管理员**拥有**管理权限**。
+- **Manage permissions** : Manage users and roles in the current organization. Only **system administrators** have **administrative rights** .
 
-- **模块权限**：决定用户是否可以看到控制台左侧的 **SQL 开发**、**备份与恢复**、**数据复制**、**数据库对比**、**数据源管理**五大模块，粒度细分到各模块中的子功能入口，例如 **SQL 开发**中的 **SQL 窗口**。
+- **Module permissions** : determine whether users can see the five modules on the left side of the console: **SQL development** , **backup and recovery** , **data replication** , **database comparison** , and **data source management** . The granularity is subdivided into sub-function entries in each module, such as **SQL development** . **SQL window** .
 
-- **数据源权限**：决定用户是否可以对目标数据源发起编辑、SQL 查询或更改、备份恢复、数据复制、数据库对比等操作。
+- **Data source permissions** : Determine whether users can initiate operations such as editing, SQL query or change, backup and recovery, data replication, database comparison, etc. on the target data source.
 
   :::tip
 
-  **数据源权限**需要与**模块权限**配合使用，例如，用户对某个数据源拥有数据复制的权限，但是未被赋予数据复制的模块权限，则依然无法使用数据复制功能。
+  **Data source permissions** need to be used in conjunction with **module permissions** . For example, if a user has the data copy permission to a data source, but has not been granted the data copy module permission, he still cannot use the data copy function.
 
   :::
 
-- **告警权限**：分为**管理告警**和**查看告警**两种。
-  
-  - **管理告警**：支持查看系统推送的告警信息；支持创建、编辑、禁用、删除告警策略。更多信息，请参见[管理告警](../alart/intro.md)。
-  - **查看告警**：仅支持查看系统推送的告警信息。
+- **Alarm permissions** : divided into two types: **managing alarms** and **viewing alarms** .
 
-### 附录：查看当前模式
+  - **Manage alarms** : Support viewing alarm information pushed by the system; support creating, editing, disabling, and deleting alarm policies. For more information, see [Managing Alerts](/alart/intro.md) .
+  - **Viewing alarms** : Only supports viewing the alarm information pushed by the system.
 
+### Appendix: View Current Mode
 
+### Related Documentation
 
-### 相关文档
-
-- [管理组织](manage_organization.md)
-- [管理用户](manage_user.md)
-- [管理角色](manage_role.md)
-- [管理工单](manage_workflow.md)
+- [management organization](/account/manage_organization.md)
+- [Manage users](/account/manage_user.md)
+- [management role](/account/manage_role.md)
+- [Manage work orders](/account/manage_workflow.md)

@@ -2,37 +2,33 @@
 sidebar_position: 1
 ---
 
-# 数据复制简介
+# Introduction to Data Replication
 
-NineData 数据复制支持多种同异构数据源之间的离线、实时数据复制。适合数据迁移、数据库扩缩容、数据库版本升级、异地容灾、异地多活、数据仓库及数据湖数据集成等多种业务场景。
+NineData data replication supports offline and real-time data replication between multiple homogeneous and heterogeneous data sources. It is suitable for various business scenarios such as data migration, database expansion and contraction, database version upgrade, remote disaster recovery, remote multi-activity, data warehouse and data lake data integration.
 
-### 产品架构
-![quickstart1](./image/replication_overview.png)
+### Product Architecture
 
-### 产品优势
+[![quickstart1](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/replication/image/replication_overview.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/image/replication_overview.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-NineData 数据复制产品基于云原生架构，相比于传统数据复制产品，无论是在安全、性能、成本等各个方面都具有巨大的优势。
+### Product advantages
 
-* 简单易用：SaaS 模式，即开即用，无需繁杂的部署和配置。
+NineData data replication products are based on cloud-native architecture. Compared with traditional data replication products, they have huge advantages in security, performance, cost and other aspects.
 
-* 高性能：结合日志实时抓取、智能分片、事务性并发及热点合并等众多核心技术，实现强劲复制性能，增量复制延迟低至秒级。
-* 高可靠：全面的监控报警机制，内置任务异常检测、自我修复机制并提供可干预能力，提升任务可用性。增量复制、多版本元数据、任务异常无缝重启等机制保障了任务的可靠性。
-* 强一致：业界创新的断点续传技术及事务一致性同步能力，有效保证复制数据一致性，配合 NineData 的数据对比功能，保障您的数据质量。
+- Simple and easy to use: SaaS model, out-of-the-box, without complicated deployment and configuration.
+- High performance: Combined with many core technologies such as real-time log capture, intelligent sharding, transactional concurrency, and hotspot merging, it achieves strong replication performance with incremental replication latency as low as seconds.
+- High reliability: Comprehensive monitoring and alarm mechanism, built-in task anomaly detection, self-healing mechanism, and intervenable capabilities to improve task availability. Mechanisms such as incremental replication, multi-version metadata, and seamless task restarts ensure the reliability of tasks.
+- Strong Consistency: The industry's innovative breakpoint resuming technology and transaction consistency synchronization capability can effectively ensure the consistency of replicated data, and cooperate with NineData's data comparison function to ensure your data quality.
+- Multi-cloud and multi-database: Provide enterprises with data replication capabilities of various databases in a multi-cloud environment, and also support data replication of local self-built and cloud vendor databases; at the same time, it supports a variety of common databases, including MySQL, SQLServer, and ClickHouse.
 
-* 多云、多数据库：为企业提供在多云环境下的多种数据库的数据复制能力，也支持本地自建及云厂商数据库的数据复制；同时支持多种常见数据库，包括 MySQL、SQLServer 及 ClickHouse 等。
+### Application scenarios
 
-### 应用场景
+- Database migration: Data migration across regions, clouds, or data sources is required, and scenarios such as self-built databases are migrated to the cloud.
+- Real-time data warehouse synchronization: Supports real-time integration of data from multiple data sources and multiple environments into a unified data warehouse for analysis.
+- Cross-cloud and cross-region disaster recovery: Supports continuous data synchronization between the business center and the disaster recovery center. If a failure occurs in the primary region, you can switch user requests to the disaster recovery region to achieve cross-cloud and cross-region disaster recovery.
+- Remote multi-active: It supports two-way real-time synchronization between business nodes in multiple regions to ensure the consistency of global data.
+  - When any unit fails, it is only necessary to switch the traffic of this unit to other units, which can realize the second-level recovery of the business and effectively ensure the high availability of the service.
+  - Distribute business traffic to various business units according to a certain dimension of the business. For example, the traffic of each unit is divided according to the area to which the user belongs, so that users can access nearby, reduce network delay, and improve user experience. At the same time, each business unit is distributed in different regions, which can effectively solve the problem that the infrastructure of a single region limits business expansion.
 
-* 数据库迁移：需要进行跨地域、跨云或者跨数据源的数据迁移，以及自建数据库上云等场景。
+### Related Documentation
 
-* 实时数据仓库同步：支持将多种数据源、多个环境的数据实时集成到统一的数据仓库进行分析。
-
-* 跨云跨地域容灾：支持在业务中心和灾备中心之间持续同步数据， 如果主地域发生故障，您可以将用户请求切换到灾备地域，实现跨云、跨地域容灾。
-
-* 异地多活：支持在多个地域的业务节点之间实现双向实时同步，保障全局数据的一致性。
-  * 当任何一个单元出现故障时，只需将该单元的流量切换至其他单元，既可实现业务的秒级恢复，有效地保障了服务的高可用性。
-  * 根据业务的某个维度将业务流量分流至各个业务单元。例如，按照用户所属区域划分各单元的流量，实现用户就近访问，降低网络延迟，提升用户体验。同时，各个业务单元分布在不同的地域，可以有效解决单地域的基础设施限制业务扩展的问题。
-
-### 相关文档
-
-[执行数据复制](data_replication.md)
+[perform data replication](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/data_replication.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

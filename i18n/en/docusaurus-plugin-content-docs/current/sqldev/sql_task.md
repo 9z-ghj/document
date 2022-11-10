@@ -2,123 +2,123 @@
 sidebar_position: 3
 ---
 
-# SQL 任务
+# SQL tasks
 
-SQL 任务是对数据库发起 SQL 操作的任务，主要包括 DDL（数据库定义语言）、DML（数据库操纵语言）等 SQL 语句。本文介绍如何使用 SQL 任务。
+The SQL task is the task of initiating SQL operations on the database, mainly including SQL statements such as DDL (Database Definition Language) and DML (Database Manipulation Language). This article describes how to use SQL tasks.
 
-### 功能介绍
+### Features
 
-为保障数据安全，对目标数据源没有写权限的用户无法对该数据源的内容发起变更，在有变更需求的情况下，可以通过提交 SQL 任务工单实现。NineData 提供的 SQL 任务功能具有全周期的安全管控，包括提交、审批、执行、回滚等步骤。
+To ensure data security, users who do not have write permissions to the target data source cannot initiate changes to the content of the data source. If there is a change requirement, it can be achieved by submitting a SQL task work order. The SQL task function provided by NineData has full-cycle security control, including steps such as submission, approval, execution, and rollback.
 
-### 前提条件
+### Preconditions
 
-* 已创建或加入组织。更多信息，请参见[管理组织](../account/manage_organization.md)。
-* NineData 控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](../account/manage_organization.md#切换到组织)。
-* 当前用户具有访问 SQL 任务模块的权限。更多信息，请参见[预置角色权限列表](../account/manage_role.md#附录预置角色权限列表)。
+- An organization has been created or joined. For more information, see [Managing Organizations](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- The NineData console is in org mode. How to switch from personal mode to organization mode, see [Switching to Organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) .
+- The current user has access to the SQL Tasks module. For more information, see [List of Preset Role Permissions](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_role.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录预置角色权限列表) .
 
-### 提交 SQL 变更任务
+### Submit SQL Change Task
 
-1. 登录[NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**SQL 开发**>**SQL 任务**。
-
-   :::tip
-
-   如果未找到**SQL 任务**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](../account/manage_organization.md#切换到组织)。
-
-   :::
-
-3. 在**SQL 任务**页面，单击右上角的**创建 SQL 任务**。
-
-4. 在**创建 SQL 任务**页面，根据下表配置工单。![commit_sql](./image/commit_sql.png)
-
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **任务名称**                           | 输入 SQL 任务的名称，该名称通常包含了 SQL 语句的执行目的，为减少沟通成本，请尽量使用有意义的名称。最多支持 64 个字符。 |
-   | **数据源**                             | 目标需变更数据库所在的数据源。                               |
-   | **数据库**                             | 需要执行 SQL 变更的数据库。                                  |
-   | **发布人**                             | 当前 SQL 任务单的审批人兼审批通过后的 SQL 语句执行人。<br />**说明**：用户列表中仅显示对当前数据源拥有**审批与发布**权限的用户。权限相关信息，请参见[预置角色权限列表](../account/manage_role.md#附录预置角色权限列表)。 |
-   | **备注**（可选）                       | 针对当前 SQL 任务未尽事项的说明，例如执行任务的原因，期望执行时间等。 |
-   | **提交方式**                           | 输入需要执行的 SQL 语句或上传包含 SQL 语句的文件。<ul><li>**SQL 文本**：直接在文本框中输入需要执行的 SQL 语句。</li><li>**上传 SQL 文件**：单击**上传文件**，并选择包含需执行 SQL 语句的文件，单击**打开**。<br />**说明**：上传完成后，把鼠标移动到文件名处，可在文件名右侧选择![review](./image/review.png)（预览文件）或![delete](./image/delete.png)（删除文件)。</li></ul> |
-
-5. 单击**预检查**，系统会提前对 SQL 语句进行检查，排除语法错误等无法执行的情况。如果 SQL 语句有问题，会在下方出现提示，单击提示中的**查看详情**即可查看具体的错误信息，方便您进行定位和修改。
-
-6. **预检查**通过后，单击**创建 SQL 任务**，即可发起 SQL 任务。此时页面自动跳转至 **SQL 任务**页面，您可以查看 SQL 任务列表或对 SQL 任务进行管理操作。
-
-   :::tip
-   
-   对于自身为**提交人**的任务，您还可以在 **SQL 任务**页面做如下操作：
-   
-   - **编辑**：如果任务被驳回（任务状态为**已驳回**），可以单击该任务右侧**操作**列的**编辑**，重新编辑SQL任务，并单击**重新提交**。
-   - **转交**：单击该任务右侧**操作**列的![more](./image/more.png)>**转交**，更改该 SQL 任务的执行人。
-   - **撤回**：撤回SQL任务。更多信息，请参见[撤回 SQL 任务](#撤回-SQL-任务)。
-   - **复制任务**：单击该任务右侧**操作**列的![more](./image/more.png)>**复制任务**，复制一个一模一样的任务单。
-   - **关闭**：单击该任务右侧**操作**列的![more](./image/more.png)>**关闭**，关闭目标任务单。关闭后，如果该 SQL 任务还未执行，则不会再被执行。
-   - **删除**：如果任务状态为**已终止**，单击该任务右侧**操作**列的![more](./image/more.png)>**删除**，并输入任务名称，然后单击**删除任务**。
-   
-   :::
-
-### 撤回 SQL 任务
-
-SQL 任务的状态处于**待处理**时，您可以撤回该 SQL 任务的申请，撤回后，任务不再执行，您可以重新编辑该任务单再次提交。
-
-**前提条件**
-
-- SQL 任务的状态为**待处理**。
-- 您是目标 SQL 任务的**提交人**。
-
-**操作步骤**
-
-1. 登录[NineData 控制台](https://console.ninedata.cloud)。
-
-2. 在左侧导航栏，单击 **SQL 开发**>**SQL 任务**。
+2. In the left navigation bar, click **SQL Development** > **SQL Tasks** .
 
    :::tip
 
-   如果未找到 **SQL 任务**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](../account/manage_organization.md#切换到组织)。
+   If no **SQL tasks** are found , verify that your console is in org mode. How to switch from personal mode to organization mode, see [Switching to Organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) .
 
    :::
 
-3. 在 **SQL 任务**页面，找到目标 SQL 任务，单击任务 ID 或任务右侧**操作**列的**详情**。在任务详情页右上角单击**撤回**。
+3. On the **SQL Tasks** page, click **Create SQL Task** in the upper right corner .
+
+4. On the **Create SQL Task** page, configure the ticket according to the table below.[![commit_sql](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/commit_sql.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/commit_sql.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **mission name**                        | Enter the name of the SQL task, which usually contains the purpose of executing the SQL statement. To reduce communication costs, try to use a meaningful name. Up to 64 characters are supported. |
+   | **data source**                         | The target needs to change the data source where the database is located. |
+   | **database**                            | The database that needs to perform SQL changes.              |
+   | **publisher**                           | The approver of the current SQL task order and the executor of the SQL statement after approval. **Note : Only users who have** **approval and publishing** permissions for the current data source are displayed in the user list . For information about permissions, see the [list of preset role permissions](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_role.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录预置角色权限列表) . |
+   | **remarks** (optional)                  | A description of the unfinished matters of the current SQL task, such as the reason for executing the task, the expected execution time, etc. |
+   | **How to submit**                       | Enter the SQL statement to be executed or upload a file containing the SQL statement.**SQL text** : Enter the SQL statement to be executed directly in the text box.**Upload SQL file** : Click **Upload file** , select the file containing the SQL statement to be executed, and click **Open** . **Note** : After the upload is complete, move the mouse to the file name, and select [![review](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/review.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/review.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)(preview file) or [![delete](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/delete.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/delete.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)(delete file) on the right side of the file name. |
+
+5. Click **pre-check** , and the system will check the SQL statement in advance to rule out syntax errors and other situations that cannot be executed. If there is a problem with the SQL statement, a prompt will appear below. Click **View Details** in the prompt to view the specific error information, which is convenient for you to locate and modify.
+
+6. **After the pre-check** is passed, click **Create SQL Task** to initiate the SQL task. At this point, the page automatically jumps to the **SQL task** page, where you can view the SQL task list or manage the SQL tasks.
 
    :::tip
 
-   您也可以单击任务右侧**操作**列的![more](./image/more.png)>**撤回**。
+   For tasks for which you are the **submitter** , you can also do the following on the **SQL Tasks page:**
+
+   - **Edit** : If the task is rejected (task status is **rejected** ), you can click Edit in the operation column to the right of the task **,** **re** - edit the SQL task, and click **Resubmit** .
+   - **Transfer** : Click > Transfer in the **operation** column on the right side of the task **to** change the executor of the SQL task.[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+   - **Recall** : Recall the SQL task. For more information, see [Recalling SQL Tasks](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/sql_task.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#撤回-SQL-任务) .
+   - **Copy a task** : Click > **Copy Task in the** **operation** column on the right side of the task to copy an identical task list.[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+   - **Close** : Click > **Close in the** **operation** column to the right of the task to close the target task list. After shutdown, if the SQL task has not been executed, it will not be executed again.[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+   - **Delete** : If the task status is **Terminated** , click > **Delete in the** **Action** column to the right of the task , enter the task name, and click **Delete Task** .[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
    :::
 
-4. 在弹出的确认窗口中，单击**撤回**或**撤回并编辑**。
+### Withdraw SQL tasks
 
-   * **撤回**：页面自动跳转该 SQL 任务的详情页面，您可以单击页面右上角的**编辑**，或退回 **SQL 任务**列表找到该 SQL 任务，单击右侧**操作**列下的**编辑**，重新编辑任务单。
-   * **撤回并编辑**：页面自动跳转至 SQL 任务的编辑页面。
+When the status of the SQL task is **pending** , you can withdraw the application for the SQL task. After the withdrawal, the task will no longer be executed, and you can re-edit the task list and submit it again.
 
-### 审批 SQL 任务
+**Preconditions**
 
-**前提条件**
+- The status of the SQL task is **pending** .
+- **You are the submitter** of the target SQL task .
 
-- SQL 任务的状态为**待处理**。
-- 您是目标 SQL 任务的**发布人**。
+**Steps**
 
-**操作步骤**
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-1. 登录[NineData 控制台](https://console.ninedata.cloud)。
-
-2. 在左侧导航栏，单击 **SQL 开发**>**SQL 任务**。
+2. In the left navigation bar, click **SQL Development** > **SQL Tasks** .
 
    :::tip
 
-   如果未找到 **SQL 任务**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](../account/manage_organization.md#切换到组织)。
+   If no **SQL tasks** are found , verify that your console is in org mode. How to switch from personal mode to organization mode, see [Switching to Organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) .
 
    :::
 
-3. 在 **SQL 任务**页面，找到目标 SQL 任务，单击任务 ID 或任务右侧**操作**列的**详情**。
+3. On the **SQL Tasks** page, find the target SQL task, and click the task ID or **details in the** **Action** column to the right of the task . Click **Withdraw** in the upper right corner of the task details page .
 
-4. 在**任务详情**页面，审批 **SQL 详情**中的内容，根据实际情况选择**转交**、**执行**或**驳回**。
+   :::tip
 
-   | <div style={{width:'25pt'}}></div>操作 | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **转交**                               | 将任务单转交给其他用户审批。                                 |
-   | **执行**                               | 批准申请，并根据业务需求选择**立即执行**、**定时执行**或**手动执行**。<ul><li>**立即执行**：马上执行 SQL 语句。</li><li>**定时执行**：选择一个时间执行 SQL 语句。<!--您可以选中**若执行失败，发送告警**，并选择**告警方式**和**接收人**，当 SQL 执行失败时，告警接收人会收到提醒信息。--><br /></li><li>**手动执行**：手动执行 SQL 任务单中的 SQL，并单击**已执行，标记成功**。您也可以单击**前往 SQL 窗口执行**手动执行该 SQL。</li></ul> |
-   | **驳回**                               | 驳回请求，不执行该 SQL 任务。单击**驳回**后，您还需要输入**驳回原因**，并单击**确定**。<br />如果您批准了 SQL 任务，并选择了**定时执行**，则还可以在该任务状态为**待执行**的情况下驳回该 SQL 任务。操作步骤：<ol><li>在 **SQL 任务**页面，单击该任务右侧**操作**列下的**撤销执行**，或在该任务的详情页的右上角单击**撤销执行**。</li><li>输入**驳回原因**，单击**确定**。</li></ol><br />**说明**：**提交人**和**发布人**为同一人的情况下无法**驳回**，仅支持[撤回 SQL 任务](#撤回-sql-任务)。 |
+   You can also click > **Withdraw in the** **Action** column to the right of the task .[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-5. 您可以在**任务详情**的**操作历史**中查看该工单的流程详情。![workflow](./image/workflow.png)
+   :::
+
+4. In the confirmation window that pops up, click **Recall** or **Retract and Edit** .
+
+   - **Withdraw** : The page automatically jumps to the details page of the SQL task. You can click **Edit** in the upper right corner of the page , or go back to the **SQL task** list to find the SQL task, and click Edit under the operation column on the right **to** **re** - edit the task list.
+   - **Withdraw and Edit** : The page automatically jumps to the edit page of the SQL task.
+
+### Approve SQL tasks
+
+**Preconditions**
+
+- The status of the SQL task is **pending** .
+- **You are the publisher** of the target SQL task .
+
+**Steps**
+
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
+
+2. In the left navigation bar, click **SQL Development** > **SQL Tasks** .
+
+   :::tip
+
+   If no **SQL tasks** are found , verify that your console is in org mode. How to switch from personal mode to organization mode, see [Switching to Organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) .
+
+   :::
+
+3. On the **SQL Tasks** page, find the target SQL task, and click the task ID or **details in the** **Action** column to the right of the task .
+
+4. On the **task details** page, approve the contents in the **SQL details , and choose** **to transfer** , **execute** or **reject** according to the actual situation .
+
+   | <div style={{width:'25pt'}}>Operation | illustrate                                                   |
+   | ------------------------------------- | ------------------------------------------------------------ |
+   | **transfer**                          | Transfer the task order to other users for approval.         |
+   | **implement**                         | Approve the application and choose **immediate** , **scheduled** or **manual execution** based on business needs .**Execute Immediately** : Execute the SQL statement immediately.**Scheduled execution** : Select a time to execute the SQL statement. **Manual execution** : Manually execute the SQL in the SQL task list, and click **Executed to mark success** . You can also click **Go to SQL Window Execute to** execute the SQL manually. |
+   | **turn down**                         | The request is rejected and the SQL task is not executed. After clicking Reject , you will also need to enter **the reason for rejection** **and** click **OK** . If you approve an SQL task and select **Scheduled execution** , you can also dismiss the SQL task if the task status is **pending .** Steps: On the **SQL task** page, click Undo Execution under the Action column on the right side of the **task** **,** or click **Undo Execution** in the upper-right corner of the task's details page .Enter **the reason for rejection** and click **OK** . **Note** : **If the submitter** and the **publisher** are the same person, it cannot be **rejected** , and only [the SQL task can be withdrawn](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/sql_task.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#撤回-sql-任务) . |
+
+5. You can view the process details of the ticket in the **operation history of the** **task details.**[![workflow](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/workflow.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/workflow.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

@@ -2,42 +2,40 @@
 sidebar_position: 5
 ---
 
+# Create a private network connection
 
+NineData supports the creation of a private network connection to connect NineData and the intranet of the target cloud vendor. You can connect to the cloud service through NineData without applying for the public network address of the cloud service.
 
-# 创建私网连接
+### Preconditions
 
-NineData 支持创建私网连接，打通 NineData 和目标云厂商的内网，您无需申请云服务的公网地址，即可通过 NineData 连接云服务。
+The cloud provider you use is Alibaba Cloud.
 
-### 前提条件
+### Steps
 
-您使用的云厂商为阿里云。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-### 操作步骤
+2. In the left navigation bar, click **Data Source Management** > **Private Network Connection** .
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+3. Click **Create Private Network Connection** in the upper right corner of the page .
 
-2. 在左侧导航栏，单击**数据源管理**>**私网连接**。
+4. On the **Create Private Network Connection** page, configure parameters according to the following table.
 
-3. 单击页面右上角的**创建私网连接**。
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **connection name**                     | Enter the private network connection name. In order to facilitate subsequent search and management, please try to use meaningful names. |
+   | **cloud vendors**                       | Select the name of the cloud vendor to which the private network connection needs to be added. Currently supports Alibaba **Cloud** , **Tencent Cloud** , **Huawei Cloud** , and **AWS** . |
+   | **Is it authorized**                    | **Authorize cloud vendor access rights and automatically create private network connections** : To authorize cloud vendors to create private network connections, you need to configure cloud vendor access credentials in advance. For details, see [Configuring Cloud Vendor Access Credentials](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/access_credentials.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .**Manually create a private network connection without authorization** : You need to create a terminal node on the target cloud vendor console to manually open the private network connection. |
+   | **Access area**                         | Select the region of the data source that needs to be connected through the private network. |
+   | **Cloud vendor master account ID**      | Select the primary account ID of the cloud vendor that needs to establish a private network connection with NineData. |
+   | **Cloud Vendor Access Credentials**     | It is only required when an authorized cloud vendor creates a private network connection. For details, see [Configuring Cloud Vendor Access Credentials](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/access_credentials.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+   | **VPC**                                 | It is only required when an authorized cloud vendor creates a private network connection. Select the VPC under the cloud vendor ID that needs to be connected to the private network. |
+   | **Endpoint ID**                         | It only needs to be filled in when manually creating a private network connection, and it needs to be created on the console of the target cloud vendor. For details on how to create an endpoint, see [Alibaba Cloud's official documentation](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://bp.aliyun.com/detail/186) . |
+   | **Endpoint IP address**                 | It is only required when manually creating a private network connection. Enter the IP address corresponding to the endpoint ID. |
 
-4. 在**创建私网连接**页面，按照下表配置参数。
-
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **连接名称**                           | 输入私网连接名称。为了方便后续查找和管理，请尽量使用有意义的名称。 |
-   | **云厂商**                             | 选择需要添加私网连接的云厂商名称。当前支持**阿里云**、**腾讯云**、**华为云**、**AWS**。 |
-   | **是否授权**                           | <ul><li>**授权云厂商访问权限，自动创建私网连接**：授权云厂商创建私网连接，需提前配置云厂商访问凭证。如何配置，请参见[配置云厂商访问凭证](access_credentials.md)。</li><li>**不授权，手动创建私网连接**：需要在目标云厂商控制台创建终端节点，用来手动打通私网连接。</li></ul> |
-   | **接入地域**                           | 选择需要通过私网进行连接的数据源所属地域。                   |
-   | **云厂商主账号 ID**                    | 选择需要和 NineData 建立私网连接的云厂商主账号 ID。          |
-   | **云厂商访问凭证**                     | 仅在授权云厂商创建私网连接时需要填写，如何配置，请参见[配置云厂商访问凭证](access_credentials.md)。 |
-   | **VPC**                                | 仅在授权云厂商创建私网连接时需要填写，选择云厂商 ID 下需要打通私网连接的 VPC。 |
-   | **终端节点 ID**                        | 仅在手动创建私网连接时需要填写，需要在目标云厂商控制台创建。终端节点的创建方法请参见[阿里云官方文档](https://bp.aliyun.com/detail/186)。 |
-   | **终端节点 IP 地址**                   | 仅在手动创建私网连接时需要填写，输入终端节点 ID 对应的 IP 地址。 |
-
-5. 单击**连接测试**，等待提示**连接成功**后，单击**创建私网连接**，完成创建。
+5. Click **Connection Test** , wait for the message that **the connection is successful** , and click **Create Private Network Connection** to complete the creation.
 
    :::tip
-   
-   如果连接测试未通过，请调整参数配置，直到连接测试通过。
-   
+
+   If the connection test fails, adjust the parameter configuration until the connection test passes.
+
    :::

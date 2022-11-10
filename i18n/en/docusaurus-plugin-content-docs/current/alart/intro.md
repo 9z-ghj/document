@@ -1,33 +1,33 @@
 ---
 sidebar_position: 1
 ---
-# 运维监控简介
+# Introduction to Operation and Maintenance Monitoring
 
-NineData 提供运维监控功能，可实时监控 NineData 任务的运行状态，针对异常任务，支持通过告警的形式实时通知您，方便您及时采取措施。
+NineData provides the operation and maintenance monitoring function, which can monitor the running status of NineData tasks in real time. For abnormal tasks, it can notify you in real time in the form of alarms, so that you can take timely measures.
 
-### 背景信息
+### Background Information
 
-对于**数据对比**、**数据复制**、**数据备份**等异步运行且运行时间较长的任务，用户很难通过状态轮询的方式查看任务运行的情况。
+For tasks that run asynchronously and run for a long time, such as **data comparison** , **data replication** , and **data backup , it is difficult for users to check the running status of the tasks through status polling.**
 
-为了提升使用体验，NineData 提供了监控告警功能，可随时随地监控任务的运行状态，并实时将异常信息通过短信、电话、邮箱、Webhook 等方式推送给您，大大降低任务维护成本。
+In order to improve the user experience, NineData provides a monitoring and alarm function, which can monitor the running status of tasks anytime and anywhere, and push abnormal information to you in real time through SMS, phone, email, Webhook, etc., greatly reducing task maintenance costs.
 
-### 功能介绍
+### Features
 
-| 项目<div  style={{width:'60pt'}}></div> | 说明                                                         |
-| --------------------------------------- | ------------------------------------------------------------ |
-| 支持的任务                              | 数据备份、数据恢复、数据复制、数据对比、结构对比、网关       |
-| 监控指标                                | 数据备份：任务状态、全量备份时间、日志备份延迟<br />数据恢复：任务状态<br />数据复制：任务状态、复制延迟<br />数据对比：任务状态、对比时间、对比结果<br />结构对比：任务状态、对比时间、对比结果<br />网关：网关状态 |
-| 告警规则                                | NineData 分别对每种任务类型提供了 1 条默认的告警规则，此类规则无法修改，您也可以根据业务需求创建自定义规则。更多信息，请参见[创建告警规则](alart_rule.md#创建告警规则)。 |
-| 告警接收方                              | 支持将告警发送给个人，也支持发送给告警接收组内的所有成员，NineData 提供了一个默认的告警接收组 `默认告警组`，您也可以创建自定义的告警接收组。更多信息，请参见[配置告警接收](alart_receiver.md)。 |
-| 告警渠道                                | 支持短信、电话、邮件、钉钉、飞书、企业微信。默认告警规则的告警渠道为短信，如需使用其他告警渠道，请手动[创建告警规则](alart_rule.md#创建告警规则)。 |
-| 查看历史                                | 告警被触发后会生成历史记录，方便您后续进行任务的运维管理。   |
+| item <div style={{width:'60pt'}}> | illustrate                                                   |
+| --------------------------------- | ------------------------------------------------------------ |
+| Supported tasks                   | Data backup, data recovery, data replication, data comparison, structure comparison, gateway |
+| Monitoring indicators             | Data backup: task status, full backup time, log backup delay Data recovery: task status Data replication: task status, replication delay Data comparison: task status, comparison time, comparison result Structure comparison: task status, comparison time, comparison result Gateway: gateway status |
+| Alert rules                       | NineData provides a default alarm rule for each task type, which cannot be modified. You can also create custom rules based on business needs. For more information, see [Creating Alert Rules](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_rule.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#创建告警规则) . |
+| Alert recipient                   | It supports sending alarms to individuals, as well as to all members in the alarm receiving group. NineData provides a default alarm receiving group `默认告警组`, and you can also create a custom alarm receiving group. For more information, see [Configuring Alarm Receiving](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_receiver.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+| Alarm channel                     | Support text messages, phone calls, emails, DingTalk, Feishu, and corporate WeChat. The alarm channel of the default alarm rule is SMS. If you want to use other alarm channels, [create an alarm rule](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_rule.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#创建告警规则) manually . |
+| View History                      | After the alarm is triggered, a history record will be generated, which is convenient for you to manage the operation and maintenance of the task in the future. |
 
-### 使用流程图
+### Use flowcharts
 
-![flow](./image/flow4.png)
+[![flow](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/alart/image/flow4.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/image/flow4.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-### 相关文档
+### Related Documentation
 
-* [配置告警接收](alart_receiver.md)
-* [配置告警策略](alart_rule.md)
-* [查看告警历史](alart_history.md)
+- [Configure Alarm Receiving](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_receiver.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Configure an alert policy](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_rule.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [View alarm history](/alart/alart_history.md)

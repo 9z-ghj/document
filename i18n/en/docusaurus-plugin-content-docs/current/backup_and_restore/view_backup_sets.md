@@ -2,40 +2,39 @@
 rsidebar_position: 4
 ---
 
-# 查看备份集
+# View backup sets
 
-NineData 支持查看当前当前用户（个人模式）或组织（组织模式）下的所有环境下所有备份集。
+NineData supports viewing all backup sets in all environments under the current user (personal mode) or organization (organizational mode).
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**备份与恢复**>**备份集**。
+2. In the left navigation bar, click **Backup & Restore** > **Backup Sets** .
 
-3. 在跳转的页面中，您可以进行如下操作。
+3. In the jumped page, you can perform the following operations.
 
-   | 操作<div style={{width:'50pt'}}></div> | 步骤<div style={{width:'300pt'}}></div>                      |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | 查看所有全量备份集和日志备份集         | 单击页面中的**全量备份集**页签或**日志备份集**页签。         |
-   | 下载日志备份集                         | 为方便您进行问题分析溯源，NineData 提供 Binlog 日志文件的下载。下载方式：<ol><li>单击**日志备份集**页签。</li><li>单击目标 Binlog 文件右侧**操作**列的**下载**，下载 Binlog 文件。</li></ol><br />**说明**：您也可以单击**复制下载链接**，通过其他方式下载。 |
-   | 将**已完成**的备份集恢复到目标数据源   | 单击目标备份集 ID 右侧**操作**列的**恢复数据**。更多信息，请参见[恢复逻辑数据](restore/restore_logical_backup.md)或[恢复物理数据](restore/restore_physical_backup.md)。 |
-   | 对**已完成**的备份集进行在线数据查询   | 单击目标备份集 ID 右侧**操作**列的**数据查询**。更多信息，请参见[查询备份数据](backup_data_query.md)。 |
-   | 查看备份集的详情                       | 单击目标备份集 ID 右侧**操作**列的**详情**。                   |
-   | 终止**备份中**或**备份失败**的备份集   | 单击目标备份集 ID 右侧**操作**列的**终止**。                   |
-   | 删除备份集                             | 单击目标备份集 ID 右侧**操作**列的**删除**。                   |
-   
+   | Operation <div style={{width:'50pt'}}>                       | Step <div style={{width:'300pt'}}>                           |
+   | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | View all full backup sets and log backup sets                | Click the **Full Backup Sets** tab or the **Log Backup Sets** tab on the page. |
+   | Download log backup set                                      | To facilitate your problem analysis and traceability, NineData provides the download of Binlog log files. Download method:Click **the Log Backup Sets** tab.Click Download in the Action column to the right of the target Binlog file **to** **download** the Binlog file. **Note** : You can also click the **copy download link** to download in other ways. |
+   | Restoring a **completed** backup set to the target data source | **Click Restore Data in the** **Action** column to the right of the target backup set ID . For more information, see [Restoring Logical Data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) or [Restoring Physical Data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+   | Online data query for completed **backup sets**              | **Click Data Query in the** **Action** column to the right of the target backup set ID . For more information, see [Querying Backup Data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+   | View details of backup sets                                  | **Click Details in the** **Action** column to the right of the target backup set ID . |
+   | Terminate a **backup** set that is being backed up or that **fails to be backed up** | **Click Terminate in the** **Action** column to the right of the target backup set ID . |
+   | delete backup set                                            | **Click Delete in the** **Action** column to the right of the target backup set ID . |
+
    :::tip
-   
-   如果没有找到上述方法中的入口，请单击操作列下的![more](./image/more.png)按钮。
-   
+
+   If you do not find the entry in the above method, click the [![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/backup_and_restore/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)button under the Action column.
+
    :::
 
-### 相关文档
+### Related Documentation
 
-- [数据备份简介](intro_back.md)
-- [执行逻辑备份](backup/logical_backup.md)
-- [执行物理备份](backup/physical_backup.md)
-- [恢复逻辑备份数据](restore/restore_logical_backup.md)
-- [恢复物理备份数据](restore/restore_physical_backup.md)
-- [查询备份数据](backup_data_query.md)
-
+- [Introduction to Data Backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [perform logical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Perform physical backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring logical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring physical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Query backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

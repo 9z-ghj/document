@@ -21,12 +21,12 @@ NineData upgraded the data management concept and launched a set of multi-cloud,
 
 ![architecture-global](https://docs.ninedata.cloud/assets/images/architecture-global-fbab24e1edf08facd0c55989eb883303.png)
 
-| Function                                                     | introduce                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [SQL development](https://docs-ninedata-cloud.translate.goog/sqldev/intro_sqldev?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) | A cloud-native SQL development tool for online query and management of data, supports multiple database types, and provides capabilities for data query, SQL development, SQL scheduled tasks, and data export. Team collaboration mechanism anytime, anywhere to achieve efficient and secure SQL development. |
-| [Backup and restore](https://docs-ninedata-cloud.translate.goog/backup_and_restore/intro_back?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) | It supports the backup and recovery function of multi-environment and multi-type databases. It has the capabilities of second-level RPO, fine-grained data recovery, and online query of backup data. |
-| [data replication](https://docs-ninedata-cloud.translate.goog/replication/intro_repli?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) | Support real-time and batch data replication between homogeneous and heterogeneous data sources. Realize business scenarios such as data migration, remote disaster recovery, database multi-activity, data warehouse and data lake data integration. |
-| [Data comparison](https://docs-ninedata-cloud.translate.goog/compare/intro_comp?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) | Compare the structure definitions and data consistency of the two data sources. When there is inconsistency, the data change SQL statement can be automatically executed on the target side to ensure the consistency of the two data sources. Database objects supported by data comparison include tables, stored procedures, functions, triggers, and views. |
+| Function                                                | introduce                                                    |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| [SQL development](/sqldev/intro_sqldev.md)              | A cloud-native SQL development tool for online query and management of data, supports multiple database types, and provides capabilities for data query, SQL development, SQL scheduled tasks, and data export. Team collaboration mechanism anytime, anywhere to achieve efficient and secure SQL development. |
+| [Backup and restore](/backup_and_restore/intro_back.md) | It supports the backup and recovery function of multi-environment and multi-type databases. It has the capabilities of second-level RPO, fine-grained data recovery, and online query of backup data. |
+| [data replication](/replication/intro_repli.md)         | Support real-time and batch data replication between homogeneous and heterogeneous data sources. Realize business scenarios such as data migration, remote disaster recovery, database multi-activity, data warehouse and data lake data integration. |
+| [Data comparison](/compare/intro_comp.md)               | Compare the structure definitions and data consistency of the two data sources. When there is inconsistency, the data change SQL statement can be automatically executed on the target side to ensure the consistency of the two data sources. Database objects supported by data comparison include tables, stored procedures, functions, triggers, and views. |
 
 ### Advantage
 
@@ -38,4 +38,4 @@ NineData upgraded the data management concept and launched a set of multi-cloud,
 
 ### How to use
 
-[Quick start](https://docs-ninedata-cloud.translate.goog/quick_start/registration?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+[Quick start](/quick_start/registration.md)

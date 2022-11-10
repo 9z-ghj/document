@@ -2,71 +2,73 @@
 sidebar_position: 2
 ---
 
-# 恢复物理备份数据
+# Restoring physical backup data
 
-在数据库发生误操作或故障时，您可以通过 NineData 的备份与恢复服务将备份数据恢复到数据库。
+In the event of a misoperation or failure of the database, you can restore the backup data to the database through NineData's backup and recovery service.
 
-### 前提条件
+### Preconditions
 
-- 已经完成一次完整的备份。如何备份数据，请参见请参见[执行物理备份](../backup/physical_backup.md)。
-- 已经通过**网关**的连接方式将需要恢复的数据库添加到 NineData。更多信息，请参见[添加数据源](../../configuration/datasource.md)。
-- 需要恢复的数据源为自建的 SQL Server 数据库。
+- A full backup has been completed. How to back up data, see See [Performing Physical Backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- The database that needs to be restored has been added to NineData through the connection method of the **gateway .** For more information, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- The data source to be restored is the self-built SQL Server database.
 
-### 注意事项
+### Precautions
 
-恢复的目标数据源版本必须大于或等于备份数据的数据源版本。例如，SQL Server 2019 的备份数据不支持恢复到 SQL Server 2017 数据源。
+The restored target data source version must be greater than or equal to the data source version of the backup data. For example, backup data for SQL Server 2019 does not support recovery to SQL Server 2017 data sources.
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**备份与恢复**>**数据恢复**。
-
-   :::tip
-
-   您也可以单击**备份与恢复**>**备份集**，在**全量备份集**页签下，找到目标已完成备份的备份集 ID，单击其右侧**操作**列下的**恢复数据**。
-
-   :::
-
-3. 在**选择恢复方式**页签，根据下表进行配置，并单击**下一步**。
-
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **任务名称**                           | 输入恢复任务的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 64 个字符。 |
-   | **源数据源**                           | 备份的对象，您可以通过选择**源数据源**快速找到**备份任务**。 |
-   | **备份任务**                           | 备份数据源时创建的备份任务，包含了恢复所需的所有数据。       |
-   | **恢复方式**                           | 支持如下恢复方式：<ul><li>**按时间点恢复**：该方式基于全量备份数据和日志，可恢复全量数据和后续产生的增量数据。具体可恢复时间段请参见控制台。</li><li>**备份集**：该方式仅基于全量备份数据，支持恢复到全量备份完成的时间点，不包含增量数据。</li></ul> |
-   | **恢复时间点**                         | **恢复方式**为**按时间点恢复**时可配置，选择将数据恢复到哪个时间点。支持分钟级 RPO，既可恢复备份开始至当前时间点前几分钟到 30 分钟之间的任意时间点的数据。 |
-   | **备份集**                             | **恢复方式**为**备份集**时可配置，选择全量备份集，该选项不包含增量数据。 |
-   | **目标数据源**                         | 恢复的对象，选择将备份数据恢复到哪个数据源。                 |
-   | **网关**                               | 物理恢复会直接将文件恢复到目标数据源中，因此目标数据源需要配置网关。如果您在添加数据源时已经通过网关接入，此处已经自动配置完成。如果您未通过网关接入数据源，请参见如下步骤：<ol><li>将数据源所在主机[添加到网关](../../configuration/gateway.md)。</li><li>将数据源通过网关接入。更多信息，请参见[添加数据源](../../configuration/datasource.md)。</li></ol> |
-   
-4. 在**恢复对象**页签，根据下表进行配置，并单击**下一步**。
-
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **恢复对象**                           | 确认需要恢复的内容，您可以选择**所有备份**恢复所有数据，也可以选择**自定义对象**，自行选择需要恢复的数据。 |
-   | **数据库已存在处理策略**               | <ul><li>**覆盖现有数据库（WITH REPLACE）**：如果目标库中有同名库，则使用备份文件中的数据库直接覆盖。</li><li>**报错并退出**：如果目标库中有同名库，则在预检查时报错。</li></ul> |
-
-5. 在**配置映射对象**页签，配置恢复到目标数据源之后的库名，单击**保存并预检查**。
-
-6. 在**预检查**页签，等待系统完成预检查，预检查通过后，单击**启动任务**。
+2. On the left navigation bar, click **Backup & Restore** > **Data Recovery** .
 
    :::tip
 
-   - 如果预检查未通过，需要单击目标检查项右侧**操作**列的**详情**，排查失败的原因，手动修复后重新执行预检查，直到通过。
-- **检查结果**为**警告**的检查项，可视具体情况修复或忽略。
-   - 如果您不想立即开启任务，可以单击**保存任务，返回列表**，将当前恢复任务保存到**恢复任务**列表中，避免后期从头配置。
+   You can also click **Backup and Restore** > **Backup Sets** . On the **Full Backup Sets** tab, find the ID of the backup set that has been backed up, and click **Restore Data in the** **Actions** column on the right .
 
    :::
 
-7. 在**启动任务**页面，提示**启动成功**。单击**查看详情**查看恢复任务的执行情况；单击**返回列表**可以返回**恢复任务**列表。
+3. On the **Select Recovery Method** tab, configure according to the following table, and click **Next** .
 
-### 相关文档
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **mission name**                        | Enter the name of the recovery task. For the convenience of subsequent search and management, try to use a meaningful name. Up to 64 characters are supported. |
+   | **source data source**                  | Backup objects, you can quickly find **backup tasks** by selecting the **source data source** . |
+   | **backup task**                         | A backup job, created when backing up a data source, contains all the data needed for recovery. |
+   | **recovery method**                     | The following recovery methods are supported:**Recovery by point in time** : This method is based on full backup data and logs, and can recover full data and subsequent incremental data. For the specific recovery time period, see the console.**Backup set** : This method is only based on the full backup data, and supports recovery to the point in time when the full backup is completed, excluding incremental data. |
+   | **recovery point in time**              | **The recovery method** is configurable when **recovering by point in time** , and you can select the point in time to which the data will be recovered. Minute-level RPO is supported, which can restore data from a few minutes to 30 minutes before the current point in time from the start of the backup. |
+   | **backup set**                          | It can be configured when the **recovery method** is **backup set . Select the full backup set. This option does not contain incremental data.** |
+   | **target data source**                  | To restore the object, select which data source to restore the backup data to. |
+   | **gateway**                             | Physical restore restores files directly to the target data source, so the target data source needs to have a gateway configured. If you have already accessed through the gateway when adding the data source, it has been automatically configured here. If you do not access the data source through the gateway, please refer to the following steps:Add the host where the data source is located [to the gateway](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/gateway.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .Connect the data source through the gateway. For more information, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
 
-- [数据备份简介](../intro_back.md)
-- [执行物理备份](../backup/physical_backup.md)
-- [执行逻辑备份](../backup/logical_backup.md)
-- [恢复逻辑备份数据](restore_logical_backup.md)
-- [查看备份集](../view_backup_sets.md)
-- [查询备份数据](../backup_data_query.md)
+4. On the **Recovery Objects** tab, configure according to the following table, and click **Next** .
+
+   | Parameters <div style={{width:'50pt'}}>                | illustrate                                                   |
+   | ------------------------------------------------------ | ------------------------------------------------------------ |
+   | **restore object**                                     | Confirm the content to be restored. You can select **all backups** to restore all data, or you can select **a custom object** and choose the data to be restored by yourself. |
+   | **A processing policy already exists in the database** | **Overwrite the existing database (WITH REPLACE)** : If there is a library with the same name in the target library, it will be directly overwritten with the database in the backup file.**Report an error and exit** : If there is a library with the same name in the target library, an error will be reported in the pre-check. |
+
+5. On the **Configure Mapping Objects** tab, configure the library name after restoring to the target data source, and click **Save and Precheck** .
+
+6. On the **Pre-check** tab, wait for the system to complete the pre-check. After the pre-check passes, click **Start task** .
+
+   :::tip
+
+   - **If the pre-check fails, you need to click the details in the** **operation** column to the right of the target check item to check the cause of the failure, and then perform the pre-check again after manual repair until it passes.
+
+- **Check items whose results** are **warnings** can be repaired or ignored according to specific circumstances.
+
+  - If you do not want to start the task immediately, you can click **Save Task to return to the list** and save the current recovery task to the **recovery task** list to avoid reconfiguration later.
+
+  :::
+
+1. On the **Startup task** page, a message is displayed indicating that **the startup was successful** . Click **View Details** to view the execution status of the recovery tasks; click **Return to List** to return to **the recovery task** list.
+
+### Related Documentation
+
+- [Introduction to Data Backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Perform physical backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [perform logical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring logical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [View backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/view_backup_sets.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Query backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

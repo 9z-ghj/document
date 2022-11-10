@@ -2,75 +2,74 @@
 sidebar_position: 2
 ---
 
+# Product Architecture
 
+This chapter introduces the overall product architecture and core functional components of NineData.
 
-# 产品架构
+### Architecture Description
 
+NineData provides a distributed, easy-to-expand, highly reliable, multi-tenant product architecture. The product architecture diagram is as follows.
 
-本章介绍 NineData 的整体产品架构、核心功能组件。
+![architecture](./image/architecture.png)
 
-### 架构说明
+The entire product architecture is divided into five layers:
 
-NineData 提供了一套分布式、易扩展、高可靠、多租户的产品架构，产品架构图如下。
+- **Access layer** : User interaction layer, which provides task creation, management, and operation and maintenance of data management. The service is mainly provided in the form of an interactive console.
+- **Function engine layer** : responsible for specific data management work. Including DevOps, query engine, backup engine, synchronization engine, comparison engine and scheduling engine. For details on the capabilities of each engine, see [Engine Introduction](#functional-components) .
+- **Core component layer** : public layer components, serving the upper-layer functional engine, providing log parsing, data conversion, and data storage engine capabilities.
+- **Data security layer** : Provides data security protection capabilities covering the entire data life cycle and throughout the data management process. Components include fine-grained permission control, sensitive data management and desensitization, data encryption and security operation auditing.
+- **Data source connection layer** : Responsible for providing connection access to multiple data sources for the upper engine.
 
-![architecture](image/architecture.png)
-
-整个产品架构分为五层：
-
-- **接入层**：用户交互层，提供数据管理的任务创建、管理及运维等。主要以交互式控制台的形式提供服务。
-- **功能引擎层**：负责具体的数据管理工作。包含 DevOps、查询引擎、备份引擎、同步引擎、对比引擎及调度引擎。各引擎的能力详情，请参见[引擎介绍](#功能组件)。
-- **核心组件层**：公共层组件，服务于上层功能引擎，提供日志解析、数据转换及数据存储引擎等能力。
-- **数据安全层**：提供覆盖数据全生命周期，贯穿数据管理过程的数据安全防护能力。组件包含细粒度权限管控、敏感数据管理及脱敏、数据加密及安全操作审计。
-- **数据源连接层**：负责为上层引擎提供多种数据源的连接访问。
-
-### 功能组件
+### functional components
 
 <table>
+<thead>
   <tr>
-    <td><b>引擎及组件</b></td>
-    <td><b>说明</b></td>
+    <th>Engines and Components</th>
+    <th>illustrate</th>
   </tr>
+</thead>
+<tbody>
   <tr>
-    <td rowspan="2"><b>DevOps 和查询引擎</b></td>
-    <td><b>DevOps</b>：
-      <ul>
-        <li>校验 SQL 请求是否有执行权限。</li>
-        <li>识别敏感数据并动态脱敏。</li>
-        <li>提供企业级数据库协同变更能力。</li>
-      </ul></td>
-  </tr>
-  <tr>
-    <td><b>查询引擎</b>：接收用户下发的 SQL 请求。</td>
-  </tr>
-  <tr>
-    <td><b>调度引擎</b></td>
-    <td>负责平台整体的任务及资源调度。
-      <ul>
-        <li><b>资源调度</b>：根据集群负载压力及节点健康情况，动态调整资源水位，上下线服务节点。</li>
-        <li><b>任务调度</b>：根据任务数据源所在的地理位置、网络访问质量及各个节点的资源负载情况等，将任务调度到最合适的节点上执行。如果任务出现异常，调度引擎会自动将任务调度至健康节点，保障任务稳定执行。</li>
+    <td rowspan="2"><b>DevOps and query engines</b></td>
+    <td><b>DevOps</b> :<ul>
+      <li>Verify that the SQL request has execute permission.</li>
+      <li>Identify sensitive data and desensitize on the fly.</li>
+      <li>Provides enterprise-level database collaborative change capabilities.</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><b>备份引擎</b></td>
-    <td>负责执行备份恢复任务，并定期推送任务执行状态、进度及异常情况。</td>
+    <td><b>Query engine</b> : Receive SQL requests sent by users.</td>
   </tr>
   <tr>
-    <td><b>同步引擎</b></td>
-    <td>负责执行数据复制任务，根据用户配置的复制类型，以 pipeline 的方式自动调度相关依赖任务。同时定期推送任务执行状态、进度及异常情况。</td>
+    <td><b>scheduling engine</b></td>
+    <td>Responsible for the overall task and resource scheduling of the platform.<ul>
+      <li><b>Resource scheduling</b> : According to the cluster load pressure and node health, dynamically adjust the resource water level, and go online and offline for service nodes.</li>
+      <li><b>Task scheduling</b> : According to the geographic location of the task data source, the quality of network access, and the resource load of each node, the task is scheduled to the most suitable node for execution. If the task is abnormal, the scheduling engine will automatically schedule the task to a healthy node to ensure the stable execution of the task.</li>
+      </ul></td>
   </tr>
   <tr>
-    <td><b>对比引擎</b></td>
-    <td>负责执行两个数据源之间的结构、数据对比任务，并定期推送任务执行状态、进度及异常情况。</td>
+    <td><b>Backup engine</b></td>
+    <td>Responsible for performing backup and recovery tasks, and regularly push task execution status, progress and exceptions.</td>
+  </tr>
+  <tr>
+    <td><b>Sync engine</b></td>
+    <td>Responsible for performing data replication tasks, and automatically schedule related dependent tasks in a pipeline manner according to the replication type configured by the user. At the same time, the task execution status, progress and abnormal conditions are regularly pushed.</td>
+  </tr>
+  <tr>
+    <td><b>Compare engine</b></td>
+    <td>Responsible for performing structure and data comparison tasks between two data sources, and regularly push task execution status, progress and exceptions.</td>
   </tr>
   <tr>
     <td><b>SQL Parser</b></td>
-    <td>SQL 解析模块。负责整体平台中 SQL 语句、日志的解析工作，辅助引擎完成数据读取、数据安全访问等任务。</td>
+    <td>SQL parsing module. Responsible for the analysis of SQL statements and logs in the overall platform, and assist the engine to complete tasks such as data reading and data security access.</td>
   </tr>
   <tr>
-    <td><b>敏感数据管理</b></td>
-    <td>负责为查询引擎、备份引擎、同步引擎、对比引擎提供敏感数据元信息以及脱敏功能。内置数十种敏感数据识别算法，开启后自动扫描数据源中的敏感字段并打标。</td>
+    <td><b>Sensitive data management</b></td>
+    <td>Responsible for providing sensitive data metadata and masking functions for the query engine, backup engine, synchronization engine, and comparison engine. Dozens of sensitive data recognition algorithms are built-in, and when enabled, the sensitive fields in the data source are automatically scanned and marked.</td>
   </tr>
+</tbody>
 </table>
 
 

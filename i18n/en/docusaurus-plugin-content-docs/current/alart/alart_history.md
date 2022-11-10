@@ -1,32 +1,30 @@
 ---
 sidebar_position: 4
 ---
-# 查看告警历史
+# View alarm history
 
-NineData 提供告警历史功能，告警被触发后会生成历史记录，您可以通过查看告警历史快速定位异常任务，提高故障复盘效率。
+NineData provides an alarm history function. After an alarm is triggered, a history record will be generated. You can quickly locate abnormal tasks by viewing the alarm history and improve the efficiency of fault recovery.
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**运维监控**>**告警历史**。界面说明如下：![interface](./image/interface.png)
+2. In the left navigation pane, click **O&M Monitoring** > **Alarm History** . The interface description is as follows:[![interface](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/alart/image/interface.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/image/interface.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-   | 序号<div style={{width:'25pt'}}></div> | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | -------------------------------------- | ------------------------------------------------------------ |
-   | 1                                      | 只看自己                               | 可过滤接收方为当前账号的告警内容。                           |
-   | 2                                      | 内容过滤选项                           | 可通过任务类型、告警策略、告警时间、关键词搜索等方式快速定位目标异常任务。 |
-   | 3                                      | 刷新                                   | 刷新告警历史页面。                                           |
-   | 4                                      | 告警时间                               | 告警的推送时间。                                             |
-   | 5                                      | 任务类型                               | 告警对应的任务类型。                                         |
-   | 6                                      | 异常任务                               | 触发告警的原任务名称。可单击任务名称直达该任务页面。         |
-   | 7                                      | 告警方式                               | 告警的推送方式。                                             |
-   | 8                                      | 状态                                   | 告警是否成功推送，如果推送的目标是一个组，则需要组内所有接收方全部收到告警才显示**成功**，否则显示**失败**。 |
-   | 9                                      | 告警内容                               | 告警的详情，包含任务名称、失败原因等内容。                   |
-   | 10                                     | 操作                                   | 可单击**详情**查看目标告警的详细情况。包含**基本信息**、**告警设置**、**告警内容**等。 |
+   | Serial number <div style={{width:'25pt'}}> | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | ------------------------------------------ | --------------------------------------- | ------------------------------------------------------------ |
+   | 1                                          | just look at yourself                   | You can filter the alarm content whose recipient is the current account. |
+   | 2                                          | Content filtering options               | Target abnormal tasks can be quickly located by task type, alarm policy, alarm time, and keyword search. |
+   | 3                                          | refresh                                 | Refresh the alarm history page.                              |
+   | 4                                          | Alarm time                              | The push time of the alarm.                                  |
+   | 5                                          | task type                               | The task type corresponding to the alarm.                    |
+   | 6                                          | unusual task                            | The name of the original task that triggered the alert. You can click the task name to go directly to the task page. |
+   | 7                                          | Alarm mode                              | How to push alarms.                                          |
+   | 8                                          | state                                   | Whether the alarm is successfully pushed, if the push target is a group, all receivers in the group need to receive the alarm to display **success** , otherwise it will display **failure** . |
+   | 9                                          | Alarm content                           | Details of the alarm, including the task name, failure reason, etc. |
+   | 10                                         | operate                                 | You can click **Details** to view the details of the target alarm. Contains **basic information** , **alarm settings** , and **alarm content** . |
 
-   
+### Related Documentation
 
-### 相关文档
-
-* [配置告警接收](alart_receiver.md)
-* [配置告警策略](alart_rule.md)
+- [Configure Alarm Receiving](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_receiver.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Configure an alert policy](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/alart_rule.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

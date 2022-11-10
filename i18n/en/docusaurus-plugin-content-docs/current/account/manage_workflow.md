@@ -2,64 +2,64 @@
 sidebar_position: 5
 ---
 
-# 权限申请与审批
+# Permission application and approval
 
-NineData 支持组织内的数据安全管控功能，并提供对应的审批流，您可以申请权限或通过其他用户提交的权限申请。
+NineData supports the data security management and control function within the organization and provides the corresponding approval flow. You can apply for permissions or apply for permissions submitted by other users.
 
-### 申请敏感数据权限
+### Apply for sensitive data permission
 
-数据源中设置了敏感列的数据无法直接查看，此时可申请敏感列权限，申请通过后即可查看目标数据源中的敏感列。
+Data with sensitive columns set in the data source cannot be viewed directly. At this time, you can apply for the permission of sensitive columns. After the application is approved, you can view the sensitive columns in the target data source.
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**账户管理**>**权限申请与审批**。
-
-   :::tip
-
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
-
-   :::
-
-3. 在**权限申请与审批**页面，单击右上角的**申请权限**。
-
-4. 在**申请敏感数据权限**页面，根据下表进行配置，并单击**提交申请**。
-
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **数据源**                             | 需要申请查看的敏感列所属数据源。                             |
-   | **敏感列**                             | 添加需要申请查看的敏感列。操作步骤：<br />1. 单击**添加**，查找需要查看的敏感列。您可以通过筛选库、表或直接搜索列名快速定位到目标敏感列。<br />2. 在敏感列列表左侧，选中目标敏感列的复选框，并单击页面右下角的**确认**。 |
-   | **权限有效期**                         | 选择权限的有效期，在该期限内可以无限制查看有权限的敏感列。可选有效期为 **7 天**、**30 天**、**60 天**、**90 天**、**半年**、**1 年**、**3 年**、**自定义**。<br />自定义可以自行输入需要申请的天数，有效范围为 **1~10000**。 |
-   | **申请原因**                           | 输入申请权限的原因。                                         |
-   | **审批人**                             | 选择拥有该敏感列权限的用户审批工单。<br />**说明**：审批人列表中仅显示拥有敏感数据管理权限的用户。 |
-
-5. 提交申请工单后，页面自动跳转到**权限申请与审批**页面，在工单列表中，会显示所有您提交的工单，等待工单**状态**从**待审核**变成**审批通过**即可。
-
-### 查看或管理工单
-
-您可以查看您提交的所有工单、待您审批的工单，以及组织内的所有工单。除此之外，您可以对您提交的，以及待您提交的工单进行管理操作。
-
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
-
-2. 在左侧导航栏，单击**账户管理**>**权限申请与审批**。
+2. In the left navigation bar, click **Account Management** > **Permission Application and Approval** .
 
    :::tip
 
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
+   If **Account Management** is not found , verify that your console is in Org Mode. How to switch from personal mode to organization mode, see [Switching to Organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) .
 
    :::
-   
-   **查看工单**
 
-   1. 页面自动跳转到**我提交的**页签，该页签内显示所有您提交的工单。
-   2. 单击**待我审批**页签，该页签内显示所有待您审批的工单。
-   3. 单击**全部审批**页签，该页签内显示当前组织下的所有工单。
+3. On the **permission application and approval** page, click **Apply for Permissions** in the upper right corner .
 
-   **管理工单**
-   
-   单击工单右侧**操作**列的**详情**，可以查看工单的详情页，详情页包含了**工单 ID**、**申请内容**以及**操作历史**，如果您是工单的提交人或审批人，根据工单状态，还可以执行下列操作。
-   
-   - **转交**：将工单转交给其他用户审批（工单状态为**待审核**，且您为工单提交人或审批人时显示）。单击**转交**后，您还需要选择转交人，并单击**确定**。
-   - **审批不通过**：驳回工单申请（工单状态为**待审核**，且您为工单审批人时显示）。单击**审批不通过**后，您需要输入不通过的原因，并单击**审批不通过**。
-   - **审批通过**：同意工单申请（工单状态为**待审核**，且您为工单审批人时显示）。单击**审批通过**后，您可以输入通过原因，并单击**审批通过**。
-   - **撤回**：撤回工单申请（工单状态为**待审核**，且您为工单提交人时显示）。单击**撤回**后，您还需要在弹出的确认框中单击**撤回**。撤回操作无法撤销，请谨慎操作。
-   - **删除**：删除工单（工单状态为**待审核**，且您为工单提交人时显示）。单击**删除**后，您还需要在弹出的确认框中单击**删除**。删除操作无法撤销，请谨慎操作。
+4. On the **Apply for Sensitive Data Permission** page, configure according to the following table, and click **Submit Application** .
+
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **data source**                         | The data source to which the sensitive column that needs to be viewed belongs to. |
+   | **sensitive column**                    | Add sensitive columns that need to be requested to be viewed. Operation steps: 1. Click **Add** to find the sensitive column you want to view. You can quickly locate target sensitive columns by filtering libraries, tables, or directly searching for column names. 2. To the left of the Sensitive Columns list, select the checkbox for the target sensitive column and click OK in the lower right corner of the **page** . |
+   | **Permission validity period**          | Select the validity period of the permission, during which you can view the sensitive columns with permission without restrictions. Optional validity is **7 days** , **30 days** , **60 days** , **90 days** , **half year** , **1 year** , **3 years** , **custom** . Custom can enter the number of days to be applied by yourself, the valid range is **1~10000** . |
+   | **Reason for application**              | Enter the reason for requesting permission.                  |
+   | **Approver**                            | Select the user who has permission to this sensitive column to approve the ticket. **Note** : Only users with sensitive data management permissions are displayed in the approver list. |
+
+5. After submitting the application work order, the page automatically jumps to the **permission application and approval** page. In the work order list, all the work orders you have submitted will be displayed. Wait for the work order **status** to change from **pending** to **approval** .
+
+### View or manage tickets
+
+You can view all work orders you have submitted, work orders pending your approval, and all work orders within your organization. In addition, you can manage the work orders you have submitted and the work orders waiting for you to submit.
+
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
+
+2. In the left navigation bar, click **Account Management** > **Permission Application and Approval** .
+
+   :::tip
+
+   If **Account Management** is not found , verify that your console is in Org Mode. How to switch from personal mode to organization mode, see [Switching to Organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_organization.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#切换到组织) .
+
+   :::
+
+   **View work order**
+
+   1. The page automatically jumps to the **My Submitted** tab, which displays all your submitted work orders.
+   2. Click **the Pending My Approval** tab, which displays all work orders waiting for your approval.
+   3. Click the **All Approval** tab, and all work orders under the current organization are displayed in this tab.
+
+   **Manage work orders**
+
+   Click the **details in the** **operation** column on the right side of the work order to view the details page of the work order. The details page includes the **work order ID** , **application content** and **operation history** . If you are the submitter or approver of the work order, according to the work order status, You can also perform the following operations.
+
+   - Transfer : Transfer the ticket to other users for approval (displayed when the status of the ticket is **pending** **and** you are the submitter or approver of the ticket). After clicking **Transfer** , you will also need to select the transfer person and click **OK** .
+   - **Approval Failed** : Reject the work order application (displayed when the work order status is **pending** and you are the work order approver). After clicking **Approval Failed** , you need to enter the reason for rejection and click **Approval Failed** .
+   - **Approved** : Approve the work order application (displayed when the work order status is **pending** and you are the work order approver). After clicking **Approve** , you can enter the reason for approval and click **Approve** .
+   - **Withdraw** : withdraw the ticket application (displayed when the status of the ticket is **pending** and you are the submitter of the ticket). After clicking **withdraw , you will also need to click** **withdraw** in the confirmation box that pops up . The undo operation cannot be undone, please operate with caution.
+   - **Delete** : Delete the ticket (displayed when the status of the ticket is **pending** and you are the submitter of the ticket). After clicking **Delete , you also need to click** **Delete** in the confirmation box that pops up . The delete operation cannot be undone, please operate with caution.

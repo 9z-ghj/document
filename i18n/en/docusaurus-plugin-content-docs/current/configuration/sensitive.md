@@ -2,136 +2,118 @@
 sidebar_position: 2
 ---
 
-# 管理敏感数据
+# Manage sensitive data
 
-NineData 支持对将数据源中的某一列或多个列设置为敏感列，未被授权查看敏感列的用户将无法查看该列的内容。
+NineData supports setting one or more columns in the data source as sensitive columns. Users who are not authorized to view sensitive columns will not be able to view the content of the column.
 
-### 前提条件
+### Preconditions
 
-已将需要添加敏感字段的数据源添加到 NineData。如何添加，请参见[添加数据源](datasource.md)。
+A data source that requires adding sensitive fields has been added to NineData. For how to add, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-### 为数据源添加敏感列
+### Add Sensitive Columns to Data Sources
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**数据源管理**>**敏感数据**。
+2. On the left navigation bar, click **Data Source Management** > **Sensitive Data** .
 
-3. 在**数据源**页签，单击页面右上角的**添加数据源**。
+3. On the **Data Sources** tab, click **Add Data Source** in the upper right corner of the page .
 
-4. 单击**数据源**下方的选框，会弹出已添加到 NineData 的数据源列表，从列表中选择需要添加敏感列的数据源。
-
-   :::tip
-
-   如果您没有找到目标数据源，请单击列表下方的**立即创建**，添加数据源。更多信息，请参见[添加数据源](datasource.md)。
-
-   :::
-
-5. NineData 支持**手动添加**和**扫描添加**两个选项，其中**扫描添加**可以根据[识别规则](#附录-1识别规则)自动扫描数据源中的敏感列并添加到敏感列列表。
-
-   - **手动添加**：单击**手动添加**，在右侧的**添加敏感列**页面中勾选需要添加为敏感列的列名，并单击**确认**。
+4. Click the check box below the **data** source, a list of data sources that have been added to NineData will pop up, and select the data source that needs to add sensitive columns from the list.
 
    :::tip
 
-   如果数据库中内容太多不方便查找，您可以在**添加敏感列**页面上方选择数据库和数据表，过滤出目标表，然后通过列名搜索，可以快速定位到目标列。
+   If you do not find the target data source, click **Create Now** below the list to add the data source. For more information, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
    :::
 
-   - **扫描添加**：单击**扫描添加**，在右侧的**扫描添加**页面中单击**开始扫描**，等待扫描完成后，在**敏感列**列表中勾选扫描出的敏感列，并单击**确认**。
+5. NineData supports two options: **manual add** and **scan add** , where **scan add** can automatically scan sensitive columns in the data source and add them to the list of sensitive columns according to [identification rules .](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/sensitive.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录-1识别规则)
 
-6. 敏感列列表中显示的即是您在上一步中选择的列，你需要为每个列选择**数据类型**和**脱敏算法**。![敏感列](image/sensitive_column.png)
+   - **Manual addition** : Click **Manual Add , select the column names to be added as sensitive columns on the** **Add Sensitive Columns** page on the right , and click **OK** .
 
    :::tip
 
-   所有添加到敏感列中的列，其**敏感级别**默认为**敏感**，如果调整**敏感级别**为**普通**，则相当于单击右侧**操作**列的**移除**，该列将不再是敏感列。
+   If there is too much content in the database and it is difficult to find it, you can select the database and data table at the top of the **Add Sensitive Column** page, filter out the target table, and then search by column name to quickly locate the target column.
 
    :::
 
-7. 单击**添加数据源**完成敏感列的添加。
+   - **Scan Add** : Click **Scan Add , click** **Start Scan on the** **Scan Add** page on the right , wait for the scan to complete, select the scanned sensitive column in the **sensitive column** list, and click **OK** .
 
-### 管理敏感列
-
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
-
-2. 在左侧导航栏单击**数据源管理**>**敏感数据**。
-
-3. 单击**敏感列**页签，这里会列出当前 NineData 账号下所有数据源中的敏感列，您可以做如下操作：
-
-   - 查看当前 NineData 账号下所有敏感列。
-   - 修改敏感列的**数据类型**和**脱敏算法**。
-   - 修改敏感列的**敏感级别**：**敏感级别**修改为**普通**后，该列将自动从**敏感列**列表移除。
+6. The list of sensitive columns shows the columns you selected in the previous step, and you need to select the **data type** and **desensitization algorithm** for each column .[![sensitive column](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/configuration/image/sensitive_column.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/image/sensitive_column.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
    :::tip
-   
-   如果敏感列太多不方便查找，您可以在页面右上方通过筛选数据源、数据库、数据表、列名，快速定位到目标敏感列。
-   
+
+   **The sensitivity level** of all columns added to the sensitive column is **sensitive** by default . If you adjust the **sensitivity level** to **normal** , it is equivalent to clicking the **remove** column **on** the right , and the column will no longer be a sensitive column.
+
    :::
 
-### 创建识别规则
+7. Click **Add Data Source** to complete the addition of sensitive columns.
 
-识别规则用于系统自动扫描数据源中的敏感列，NineData 提供了 10 条默认的[识别规则](#附录-1识别规则)，这些规则无法被修改。您也可以根据如下步骤创建自定义识别规则。
+### Manage sensitive columns
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**数据源管理**>**敏感数据**。
+2. On the left navigation bar, click **Data Source Management** > **Sensitive Data** .
 
-3. 单击**识别规则**页签，并在页面右上角单击**创建识别规则**。
+3. Click **the Sensitive Columns** tab, and the sensitive columns in all data sources under the current NineData account will be listed here. You can do the following:
 
-4. 根据下表进行配置，并单击**创建识别规则**。
+   - View all sensitive columns under the current NineData account.
+   - Modify the **data type** and **desensitization algorithm** of sensitive columns .
+   - Modify the sensitivity level of a sensitive column **:** After the **sensitivity level** is changed to **normal** , the column will be automatically removed from the **sensitive column** list.
 
-   | 参数               | 说明                                                         |
-   | ------------------ | ------------------------------------------------------------ |
-   | **规则名称**       | 输入规则的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 16 个字符。 |
-   | **脱敏算法**       | 选择对敏感列进行脱敏的方式。关于脱敏算法的详细信息，请参见[脱敏算法](#附录-2脱敏算法和脱敏前后对比)。<!--您可以使用系统提供的[脱敏算法](#algorism)，也可以[创建](#algorism_creation)自定义的脱敏算法。--> |
-   | **描述**（非必填） | 对识别规则进行说明，降低沟通成本。最多支持 100 个字符。      |
-   | **识别规则**       | 输入识别规则，规则的语法结构请参见页面右侧的**规则示例**。   |
+   :::tip
 
-<!--
+   If there are too many sensitive columns to find, you can quickly locate the target sensitive column by filtering the data source, database, data table, and column name at the top right of the page.
 
-<span id="algorism_creation">创建脱敏算法</span>（暂未支持）
+   :::
 
-脱敏算法是对敏感列进行脱敏的方式，NineData 提供了 13 条默认的[脱敏算法](#附录-2脱敏算法和脱敏前后对比)，这些算法无法被修改。您也可以根据如下步骤创建自定义脱敏算法。
+### Create identification rules
 
-1. 登录[NineData 控制台](https://console.ninedata.cloud)。
-2. 在左侧导航栏单击**数据源管理**>**敏感数据**。
-3. 单击**脱敏算法**页签，并在页面右上角单击**创建脱敏算法**。
-4. 根据下表进行配置，并单击
+Identification rules are used for the system to automatically scan sensitive columns in data sources. NineData provides 10 default [identification rules](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/sensitive.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录-1识别规则) , which cannot be modified. You can also create custom recognition rules by following the steps below.
 
- -->
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
+2. On the left navigation bar, click **Data Source Management** > **Sensitive Data** .
 
+3. Click the **Recognition Rules** tab and click **Create Recognition Rule** in the upper right corner of the page .
 
-### 附录1：识别规则
+4. Configure according to the table below and click **Create Recognition Rule** .
 
-| 规则名称<div style={{width:'50pt'}}></div> | 对应脱敏算法 | 脱敏前后对比                                                 |
-| ------------------------------------------ | :----------- | ------------------------------------------------------------ |
-| 中文详细地址（address）                    | cn_address   | 脱敏前：某省某市某街道某小区1幢1单元101室<br />脱敏后：某省某市某街道某小区\*\*\*\*\* |
-| 加密 KEY（secret_key）                     | mask-full    | 脱敏前：a6eb56f80be8a120436d6f1c9b8d87ca<br />脱敏后：\*\*\*\*\*\* |
-| 银行卡（card_number）                      | credit_card  | 脱敏前：6222022207223257981<br />脱敏后：6222\*\*\*\*\*\*\*\*7981 |
-| 电子邮件（email）                          | email        | 脱敏前：000000*@*qq.com<br />脱敏后：\*\*\**@*qq.com         |
-| 身份证号码（id_number）                    | id_number    | 脱敏前：300900199909090099<br />脱敏后：300\*\*\*\*\*\*\*\*\*\*\*\*\*99 |
-| IP地址（ip_address）                       | ipv4         | 脱敏前：192.168.12.91<br />脱敏后：192.\*\*\*.\*\*\*.91      |
-| 中国车牌号（license_plate_number）         | plate_number | 脱敏前：天Z0AB92<br />脱敏后：天Z\*\*\*92                    |
-| MAC地址（mac_address）                     | mask-full    | 脱敏前：00-1A-2B-3C-4D-56<br />脱敏后：\*\*\*\*\*\*          |
-| 密码（password）                           | mask-full    | 脱敏前：abcde12345<br />脱敏后：\*\*\*\*\*\*                 |
-| 电话号码（phone）                          | phone        | 脱敏前：13800000000<br />脱敏后：138\*\*\*\*0000             |
+   | parameter                     | illustrate                                                   |
+   | ----------------------------- | ------------------------------------------------------------ |
+   | **rule name**                 | Enter the name of the rule. For the convenience of subsequent search and management, please try to use a meaningful name. Up to 16 characters are supported. |
+   | **Desensitization algorithm** | Choose how to desensitize sensitive columns. For details on desensitization algorithms, see [Desensitization Algorithms](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/sensitive.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#附录-2脱敏算法和脱敏前后对比) . |
+   | **Description** (optional)    | Explain the identification rules to reduce communication costs. Up to 100 characters are supported. |
+   | **identification rules**      | Enter the recognition rule. For the syntax structure of the rule, please refer to the **rule example** on the right side of the page . |
 
-### 附录 2：脱敏算法和脱敏前后对比
+### Appendix 1: Identification Rules
 
-| 算法名称<div style={{width:'40pt'}}></div> | 脱敏前后对比<div style={{width:'40pt'}}></div>               |
-| :----------------------------------------- | :----------------------------------------------------------- |
-| mask-full                                  | 脱敏前：测试内容<br />脱敏后：\*\*\****                      |
-| three-stars                                | 脱敏前：测试内容<br />脱敏后：\***                           |
-| email                                      | 脱敏前：000000*@*qq.com<br />脱敏后：***@qq.com              |
-| phone                                      | 脱敏前：13800000000<br />脱敏后：138\*\*\*\*0000             |
-| MD5                                        | 脱敏前：a6eb56f80be8a120436d6f1c9b8d87ca<br />脱敏后：0b450f4fe1a8d243c9a6d479a124f0ba |
-| SHA1                                       | 脱敏前：69c9a5c19c5c27e43cb0efc4c8644ed6d03a110b<br />脱敏后：79860cbad9b9eca05df8337a7ce45af926ca6392 |
-| AES                                        | 脱敏前：0A6187FF44BEB44F651AAD3BB4003360<br />脱敏后：nOQIIwB8L/V/bpnT1bbuoKQ22YrN9ti9brcrC1bti9bkCkIvV1APJfdX5EE69ZW/ |
-| cn_name                                    | 脱敏前：张三<br />脱敏后：*三                                |
-| cn_address                                 | 脱敏前：某省某市某街道某小区1幢1单元101室<br />脱敏后：某省某市某街道某小区\*\*\**** |
-| id_number                                  | 脱敏前：300900199909090099<br />脱敏后：900\*\*\*\*\*\*\*\*\*\*\*\*\*99 |
-| credit_card                                | 脱敏前：6222022207223257981<br />脱敏后：6222\*\*\*\*\*\*\*\*7981 |
-| ipv4                                       | 脱敏前：192.168.12.91<br />脱敏后：192.\*\*\*.\*\*\*.91      |
-| plate_number                               | 脱敏前：天Z00000<br />脱敏后：天Z\*\*\*00                    |
+| Rule name <div style={{width:'50pt'}}>              | Corresponding desensitization algorithm | Comparison before and after desensitization                  |
+| --------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Chinese address (address)                           | cn_address                              | Before desensitization: Room 101, Unit 1, Building 1, a community in a certain street, a certain city in a certain province After desensitization: a certain community in a certain street in a certain city in a certain province ***** |
+| Encryption KEY (secret_key)                         | mask-full                               | Before desensitization: a6eb56f80be8a120436d6f1c9b8d87ca After desensitization: ****** |
+| Bank card (card_number)                             | credit_card                             | Before desensitization: 6222022207223257981 After desensitization: 6222********7981 |
+| Email (email)                                       | email                                   | Before desensitization: 000000*@qq.com *After desensitization: **** @* *qq.com * |
+| ID number (id_number)                               | id_number                               | Before desensitization: 300900199909090099 After desensitization: 300************99 |
+| IP address (ip_address)                             | ipv4                                    | Before desensitization: 192.168.12.91 After desensitization: 192.***.***.91 |
+| Chinese license plate number (license_plate_number) | plate_number                            | Before desensitization: day Z0AB92 After desensitization: day Z***92 |
+| MAC address (mac_address)                           | mask-full                               | Before desensitization: 00-1A-2B-3C-4D-56 After desensitization: ****** |
+| password                                            | mask-full                               | Before desensitization: abcde12345 After desensitization: ****** |
+| phone number                                        | phone                                   | Before desensitization: 13800000000 After desensitization: 138****0000 |
 
+### Appendix 2: Desensitization algorithm and comparison before and after desensitization
 
-
+| Algorithm name <div style={{width:'40pt'}}> | Comparison before and after desensitization <div style={{width:'40pt'}}> |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| mask-full                                   | Before desensitization: Test content After desensitization: ****** |
+| three-stars                                 | Before desensitization: Test content After desensitization: *** |
+| email                                       | Before desensitization: *000000\*@qq.com After desensitization:* **@qq.com |
+| phone                                       | Before desensitization: 13800000000 After desensitization: 138****0000 |
+| MD5                                         | Before desensitization: a6eb56f80be8a120436d6f1c9b8d87ca After desensitization: 0b450f4fe1a8d243c9a6d479a124f0ba |
+| SHA1                                        | Before desensitization: 69c9a5c19c5c27e43cb0efc4c8644ed6d03a110b After desensitization: 79860cbad9b9eca05df8337a7ce45af926ca6392 |
+| AES                                         | Before desensitization: 0A6187FF44BEB44F651AAD3BB4003360 After desensitization: nOQIIwB8L/V/bpnT1bbuoKQ22YrN9ti9brcrC1bti9bkCkIvV1APJfdX5EE69ZW/ |
+| cn_name                                     | Before desensitization: Zhang San After desensitization: *3  |
+| cn_address                                  | Before desensitization: Room 101, Unit 1, Building 1, a community in a certain street in a certain city in a certain province After desensitization: a certain community in a certain street in a certain city in a certain province****** |
+| id_number                                   | Before desensitization: 300900199909090099 After desensitization: 900************99 |
+| credit_card                                 | Before desensitization: 6222022207223257981 After desensitization: 6222********7981 |
+| ipv4                                        | Before desensitization: 192.168.12.91 After desensitization: 192.***.***.91 |
+| plate_number                                | Before desensitization: day Z00000 After desensitization: day Z***00 |

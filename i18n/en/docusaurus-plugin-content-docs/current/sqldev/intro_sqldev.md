@@ -2,48 +2,43 @@
 sidebar_position: 1
 ---
 
-# SQL 开发简介
+# Introduction to SQL Development
 
-NineData 的 SQL 开发是一套云原生 SQL 开发工具，支持在线查询与管理数据，支持多种数据库类型。
+NineData's SQL development is a set of cloud-native SQL development tools, which supports online query and management of data, and supports multiple database types.
 
-### 功能介绍
+### Features
 
-SQL 开发具有数据资产管理、数据查询、SQL 执行、数据编辑、数据导出等功能，具备强大的 SQL 编辑器，支持完整的语法高亮、自动补全、对象类型识别、错误提示等能力，帮助用户快速完成多种环境的数据管理任务，助力企业数字化转型。
+SQL development has functions such as data asset management, data query, SQL execution, data editing, data export, etc. It has a powerful SQL editor that supports complete syntax highlighting, auto-completion, object type recognition, error prompts and other capabilities, helping users Quickly complete data management tasks in a variety of environments to help enterprises digitally transform.
 
+### Architecture diagram
 
+[![test](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/test.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/test.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-### 架构图
+### Product advantages
 
-![测试](./image/test.png)
+- Cross-platform support for multiple data sources
 
+  - Supported data sources: MySQL, SQL Server, Clickhouse, etc.
+  - Supported environments: Alibaba Cloud, AWS, Huawei Cloud, Tencent Cloud, Mobile Cloud, self-built databases, etc.
 
+- Safe use of data
 
-### 产品优势
+  By default, TLS/SSL transmission encryption is used to prevent data leakage. Complete operation and query audit logs, with roles and resource authorization system, work order process, pre-check rules and other functions, to achieve enterprise-level data security.
 
-* 多数据源跨平台支持
-  * 支持的数据源：MySQL、SQL Server、<!--MongoDB、Redis、Oracle、Postgres、-->Clickhouse 等。
-  * 支持的环境：阿里云、AWS、华为云、腾讯云、移动云、自建数据库等。
+- Feature-rich and easy to operate
 
+  A zero-threshold database management service, you can perform management operations on database objects through a browser. It supports functions such as syntax completion, highlighting, automatic saving and restoring of query windows, and common SQL saving, helping developers to complete SQL operations efficiently and accurately.
 
-* 数据安全使用
+### Typical usage scenarios
 
-  默认使用 TLS/SSL 传输加密，防止数据泄露。完整的操作与查询审计日志，搭配角色和资源授权体系、工单流程、预检规则等功能，实现企业级的数据安全保障。
+- Unified database management platform
 
-* 功能丰富操作简单
+  In daily business system development, it is necessary to access and manage various databases in different environments and types. The data management module supports MySQL, SQL Server, ClickHouse, etc. from Alibaba Cloud, Tencent Cloud, Huawei Cloud, AWS, Azure and other cloud manufacturers. Various database products.
 
-  零门槛的数据库管理服务，通过浏览器即可对数据库对象执行管理操作。支持语法补全、高亮、查询窗口自动保存与恢复、常用 SQL 保存等功能，帮助开发者高效、准确地完成 SQL 操作。
+[![test](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/changjing1.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/changjing1.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-### 典型使用场景
+- Security Database Changes
 
-* 统一数据库管理平台
+  NineData provides SQL security auditing. After users submit SQL data changes, security audits are performed on the SQL syntax to ensure the standardization and security of SQL input. For enterprise users, through work order management, standard SQL changes, permission applications and other processes are used to make enterprise data management safer and more efficient.
 
-  在日常业务系统研发中，需要访问与管理多种不同环境、不同类型的数据库，数据管理模块支持阿里云、腾讯云、华为云、AWS、Azure 等多个云厂家的 MySQL、SQL Server、ClickHouse 等多种数据库产品。
-
-![测试](./image/changjing1.png)
-
-* 安全数据库变更
-
-  NineData 提供 SQL 安全审计，用户提交 SQL 数据变更后，对 SQL 语法进行安全审计，保证 SQL 输入的规范性和安全性。对于企业用户，通过工单管理，规范 SQL 变更、权限申请等流程，让企业的数据管理更安全更高效。
-
-![测试](./image/changjing2.png)
-
+[![test](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/changjing2.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/changjing2.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

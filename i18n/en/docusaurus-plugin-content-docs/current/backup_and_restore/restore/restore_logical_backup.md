@@ -1,73 +1,71 @@
 ---
 sidebar_position: 1
 ---
-# 恢复逻辑备份数据
+# Restoring logical backup data
 
-在数据库发生误操作或故障时，您可以通过 NineData 的备份与恢复服务将备份数据恢复到数据库。
+In the event of a misoperation or failure of the database, you can restore the backup data to the database through NineData's backup and recovery service.
 
-### 前提条件
+### Preconditions
 
-- 已经完成一次完整的备份。如何备份数据，请参见请参见[执行逻辑备份](../backup/logical_backup.md)。
-- 已将需要恢复的数据源添加到 NineData。更多信息，请参见[添加数据源](../../configuration/datasource.md)。
+- A full backup has been completed. For how to back up data, see See [Performing Logical Backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- The data sources that need to be restored have been added to NineData. For more information, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-### 使用限制
+### usage restrictions
 
-- 恢复的目标数据源必须和备份数据的数据源类型一致。例如，MySQL 的备份数据不支持恢复到 SQL Server 数据源。	
-- 恢复的目标数据源版本必须大于或等于备份数据的数据源版本。例如，MySQL 8.0 的备份数据不支持恢复到 MySQL 5.6 数据源。
-- 当前 SQL Server 数据源执行逻辑备份时不支持增量备份，因此不支持按时间点恢复。
-- 全量恢复时，如果数据库中包含视图（VIEW）、函数（FUNCTION）、存储过程（PROCEDURE）、触发器（TRIGGER），则请勿执行[步骤 5](#step5) 中的配置映射对象，否则任务失败。
-- 增量备份期间创建的触发器（TRIGGER）和事件（EVENT）无法恢复，但是其产生的数据会正常恢复。
-- 恢复时，如果数据库中包含视图（VIEW）、函数（FUNCTION）、存储过程（PROCEDURE）、触发器（TRIGGER）、事件（EVENT），则上述对象的定义者（DEFINER）信息将被修改为当前恢复任务中访问数据库的账号。
-- 恢复时，表中如果存在外键（FOREIGN KEY），则该外键约束不可用。
+- The target data source to be restored must be the same as the data source type of the backup data. For example, backup data for MySQL does not support recovery to SQL Server data sources.
+- The restored target data source version must be greater than or equal to the data source version of the backup data. For example, MySQL 8.0 backup data does not support restoring to MySQL 5.6 data sources.
+- The current SQL Server data source does not support incremental backups when performing logical backups, so point-in-time recovery is not supported.
+- During full recovery, if the database contains views (VIEW), functions (FUNCTION), stored procedures (PROCEDURE), and triggers (TRIGGER), do not execute the configuration mapping object in [step 5 , otherwise the task will fail.](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#step5)
+- Triggers (TRIGGERs) and events (EVENTs) created during incremental backups cannot be recovered, but the resulting data will be recovered normally.
+- During recovery, if the database contains views (VIEW), functions (FUNCTION), stored procedures (PROCEDURE), triggers (TRIGGER), and events (EVENT), the definer (DEFINER) information of the above objects will be modified to the current recovery The account that accesses the database in the task.
+- When restoring, if there is a foreign key (FOREIGN KEY) in the table, the foreign key constraint is not available.
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**备份与恢复**>**数据恢复**。
-
-   :::tip
-
-   您也可以单击**备份与恢复**>**备份集**，在**全量备份集**页签下，找到目标已完成备份的备份集 ID，单击其右侧**操作**列下的**恢复数据**。
-
-   :::
-
-3. 在**创建恢复**页面，按照下表进行配置，并单击**下一步**。
-
-   | 参数<div style={{width:'50pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **任务名称**                           | 输入恢复任务的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 64 个字符。 |
-   | **源数据源**                           | 备份的对象，您可以通过选择**源数据源**快速找到**备份任务**。 |
-   | **备份任务**                           | 备份数据源时创建的备份任务，包含了恢复所需的所有数据。       |
-   | **恢复方式**                           | 支持如下恢复方式：<ul><li>**按时间点恢复**（仅 MySQL 支持）：该方式基于全量备份数据和日志，可恢复全量数据和后续产生的增量数据。具体可恢复时间段请参见控制台。</li><li>**备份集**：该方式仅基于全量备份数据，支持恢复到全量备份完成的时间点，不包含增量数据。</li></ul> |
-   | **恢复时间点**（仅 MySQL 支持）          | **恢复方式**为**按时间点恢复**时可配置，选择将数据恢复到哪个时间点。可达到秒级 RPO，即可恢复备份开始至当前时间点前几秒之间的任意时间点的数据。 |
-   | **备份集**                             | **恢复方式**为**备份集**时可配置，选择全量备份集，该选项不包含增量数据。 |
-   | **目标数据源**                         | 恢复的对象，选择将备份数据恢复到哪个数据源。                 |
-   | **恢复类型**                           | 选择需要恢复的内容，支持**表结构**、**全量数据**的单选或多选。您还可以单击展开**高级设置**，选择存在同名表或相同数据时的处理策略。 |
-   | **高级设置**                           | <ul><li>**结构冲突策略**<ul><li>**忽略冲突，继续任务**：存在同名表时，忽略并继续恢复任务。</li><li>**对象已存在，则停止任务**：存在同名表时，停止恢复任务。</li></ul></li><li>**数据冲突策略**<ul><li>**忽略冲突，继续任务**：存在相同数据时，忽略该条数据，继续恢复其他数据。</li><li>**数据已存在，则停止任务**：存在相同数据时，停止恢复任务。</li><li>**先删除，再重新写入**：删除该条数据，重新写入。</li></ul></li></ul> |
-   
-4. 在**恢复对象**页签，确认需要恢复的内容，您可以选择**所有备份**恢复所有数据，也可以选择**自定义对象**，自行选择需要恢复的数据，然后单击**下一步**。<span id="step5"></span>
-
-5. 在**配置映射对象**页签，配置目标表恢复到目标数据源之后的表名，单击**保存并预检查**。
-
-6. 在**预检查**页签，等待系统完成预检查，预检查通过后，单击**启动任务**。
+2. On the left navigation bar, click **Backup & Restore** > **Data Recovery** .
 
    :::tip
 
-   - 如果预检查未通过，需要单击目标检查项右侧**操作**列的**详情**，排查失败的原因，手动修复后重新执行预检查，直到通过。
-
-   - **检查结果**为**警告**的检查项，可视具体情况修复或忽略。
+   You can also click **Backup and Restore** > **Backup Sets** . On the **Full Backup Sets** tab, find the ID of the backup set that has been backed up, and click **Restore Data in the** **Actions** column on the right .
 
    :::
 
-7. 在**启动任务**页面，提示**启动成功**。单击**查看详情**查看恢复任务的执行情况；单击**返回列表**可以返回**恢复任务**列表。
+3. On the **Create Recovery** page, configure according to the table below and click **Next** .
 
-### 相关文档
+   | Parameters <div style={{width:'50pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **mission name**                        | Enter the name of the recovery task. For the convenience of subsequent search and management, try to use a meaningful name. Up to 64 characters are supported. |
+   | **source data source**                  | Backup objects, you can quickly find **backup tasks** by selecting the **source data source** . |
+   | **backup task**                         | A backup job, created when backing up a data source, contains all the data needed for recovery. |
+   | **recovery method**                     | The following recovery methods are supported:**Recovery by point in time** (only supported by MySQL): This method is based on full backup data and logs, and can recover full data and subsequent incremental data. For the specific recovery time period, see the console.**Backup set** : This method is only based on the full backup data, and supports recovery to the point in time when the full backup is completed, excluding incremental data. |
+   | **Recovery point in time** (MySQL only) | **The recovery method** is configurable when **recovering by point in time** , and you can select the point in time to which the data will be recovered. The second-level RPO can be achieved, and the data at any point in time between the start of the backup and the current point in time can be restored. |
+   | **backup set**                          | It can be configured when the **recovery method** is **backup set . Select the full backup set. This option does not contain incremental data.** |
+   | **target data source**                  | To restore the object, select which data source to restore the backup data to. |
+   | **recovery type**                       | Select the content to be restored, and support single-selection or multiple-selection of **table structure** and **full data** . You can also click to expand the **advanced settings** and select the processing strategy when there is a table with the same name or the same data. |
+   | **advanced settings**                   | **Structural conflict strategy****Ignore conflicts and continue the task** : When a table with the same name exists, ignore and continue the recovery task.**If the object already exists, stop the task** : When a table with the same name exists, stop the recovery task.**Data Conflict Policy****Ignore the conflict and continue the task** : When the same data exists, ignore this piece of data and continue to restore other data.**If the data already exists, stop the task** : When the same data exists, stop the recovery task.**Delete first, then rewrite** : delete the piece of data and rewrite it. |
 
-- [数据备份简介](../intro_back.md)
-- [执行物理备份](../backup/physical_backup.md)
-- [执行逻辑备份](../backup/logical_backup.md)
-- [恢复物理备份数据](restore_physical_backup.md)
-- [查看备份集](../view_backup_sets.md)
-- [查询备份数据](../backup_data_query.md)
+4. On the **Restore Objects** tab, confirm the content to be restored. You can select **all backups** to restore all data, or you can select **a custom object** , select the data to be restored, and click **Next** .
 
+5. On the **Configure Mapping Objects** tab, configure the table name after the target table is restored to the target data source, and click **Save and Precheck** .
+
+6. On the **Pre-check** tab, wait for the system to complete the pre-check. After the pre-check passes, click **Start task** .
+
+   :::tip
+
+   - **If the pre-check fails, you need to click the details in the** **operation** column to the right of the target check item to check the cause of the failure, and then perform the pre-check again after manual repair until it passes.
+   - **Check items whose results** are **warnings** can be repaired or ignored according to specific circumstances.
+
+   :::
+
+7. On the **Startup task** page, a message is displayed indicating that **the startup was successful** . Click **View Details** to view the execution status of the recovery tasks; click **Return to List** to return to **the recovery task** list.
+
+### Related Documentation
+
+- [Introduction to Data Backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/intro_back.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Perform physical backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [perform logical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring physical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [View backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/view_backup_sets.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Query backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

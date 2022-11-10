@@ -1,140 +1,116 @@
 ---
 sidebar_position: 2
 ---
-# 数据复制
+# Data Replication
 
-NineData 数据复制支持两个数据源之间的全量数据同步和增量数据同步。
+NineData data replication supports full data synchronization and incremental data synchronization between two data sources.
 
-### 功能说明
+### Function Description
 
-NineData 支持 MySQL 到 MySQL、MySQL 到 ClickHouse、SQL Server 到 SQL Server 的数据复制功能。数据复制过程包括三个阶段：
+NineData supports data replication from MySQL to MySQL, MySQL to ClickHouse, and SQL Server to SQL Server. The data replication process consists of three phases:
 
-1. 结构复制：将源数据源中的库表结构同步到目标数据源。
-2. 全量数据复制：将源数据源中的数据全量同步到目标数据源。
-3. 增量数据复制：将源数据源中正在进行的数据变更实时同步到目标数据库。
+1. Structure replication: Synchronize the library table structure in the source data source to the target data source.
+2. Full data replication: Synchronize full data from the source data source to the target data source.
+3. Incremental data replication: Synchronize ongoing data changes in the source data source to the target database in real time.
 
-复制完成后，您可以先对目标数据源中的数据和结构进行兼容性验证，验证通过后即可将业务切换至目标数据源，实现平滑迁移。
+After the copy is complete, you can first verify the compatibility of the data and structure in the target data source. After the verification is passed, you can switch the business to the target data source to achieve smooth migration.
 
-### 前提条件
+### Preconditions
 
-- 已将源数据源和目标数据源添加至 NineData。如何添加，请参见[添加数据源](../configuration/datasource.md)。
+- Added source and target data sources to NineData. For how to add, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-- 源和目标数据源的类型和版本见下表，且<a class="tooltip tooltip-style2">同构数据源<span class="tooltip-content">相同架构的数据源。例如MySQL复制到MySQL，SQL Server复制到SQL Server。</span></a>的源数据源版本必须小于等于目标数据源版本。
+- The types and versions of the source and target data sources are shown in the following table, and the data sources of the same schema are homogeneous data sources. For example MySQL replicates to MySQL and SQL Server replicates to SQL Server. The source data source version must be less than or equal to the target data source version.
 
-  <table>
-  <thead>
-    <tr>
-      <th width="400pt">源数据源</th>
-      <th width="400pt">目标数据源</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>MySQL：8.0、5.7、5.6、5.5、5.1</td>
-      <td>MySQL：8.0、5.7、5.6、5.5、5.1</td>
-    </tr>
-    <tr>
-      <td>MySQL：8.0、5.7、5.6</td>
-      <td>ClickHouse：20.8及以上</td>
-    </tr>
-    <tr>
-      <td>SQL Server：2019、2017、2016、2014、2012、2008R2</td>
-      <td>SQL Server：2019、2017、2016、2014、2012、2008R2</td>
-    </tr>
-  </tbody>
-  </table>
+  | source data source                               | target data source                               |
+  | ------------------------------------------------ | ------------------------------------------------ |
+  | MySQL: 8.0, 5.7, 5.6, 5.5, 5.1                   | MySQL: 8.0, 5.7, 5.6, 5.5, 5.1                   |
+  | MySQL: 8.0, 5.7, 5.6                             | ClickHouse: 20.8 and above                       |
+  | SQL Server: 2019, 2017, 2016, 2014, 2012, 2008R2 | SQL Server: 2019, 2017, 2016, 2014, 2012, 2008R2 |
 
-- MySQL 为源时，必须开启 Binlog，并且 Binlog 相关参数设置如下：
+- When MySQL is the source, Binlog must be enabled, and the related parameters of Binlog are set as follows:
 
   - `binlog_format`=`ROW`
   - `binlog_row_image`=`FULL`
 
   :::tip
-  
-  如果源数据源为备库，为保证获取完整的 Binlog 日志，还需要开启 `log_slave_updates` 参数。
-  
+
+  If the source data source is the standby database, in order to obtain the complete Binlog log, the `log_slave_updates`parameter .
+
   :::
 
-### 使用限制
+### usage restrictions
 
-* 执行数据同步前需评估源数据源和目标数据源的性能，同时建议业务低峰期执行数据同步。否则全量数据初始化时将占用源数据源和目标数据源一定的读写资源，导致数据库负载上升。
-* 同步过程中，如果源数据源中包含视图（VIEW）、函数（FUNCTION）、存储过程（PROCEDURE）、触发器（TRIGGER）、事件（EVENT），则同步到目标数据源后，上述对象的定义者（DEFINER）信息将在目标数据源中被修改为当前同步任务中访问目标数据源的账号。
-* 同步对象为表级别的情况下，同步过程中请勿使用在线 DDL 变更工具（例如：**gh-ost**、**pt-online-schema-change**）对源库的同步对象进行变更，否则会导致同步失败。
-* 需要确保同步对象中的每张表都有主键或唯一约束、列名具有唯一性，否则可能会重复同步相同数据。
-* 同步过程中，如果源数据源存在触发器，则系统会在增量同步结束以后才会同步触发器。
+- Before performing data synchronization, you need to evaluate the performance of the source data source and the target data source, and it is recommended to perform data synchronization during low business peaks. Otherwise, the full data initialization will occupy a certain amount of read and write resources of the source data source and the target data source, resulting in increased database load.
+- During the synchronization process, if the source data source contains views (VIEW), functions (FUNCTION), stored procedures (PROCEDURE), triggers (TRIGGER), and events (EVENT), after synchronizing to the target data source, the definer of the above objects (DEFINER) information will be modified in the target data source to the account that accesses the target data source in the current synchronization task.
+- When the synchronization object is at the table level, do not use online DDL change tools (for example: **gh-ost** , **pt-online-schema-change** ) to change the synchronization object of the source database during the synchronization process, otherwise the synchronization will fail.
+- It is necessary to ensure that each table in the synchronization object has a primary key or unique constraint, and the column name is unique, otherwise the same data may be synchronized repeatedly.
+- During the synchronization process, if there are triggers in the source data source, the system will not synchronize the triggers until the incremental synchronization ends.
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击**数据复制**。
+2. **Click Data Copy** in the left navigation bar .
 
-3. 在**数据复制**页面，单击右上角的**创建数据复制**。
+3. On the **Data Replication** page, click **Create Data Replication** in the upper right corner .
 
-4. 在**数据源与目标**页签，按照下表进行配置，并单击**下一步**。
+4. On the **Data Source and Target** tab, configure according to the following table, and click **Next** .
 
-   | 参数<div style={{width:'60pt'}}></div> | 说明                                                         |
-   | -------------------------------------- | ------------------------------------------------------------ |
-   | **任务名称**                           | 输入数据同步任务的名称，为了方便后续查找和管理，请尽量使用有意义的名称。最多支持 64 个字符。 |
-   | **源数据源**                           | 同步对象所在的数据源。                                       |
-   | **目标数据源**                         | 接收同步对象的数据源。                                       |
-   | **复制类型**                           | <ul><li>**结构复制**：只同步源数据源的库表结构，不同步数据。</li><li> **全量复制**：同步源数据源的所有对象和数据，即全量数据复制。</li><li>**增量复制**：在全量同步完成后，基于元数据源的日志进行增量同步。</li></ul>您还可以单击展开**高级设置**，选择存在同名表或相同数据时的处理策略。 |
-   | **高级设置**                           | <ul><li>**结构冲突策略**<ul><li>**存在同名对象，则停止任务**：存在同名表时，停止同步任务。</li><li>**存在同名对象，忽略冲突并继续**：存在同名表时，检查结构是否一致，如果一致则忽略并继续同步任务，不一致则停止同步并通知用户。</li></ul></li><li>**数据冲突策略**<ul><li>**数据已存在，则停止任务**：存在相同数据时，停止同步任务。</li><li>**忽略数据冲突，继续任务**：存在相同数据时，忽略该条数据，继续同步其他数据。</li><li>**先删除，再重新写入**：删除该条数据，重新写入。</li></ul></li></ul> |
+   | Parameters <div style={{width:'60pt'}}> | illustrate                                                   |
+   | --------------------------------------- | ------------------------------------------------------------ |
+   | **mission name**                        | Enter the name of the data synchronization task. For the convenience of subsequent search and management, please try to use a meaningful name. Up to 64 characters are supported. |
+   | **source data source**                  | The data source where the synchronization object resides.    |
+   | **target data source**                  | The data source that receives the synchronization object.    |
+   | **Copy type**                           | **Structure replication** : Only the database table structure of the source data source is synchronized, but the data is not synchronized.**Full replication** : Synchronize all objects and data of the source data source, that is, full data replication.**Incremental replication** : After the full synchronization is completed, incremental synchronization is performed based on the logs of the metadata source.You can also click to expand the **advanced settings** and select the processing strategy when there is a table with the same name or the same data. |
+   | **advanced settings**                   | **Structural conflict strategy****If there is an object with the same name, stop the task** : When there is a table with the same name, stop the synchronization task.**If there is an object with the same name, ignore the conflict and continue** : When there is a table with the same name, check whether the structure is consistent. If it is consistent, ignore and continue the synchronization task. If it is inconsistent, stop the synchronization and notify the user.**Data Conflict Policy****If the data already exists, stop the task** : When the same data exists, stop the synchronization task.**Ignore data conflicts and continue the task** : When the same data exists, ignore this piece of data and continue to synchronize other data.**Delete first, then rewrite** : delete the piece of data and rewrite it. |
 
-   <span id="step5"></span>
+   
 
-5. 在**选择复制对象**页签，确认需要同步的内容，您可以选择**所有对象**同步源库所有内容，也可以选择**自定义对象**，在**源对象**列表中选定需要同步的内容，单击**>**添加到右侧**目标对象**列表，然后单击**下一步**。
+5. On the **Select Copy Objects** tab, confirm the content to be synchronized. You can select **all objects** to synchronize all content in the source library, or you can select **a custom object** , select the content to be synchronized in the **source object** list, and click **> **Add to** target object list **on the right** **, and then click** Next**.
 
-6. 在**配置映射对象**页签，配置目标表同步到目标数据源之后的表名，单击**保存并预检查**。
+6. On the **Configure Mapping Objects** tab, configure the table name after the target table is synchronized to the target data source, and click **Save and Precheck** .
 
    :::tip
 
-   您可以单击页面右侧的**映射与过滤**，自定义列名同步到目标数据源之后的名称。<!--除此之外，您还可以设置**数据过滤条件**，符合过滤条件的数据不会同步到目标数据源。-->
+   You can click **Mapping and Filtering** on the right side of the page to customize the column names after they are synchronized to the target data source.
 
    :::
 
-7. 在**预检查**页签，等待系统完成预检查，预检查通过后，单击**启动任务**。
+7. On the **Pre-check** tab, wait for the system to complete the pre-check. After the pre-check passes, click **Start task** .
 
    :::tip
 
-   - 您可以勾选**开启数据一致性对比**。在同步任务完成后，自动开启基于源数据源的数据一致性对比，保证两端数据一致。根据您选择的**复制类型**，数据一致性对比的启动时机如下：
+   - You can tick to **enable data consistency comparison** . After the synchronization task is completed, the data consistency comparison based on the source data source is automatically enabled to ensure that the data at both ends are consistent. **Depending on the replication type** you choose , the data consistency comparison starts as follows:
+   - **Structural Copy** : Starts after the structural copy is complete.
+   - **Structural replication + full replication** : start after full replication is complete.
+   - **Structural replication + full replication + incremental replication** : Start when the incremental data is consistent with the source data source for the first time and the **synchronization delay** is 0 seconds. You can click **View Details** to view the synchronization delay in the **replication details** page.[![sync_delay](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/replication/image/sync_delay.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/image/sync_delay.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+   - **If the pre-check fails, you need to click the details in the** **operation** column to the right of the target check item to check the cause of the failure. After manual repair, click **Recheck to** re-execute the pre-check until it passes.
+   - **Check items whose results** are **warnings** can be repaired or ignored according to specific circumstances.
 
-   - **结构复制**：结构复制完成后启动。
+8. On the **Startup task** page, a message is displayed indicating that **the startup is successful** , and the synchronization task starts to run. At this point you can do the following:
 
-   - **结构复制+全量复制**：全量复制完成后启动。
+   - Click **View Details** to view the execution of each phase of the synchronization task.
+   - Click **Back to List** to return to the **Data Copy** list.
 
-   - **结构复制+全量复制+增量复制**：当增量数据首次和源数据源一致且**同步延迟**为 0 秒时启动。您可以单击**查看详情**，在**复制详情**页面中查看同步延迟。![sync_delay](./image/sync_delay.png)
+### View sync results
 
-   - 如果预检查未通过，需要单击目标检查项右侧**操作**列的**详情**，排查失败的原因，手动修复后单击**重新检查**重新执行预检查，直到通过。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-   - **检查结果**为**警告**的检查项，可视具体情况修复或忽略。
+2. **Click Data Copy** in the left navigation bar .
 
-8. 在**启动任务**页面，提示**启动成功**，同步任务开始运行。此时您可以进行如下操作：
+3. On the **data replication page, click the** **task ID** of the target synchronization task . The page description is as follows.[![result](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/replication/image/result1.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/image/result1.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-   * 单击**查看详情**查看同步任务各个阶段的执行情况。
-   * 单击**返回列表**可以返回**数据复制**列表。
+   | Serial number <div style={{width:'25pt'}}> | function <div style={{width:'90pt'}}>                        | introduce                                                    |
+   | ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | 1                                          | Sync delay                                                   | The data synchronization delay between the source data source and the target data source. 0 seconds means there is no delay between the two ends. At this time, you can choose to switch the business to the target data source to achieve smooth migration. |
+   | 2                                          | Configure alerts                                             | After configuring alerts, the system notifies you in the method of your choice when a task fails. For more information, see [Introduction to Operational Monitoring](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/alart/intro.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
+   | 3                                          | More                                                         | **Pause** : Pause the task, only the task whose status is **running is** optional.**Terminate** : End the task that has not been completed or is being monitored (that is, in the process of incremental synchronization). The task cannot be restarted after the task is terminated. Please operate with caution. If the synchronization object contains triggers, a trigger copy option will pop up, please select as needed.**Delete** : Delete the task. After the task is deleted, it cannot be recovered. Please operate with caution. |
+   | 4                                          | Structural copy (displayed in scenarios that include structural copy) | Shows the progress and details of structure replication.Click Logs on the right side of the page **:** View the execution log of the fabric replication.Click **Refresh** on the right side of the page : View the latest information.**Click View DDL in the** **operation** column to the right of the target table in the list : you can view the SQL playback. |
+   | 5                                          | Full copy (displayed in scenarios including full copy)       | Displays the progress and details of the full copy.Click Monitoring on the right side of the page to **view** the monitoring indicators during the full replication process.Click Logs on the right side of the page **:** View the execution log of full replication.Click **Refresh** on the right side of the page : View the latest information. |
+   | 6                                          | Incremental replication (displayed in scenarios that include incremental replication) | Displays various monitoring indicators of incremental replication.**Click Logs** on the right side of the page : View the execution log of incremental replication.Click **Refresh** on the right side of the page : View the latest information. |
+   | 7                                          | modify object                                                | Displays the modification history of the synchronization object.Click **Modify synchronization object** on the right side of the page to configure synchronization objects. The configuration method is the same as [step 5](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/data_replication.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#step5) .Click **Refresh** on the right side of the page : View the latest information. |
+   | 8                                          | Data comparison                                              | Displays the results of the data comparison between the source data source and the target data source. Contains **structural comparisons** and **data comparisons** .Click Re-compare on the right side of the page : **re-compare** the data at both ends of the current source and target.Click Logs on the right side of the page **:** View the execution log of the consistency comparison.Click **Monitoring** on the right side of the page (data comparison display only): View the trend graph of the comparison RPS (records per second comparison). Click **Details** to view earlier records.**Click in the operation** column on the right side of the comparison list [![details](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/replication/image/details.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/image/details.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp): view the comparison details of the table definition DDL statements of the source and target.**Click in the operation** column on the right side of the comparison list [![sql](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/replication/image/sql.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/image/sql.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)(displayed in case of inconsistency): generate change SQL, you can directly copy the SQL to the target data source for execution, and modify the inconsistent content. |
 
-### 查看同步结果
+### Related Documentation
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
-
-2. 在左侧导航栏单击**数据复制**。
-
-3. 在**数据复制**页面单击目标同步任务的**任务 ID**，页面说明如下。![result](./image/result1.png)
-
-   | 序号<div style={{width:'25pt'}}></div> | 功能<div style={{width:'90pt'}}></div> | 介绍                                                         |
-   | :------------------------------------: | -------------------------------------- | ------------------------------------------------------------ |
-   |                   1                    | 同步延迟                               | 源数据源和目标数据源之间的数据同步延迟，0 秒表示两端之间没有延迟，此时您可以选择将业务切换到目标数据源，实现平滑迁移。 |
-   |                   2                    | 配置告警                               | 配置告警后，系统会在任务失败时通过您选择的方式通知您。更多信息，请参见[运维监控简介](../alart/intro.md)。 |
-   |                   3                    | 更多                                   | <ul><li>**暂停**：暂停任务，仅状态为**运行中**的任务可选。</li><li>**终止**：结束未完成或监听中（即增量同步中）的任务，终止任务后无法重启任务，请谨慎操作。如果同步对象中包含触发器，会弹出触发器复制选项，请按需选择。</li><li>**删除**：删除任务，任务删除后无法恢复，请谨慎操作。</li></ul> |
-   |                   4                    | 结构复制（包含结构复制的场景下显示）   | 展示结构复制的进度和详细信息。<ul><li>单击页面右侧的**日志**：查看结构复制的执行日志。</li><li>单击页面右侧的**刷新**：查看最新的信息。</li><li>单击列表中目标表右侧**操作**列的**查看 DDL**：可以查看 SQL 回放。</li></ul> |
-   |                   5                    | 全量复制（包含全量复制的场景下显示）   | 展示全量复制的进度和详细信息。<ul><li>单击页面右侧的**监控**：查看全量复制过程中的各监控指标。<!--全量复制过程中，还可以单击监控指标页面右侧的**限流设置**，限制每秒写入到目标数据源的速率。单位为行/秒。--></li><li>单击页面右侧的**日志**：查看全量复制的执行日志。</li><li>单击页面右侧的**刷新**：查看最新的信息。</li></ul> |
-   |                   6                    | 增量复制（包含增量复制的场景下显示）   | 展示增量复制的各项监控指标。<ul><!--<li>单击页面右侧的**限流设置**：可以限制每秒写入到目标数据源的速率。单位为行/秒。</li>--><li>击页面右侧的**日志**：查看增量复制的执行日志。</li><li>单击页面右侧的**刷新**：查看最新的信息。</li></ul> |
-   |                   7                    | 修改对象                               | 展示同步对象的修改记录。<ul><li>单击页面右侧的**修改同步对象**，可对同步对象进行配置，配置方式和[步骤 5](#step5)相同。</li><li>单击页面右侧的**刷新**：查看最新的信息。</li></ul> |
-   |                   8                    | 数据对比                               | 展示源数据源和目标数据源之间数据对比的结果。包含**结构对比**和**数据对比**。<ul><li>单击页面右侧的**重新对比**：对当前源和目标两端数据重新发起对比。</li><li>单击页面右侧的**日志**：查看一致性对比的执行日志。</li><li>单击页面右侧的**监控**（仅数据对比显示）：查看对比 RPS（每秒对比的记录数）的走势图。单击**详情**可以查看更早之前的记录。</li><li>在对比列表右侧**操作**列单击![details](./image/details.png)：查看源端和目标端的表定义 DDL 语句对比详情。</li><li>在对比列表右侧**操作**列单击![sql](./image/sql.png)（不一致情况下显示)：生成变更 SQL，您可以直接复制该 SQL 到目标数据源执行，修改不一致的内容。</li></ul> |
-
-
-
-### 相关文档
-
-[数据复制简介](intro_repli.md)
+[Introduction to Data Replication](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/replication/intro_repli.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

@@ -2,79 +2,54 @@
 sidebar_position: 1
 ---
 
-# 数据备份简介
+# Introduction to Data Backup
 
-数据备份是 NineData 推出的基于云原生架构的数据备份恢复服务，支持多云及自建数据库等环境，轻松实现多环境间的容灾恢复、增量与全量数据备份等场景。
+Data backup is a data backup and recovery service based on cloud native architecture launched by NineData. It supports multi-cloud and self-built databases and other environments, and easily realizes scenarios such as disaster recovery, incremental and full data backup between multiple environments.
 
-### 背景信息
-数据安全是数字时代企业的命脉，是确保业务连续性、品牌声誉的基础。网络攻击、误操作等问题都会对数据安全构成重大威胁。
+### Background Information
 
-NineData 数据备份服务是在深刻理解现代企业数据特点与数据保护需求的基础上推出的数据保护产品，通过充分利用云基础设施，为用户提供实时可用、持久在线、低成本的数据备份服务。
+Data security is the lifeblood of a business in the digital age and the foundation for ensuring business continuity and brand reputation. Problems such as network attacks and misoperations will pose a major threat to data security.
 
-### 产品架构
+NineData data backup service is a data protection product launched on the basis of a deep understanding of modern enterprise data characteristics and data protection needs. By making full use of cloud infrastructure, it provides users with real-time available, persistent online, and low-cost data backup services.
 
-![structure](./image/structure.png)
+### Product Architecture
 
-### 功能介绍
+[![structure](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/backup_and_restore/image/structure.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/image/structure.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-<table>
-  <tr>
-  	<td><b>功能</b></td>
-    <td><b>说明</b></td>
-  </tr>
-  <tr>
-  	<td rowspan="2"><b>备份</b></td>
-    <td><a href="./backup/logical_backup">逻辑备份</a>：以数据库对象（例如表、索引等）为备份对象的备份方式。支持全量备份、增量备份、结构备份等多种备份类型。</td>
-  </tr>
-  <tr>
-    <td><a href="./backup/physical_backup">物理备份</a>：以数据库中的文件为备份对象的备份方式。</td>  
-  </tr>
-	<tr>
-  	<td><b>恢复</b></td>
-    <td>支持对<a href="./restore/restore_logical_backup">逻辑备份集</a>和<a href="./restore/restore_physical_backup">物理备份集</a>进行恢复。对于逻辑备份集，NineData 数据备份具备如下恢复能力：<ul>
-      <li>秒级 RPO：数据源节点发生故障后，可以将节点恢复到故障发生几秒前的数据状态，数据损失率为秒级。</li>
-      <li>细粒度恢复：支持行级数据的快速恢复。</li>
-      </ul>
-    </td>
-  </tr>
-	<tr>
-		<td><b>备份数据在线查询</b></td>
-    <td>支持对逻辑备份集中的数据进行在线 SQL 查询。相关文档：<a href="backup_data_query">查询备份数据</a>。</td>
-	</tr>
-</table>
+### Features
 
+| **Function**                                                 | **illustrate**                                               |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **backup**                                                   | [Logical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) : A backup method that uses database objects (such as tables, indexes, etc.) as backup objects. Support full backup, incremental backup, structure backup and other backup types. |
+| [Physical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) : A backup method that takes the files in the database as the backup object. |                                                              |
+| **recover**                                                  | [Recovery of logical backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) and [physical backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) is supported . For logical backup sets, NineData data backup has the following recovery capabilities:Second-level RPO: After the data source node fails, the node can be restored to the data state several seconds before the failure occurred, and the data loss rate is second-level.Fine-grained recovery: supports fast recovery of row-level data. |
+| **Online query of backup data**                              | Online SQL queries are supported for data in logical backup sets. Related Documentation: [Querying Backup Data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) . |
 
+### Advantage
 
-### 优势
+NineData data backup products are based on cloud-native architecture. Compared with traditional backup products, they have huge advantages in security, performance, cost and other aspects:
 
-NineData 数据备份产品基于云原生架构，相比于传统备份产品，无论是在安全、性能、成本等各个方面都具有巨大的优势：
-* **即开即用**：开通账号即可立即开始保护您的数据，按使用量计费，无其他成本。
+- **Out-of-the- box** : Open an account and start protecting your data immediately, billed by usage, with no other costs.
+- **Simple and easy** to use : The interface is simple and easy to understand, and it only needs simple configuration to use. There is no need to understand more terminology or learn new technologies. You can allocate more time and resources to more important business.
+- **Multi-environment support** : Supports databases in multiple environments. Including public cloud, proprietary cloud, hybrid cloud, self-built database; support public or private network access.
+- **Security compliance** : The backup frequency, backup cycle, and backup storage duration can be configured, and remote backup and hot and cold backup are supported. Effectively meet various security audit compliance requirements. At the same time, it supports backup data encryption and backup data transmission encryption to effectively ensure data security.
+- **High availability** : Based on the distributed high-availability storage provided by mature cloud vendors, it can realize redundant data storage with multiple copies and cross-region (availability zone) disaster recovery.
+- **Second-level RPO** : By monitoring and backing up database change logs in real time, RPO close to the second level can be achieved, and the integrity of business data can be protected to the greatest extent.
+- **Real-time query of backup data** : Based on the self-developed computing storage engine, it can realize fast query of backup data at any point in time. When the service database fails and data is lost, data query and recovery can be completed in minutes.
 
-* **简单易用**：使用界面简洁易懂，只需要简单的配置即可使用，无需了解更多的术语或学习新的技术，您可以将更多的时间和资源分配在更重要的业务上。
+### Typical usage scenarios
 
-* **多环境支持**：支持多种环境下的数据库。包含公共云、专有云、混合云、自建数据库；支持公网或私网访问。
+- **Self- built database backup in the cloud** : For reasons such as cost or control capability, enterprises may choose to build their own database on the cloud. The NineData data backup service can provide real-time backup capabilities, reduce self-built costs and improve data protection capabilities.
+- **Local database backup** : The backup data is stored locally, and as the amount of data increases, a lot of costs may be incurred. You can use the NineData data backup service to back up your local database to the cloud to reduce costs and enjoy an efficient backup experience.
+- **Backup to multi-cloud or multi-region** : For the sake of data reliability and security compliance, enterprises usually have business requirements for backup data to be stored in off-site or multi-cloud storage. NineData data backup supports multiple cloud vendors and covers dozens of storage regions around the world, which can help users quickly build cross-region and cross-cloud remote disaster recovery.
+- **Minute-level quick recovery and emergency recovery** : Due to business logic errors, customer operation errors, etc., some data needs to be rolled back to a certain time before the wrong operation. Through the online query function of backup data, minute-level backup data recovery can be achieved to minimize losses.
+- **Data Change Track Tracking** : In order to troubleshoot program bugs or other requirements, it is necessary to find the historical change track of a certain piece of data. Online query of backup data can easily realize backtracking of the complete life cycle of data and eliminate risks in time.
 
-* **安全合规**：备份频率、备份周期、备份存储时长均可配置，支持异地备份及冷热备份。有效满足各种安全审计合规要求。同时，支持备份数据加密以及备份数据传输加密，有效保障数据的安全性。
+### Related Documentation
 
-* **高可用**：基于成熟云厂商提供的分布式高可用存储，可实现数据多副本冗余存储、跨地域（可用区）容灾。
-
-* **秒级 RPO**：通过实时监听及备份数据库变更日志，可实现接近秒级的 RPO，最大程度保护业务数据的完整性。
-
-* **备份数据实时查询**：基于自研的计算存储引擎，可实现任意时间点备份数据的快速查询。当业务库发生故障丢失数据时，可分钟级完成数据的查询及恢复。
-
-### 典型使用场景
-* **云端自建数据库备份**：出于成本或控制能力等原因，企业可能选择在云上自建数据库，NineData 数据备份服务可以提供实时备份能力，降低自建成本并提升数据保护能力。
-* **本地数据库备份**：备份数据存储在本地，随着数据量的增加，可能会产生大量成本。您可以使用 NineData 数据备份服务将本地数据库备份到云上，降低成本的同时享受高效率的备份体验。
-* **备份到多云或多地域**：出于数据可靠性、安全合规的考虑，企业通常有备份数据异地存储或多云存储的业务诉求。NineData 数据备份支持适配多家云厂商，覆盖全球数十个存储地域，可以帮助用户快速构建跨地域、跨云的异地容灾。
-* **分钟级快速恢复、应急恢复**：由于业务逻辑错误、客户操作失误等原因，导致部分数据需要回退到误操作之前的某个时间。通过备份数据在线查询功能，可以实现分钟级的备份数据恢复，将损失降到最低。
-* **数据变更轨迹跟踪**：为了排查程序 Bug 或其他需求，需要找到某条数据的历史变化轨迹。通过备份数据在线查询可以轻松实现数据完整生命周期的回溯，及时消除风险。
-
-### 相关文档
-
-- [执行逻辑备份](backup/logical_backup.md)
-- [执行物理备份](backup/physical_backup.md)
-- [恢复逻辑备份数据](restore/restore_logical_backup.md)
-- [恢复物理备份数据](restore/restore_physical_backup.md)
-- [查看备份集](view_backup_sets.md)
-- [查询备份数据](backup_data_query.md)
-
+- [perform logical backup](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Perform physical backups](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup/physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring logical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Restoring physical backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/restore/restore_physical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [View backup sets](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/view_backup_sets.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
+- [Query backup data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/backup_and_restore/backup_data_query.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

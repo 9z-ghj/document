@@ -2,38 +2,36 @@
 sidebar_position: 2
 ---
 
-# 性能说明
+# Performance description
 
-本文针对 NineData 的备份恢复性能进行测试，通过测试结果，您可以更直观地了解 NineData 产品的性能数据。
+This article tests the backup and recovery performance of NineData. Through the test results, you can understand the performance data of NineData products more intuitively.
 
-### 注意事项
+### Precautions
 
-数据库规格、参数配置等因素都会影响最终的测试结果，本测试仅作为产品性能的量级参考，并不作为 NineData 产品的性能标准。
+Database specifications, parameter configuration and other factors will affect the final test results. This test is only used as an order of magnitude reference for product performance, not as a performance standard for NineData products.
 
-### 测试环境
+### test environment
 
-| 测试对象<div style={{width: '50pt'}}></div> | 版本         | 规格                                                         | 备注                                                         |
-| ------------------------------------------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 阿里云 ECS 自建库                           | MySQL 8.0.28 | 配置信息：<ul><li>规格代码：ecs.c7.xlarge </li><li>CPU：4 核 8 GB</li><li>存储：500 GB ESSD AutoPL云盘（26800 IOPS）</li></ul> | MySQL 参数配置：<ul><li>BufferPool：4 GB</li><li>skip-log-bin：1</li><li>innodb_flush_log_at_trx_commit：0</li></ul> |
+| test object <div style={{width: '50pt'}}> | Version      | Specification                                                | Remark                                                       |
+| ----------------------------------------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Alibaba Cloud ECS self-built library      | MySQL 8.0.28 | Configuration information:Specification code: ecs.c7.xlargeCPU: 4 cores 8 GBStorage: 500 GB ESSD AutoPL cloud disk (26800 IOPS) | MySQL parameter configuration:BufferPool: 4 GBskip-log-bin: 1innodb_flush_log_at_trx_commit: 0 |
 
-### 测试数据量
+### Test data volume
 
-通过 Sysbench 生成 14 张表，每张表 3000 万条数据。物理文件大小 100 GB。Sysbench 的数据生成命令：
+Generate 14 tables through Sysbench, each with 30 million pieces of data. Physical file size 100 GB. Sysbench data generation command:
 
 ```
 sysbench --db-driver=mysql --mysql-host=1.1.1.1 --mysql-port=3306 --mysql-user=sysbench --mysql-password=sysbench --mysql-db=backup_test --table_size=30000000 --tables=14 --events=0 --time=300  --threads=8 oltp_read_write prepare
 ```
 
-### 测试方法
+### testing method
 
-- 全量备份：通过 NineData 平台对数据库进行全量逻辑备份，记录备份时长以及每秒数据量。操作流程请参见[备份数据（逻辑备份）](/backup_and_restore/backup/logical_backup.md)。
-- 全量恢复：通过 NineData 平台将备份后的文件全量恢复至数据库，记录恢复时长以及每秒数据量。操作流程请参见[恢复逻辑备份数据](/backup_and_restore/restore/restore_logical_backup.md)。
+- Full backup: perform full logical backup of the database through the NineData platform, and record the backup duration and data volume per second. For the operation process, see [Backing Up Data (Logical Backup)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/backup_and_restore/backup/logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+- Full recovery: Full recovery of backed up files to the database through the NineData platform, recording recovery time and data volume per second. For the operation process, see [Restoring Logical Backup Data](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/backup_and_restore/restore/restore_logical_backup.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-### 测试结果
+### Test Results
 
-| 测试项   | 性能    | 耗时    | 文件大小          |
-| -------- | ------- | ------- | ----------------- |
-| 全量备份 | 38 MB/s | 46 分钟 | 备份文件：65.9 GB |
-| 全量恢复 | 27 MB/s | 63 分钟 | 恢复文件：65.9 GB |
-| 全量复制 |         |         |                   |
-
+| test item     | performance | time consuming | File size               |
+| ------------- | ----------- | -------------- | ----------------------- |
+| full backup   | 38MB/s      | 46 minutes     | Backup file: 65.9 GB    |
+| full recovery | 27MB/s      | 63 minutes     | Recovery files: 65.9 GB |

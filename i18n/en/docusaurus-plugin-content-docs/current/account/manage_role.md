@@ -2,152 +2,152 @@
 sidebar_position: 4
 ---
 
-# 管理角色
+# management role
 
-角色决定了用户对于资源的使用权限，NineData 提供了 5 个预置角色，您可以编辑**系统管理员**以外的任何角色，也可以创建自定义角色，对于不再需要的角色，可以手动进行删除。
+The role determines the user's permission to use resources. NineData provides 5 preset roles. You can edit any role other than the **system administrator** , or create a custom role. For roles that are no longer needed, you can manually delete them.
 
-### 前提条件
+### Preconditions
 
-* 已创建或加入组织。更多信息，请参见[管理组织](manage_organization.md)。
-* NineData 控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
-* 您的角色为系统管理员。更多关于角色的信息，请参见[角色](intro_account.md#角色)。
+- An organization has been created or joined. For more information, see [Managing Organizations](/account/manage_organization.md) .
+- The NineData console is in org mode. How to switch from personal mode to organization mode, see [Switching to Organization](/account/manage_organization.md#swithing_to_organization) .
+- Your role is System Administrator. For more information on roles, see [Roles](/account/intro_account.md#roles) .
 
-### 注意事项
+### Precautions
 
-- 预置角色中，名为**系统管理员**的角色无法被编辑和删除。
-- 创建角色或编辑角色名称时，不可使用当前 NineData 账户下已有的角色名称。
+- Among the preset roles, the role named **System Administrator** cannot be edited or deleted.
+- When creating a role or editing a role name, the existing role name under the current NineData account cannot be used.
 
-### 查看或新增角色
+### View or add roles
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**账户管理**>**角色管理**。在打开的页面左侧，可以看到当前组织下的所有角色。
-
-   :::tip
-
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
-
-   :::
-
-3. 单击页面左下角的**新增角色**。
-
-4. 在**新建角色**对话框中，输入新角色的名称，该名称用于辨识角色用途，请使用有意义的名称，最多支持 16 个字符。
-
-5. 单击**确定**，完成新角色的创建，此时页面自动跳转至新建角色的权限配置页面，您可以根据实际业务需求配置角色的权限。
-
-   :::tip
-   
-   更多关于权限的说明，请参见[权限](intro_account.md#权限)。
-   
-   :::
-
-### 编辑已有角色
-
-您可以编辑**系统管理员**以外的所有角色，可编辑内容包括角色名称和具体权限。
-
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
-
-2. 在左侧导航栏，单击**账户管理**>**角色管理**。您可以选择重命名角色名称，或编辑角色的权限。
+2. In the left navigation bar, click **Account Management** > **Role Management** . On the left side of the opened page, you can see all roles under the current organization.
 
    :::tip
 
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
+   If **Account Management** is not found , verify that your console is in Org Mode. How to switch from personal mode to organization mode, see [Switching to Organization](/account/manage_organization.md#swithing_to_organization) .
 
    :::
 
-   - 角色重命名：在页面左侧的角色列表中，将鼠标移动到需要重命名的角色上，单击右侧的![icon2](./image/icon2.png)图标，在弹出的**编辑角色**对话框中，输入新的角色名称，单击确定。角色名称最多支持 16 个字符。
+3. Click **Add Role** in the lower left corner of the page .
+
+4. In the **New Role** dialog box, enter a name for the new role. This name is used to identify the role. Please use a meaningful name with a maximum of 16 characters.
+
+5. Click **OK** to complete the creation of the new role. At this time, the page automatically jumps to the permission configuration page of the newly created role. You can configure the permissions of the role according to actual business needs.
+
+   :::tip
+
+   For more information on permissions, see [Permissions](/account/intro_account.md#permissions) .
+
+   :::
+
+### Edit an existing role
+
+You can edit all roles except the **system administrator** . The editable content includes the role name and specific permissions.
+
+1. Log [in to the NineData console](https://console.ninedata.cloud) .
+
+2. In the left navigation bar, click **Account Management** > **Role Management** . You can choose to rename the role name, or edit the role's permissions.
+
+   :::tip
+
+   If **Account Management** is not found , verify that your console is in Org Mode. How to switch from personal mode to organization mode, see [Switching to Organization](/account/manage_organization.md#swithing_to_organization) .
+
+   :::
+
+   - Role renaming: In the role list on the left side of the page, move the mouse to the role to be renamed, click the  ![icon2](./image/icon2.png) on the right, in the pop-up **Edit Role** dialog box, enter the new role name, and click OK. Role names support up to 16 characters.
 
      :::tip
-   
-     **系统管理员**角色由于无法更改，其右侧不会出现该图标。
-   
+
+     **This icon does not appear to the right of the System Administrator** role because it cannot be changed.
+
      :::
-   
-   - 编辑角色权限：在页面左侧的角色列表中，单击目标角色名称，在右侧的权限配置页面中编辑该角色的权限，编辑完成后单击页面左下角的**保存更改**。
-   
+
+   - Edit role permissions: In the role list on the left side of the page, click the name of the target role, edit the permissions of the role on the permission configuration page on the right, and click **Save Changes** in the lower left corner of the page after editing .
+
      :::tip
-     
-     更多关于权限的说明，请参见[权限](intro_account.md#权限)。
-     
+
+     For more information on permissions, see [Permissions](/account/intro_account.md#permissions) .
+
      :::
 
-### 删除角色
+### delete role
 
-您可以删除**系统管理员**以外的所有角色。
+You can delete all roles except **System Administrator .**
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**账户管理**>**角色管理**。
-
-   :::tip
-
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
-
-   :::
-
-3. 在页面左侧的角色列表中，将鼠标移动到需要删除的角色上，单击右侧的![icon2](./image/icon2.png)图标。
+2. In the left navigation bar, click **Account Management** > **Role Management** .
 
    :::tip
 
-   **系统管理员**角色由于无法删除，其右侧不会出现该图标。
+   If **Account Management** is not found , verify that your console is in Org Mode. How to switch from personal mode to organization mode, see [Switching to Organization](/account/manage_organization.md#swithing_to_organization) .
 
    :::
 
-4. 在弹出的**编辑角色**对话框中，单击左下角的**删除角色**。
+3. In the role list on the left side of the page, move the mouse to the role to be deleted, and click the [![icon2](./image/icon2.png)icon on the right.
+
+   :::tip
+
+   **This icon does not appear to the right of the System Administrator** role because it cannot be removed.
+
+   :::
+
+4. **In the Edit Role** dialog box that pops up , click **Delete Role** in the lower left corner .
 
    :::caution
 
-   角色删除后，绑定了该角色的用户会失去该角色以及对应的所有权限。本操作不可撤销，请谨慎操作。
+   After the role is deleted, the user bound to the role will lose the role and all corresponding permissions. This operation is irreversible, please operate with caution.
 
    :::
 
-5. 在弹出的确认框中，输入该角色的名称，并单击右下角的**删除角色**。
+5. In the confirmation box that pops up, enter a name for the role and click **Delete Role** in the lower right corner .
 
-### <span id="binding">绑定角色</span>
+### bind role
 
-角色只有在绑定到目标用户之后才会发挥作用，绑定之前，您需要确保目标用户已经加入组织。更多信息，请参见[邀请用户](manage_user.md#邀请用户)。
+The role will only work after it is bound to the target user. Before binding, you need to ensure that the target user has joined the organization. For more information, see [Inviting Users](/account/manage_user.md#Inviting_Users) .
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**账户管理**>**角色管理**。
+2. In the left navigation bar, click **Account Management** > **Role Management** .
 
    :::tip
 
-   如果未找到**账户管理**，请确认您的控制台处于组织模式。如何从个人模式切换组织模式，请参见[切换到组织](manage_organization.md#切换到组织)。
+   If **Account Management** is not found , verify that your console is in Org Mode. How to switch from personal mode to organization mode, see [Switching to Organization](/account/manage_organization.md#swithing_to_organization) .
 
    :::
 
-3. 在页面左侧的角色列表中，单击目标角色名称，在页面右侧的**成员列表**中，单击**新增**。
+3. In the role list on the left side of the page, click the name of the target role, and in the **member list** on the right side of the page , click **Add** .
 
-4. 在弹出的**新增成员**对话框中，单击**成员**下方的选框，在成员列表中选择目标用户，您可以单击多个用户进行批量绑定。
+4. In the pop-up **Add Member** dialog box, click the check box below the **member** , and select the target user in the member list. You can click multiple users to bind in batches.
 
-5. 单击**确定**。
+5. Click **OK** .
 
-### 相关文档
+### Related Documentation
 
-- [管理组织](manage_organization.md)
-- [管理用户](manage_user.md)
+- [management organization](/account/manage_organization.md)
+- [Manage users](/account/manage_user.md)
 
-### 附录：预置角色权限列表
+### Appendix: List of Preset Role Permissions
 
 <table>
 <thead>
   <tr>
-    <th width="110px">权限</th>
-    <th width="110px">模块</th>
-    <th width="142px">类别</th>
-    <th width="110px">系统<br/>管理员</th>
-    <th width="110px">生产环境<br/>管理员</th>
-    <th width="110px">生产环境<br/>只读</th>
-    <th width="110px">开发环境<br/>管理员</th>
-    <th width="110px">普通成员</th>
+    <th>permission</th>
+    <th>module</th>
+    <th>category</th>
+    <th>system<br>administrator</th>
+    <th>production environment<br>administrator</th>
+    <th>Production environment<br>read only</th>
+    <th>development environment<br>administrator</th>
+    <th>ordinary member</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td rowspan="8">管理权限</td>
-    <td rowspan="3">用户管理</td>
-    <td>邀请用户</td>
+    <td rowspan="8">Administrative rights</td>
+    <td rowspan="3">User Management</td>
+    <td>Invite users</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -155,7 +155,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>移除用户</td>
+    <td>remove user</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -163,7 +163,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>配置个人权限</td>
+    <td>Configure individual permissions</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -171,8 +171,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="4">角色管理</td>
-    <td>新增角色</td>
+    <td rowspan="4">role management</td>
+    <td>Add role</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -180,7 +180,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>编辑角色权限</td>
+    <td>Edit role permissions</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -188,7 +188,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>编辑用户的角色</td>
+    <td>Edit a user's role</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -196,7 +196,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>删除角色</td>
+    <td>delete role</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -204,8 +204,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>审计日志</td>
-    <td>查看用户行为记录</td>
+    <td>Audit log</td>
+    <td>View user behavior records</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -213,9 +213,9 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>模块权限</td>
-    <td>功能模块</td>
-    <td>所有功能模块</td>
+    <td>Module permissions</td>
+    <td>functional module</td>
+    <td>All functional modules</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -223,9 +223,9 @@ sidebar_position: 4
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="11">数据源权限（生产环境）</td>
-    <td rowspan="4">SQL 开发</td>
-    <td>只读</td>
+    <td rowspan="11">Data source permissions (production environment)</td>
+    <td rowspan="4">SQL development</td>
+    <td>read only</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -233,7 +233,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>读写</td>
+    <td>read and write</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -241,7 +241,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>审批与发布</td>
+    <td>Approval and Release</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -249,7 +249,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>敏感数据管理</td>
+    <td>Sensitive data management</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -257,8 +257,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="3">备份与恢复</td>
-    <td>数据备份</td>
+    <td rowspan="3">Backup and restore</td>
+    <td>data backup</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -266,7 +266,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>数据恢复</td>
+    <td>Data Recovery</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -274,7 +274,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>备份集</td>
+    <td>backup set</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -282,8 +282,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>数据复制</td>
-    <td>数据复制</td>
+    <td>data replication</td>
+    <td>data replication</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -291,8 +291,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="2">数据库对比</td>
-    <td>数据对比</td>
+    <td rowspan="2">Database comparison</td>
+    <td>Data comparison</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -300,7 +300,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>结构对比</td>
+    <td>Structural comparison</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -308,8 +308,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>基础配置</td>
-    <td>数据源</td>
+    <td>Basic configuration</td>
+    <td>data source</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -317,9 +317,9 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="11">数据源权限（开发环境）</td>
-    <td rowspan="4">SQL 开发</td>
-    <td>只读</td>
+    <td rowspan="11">Data source permissions (development environment)</td>
+    <td rowspan="4">SQL development</td>
+    <td>read only</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -327,7 +327,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>读写</td>
+    <td>read and write</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -335,7 +335,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>审批与发布</td>
+    <td>Approval and Release</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -343,7 +343,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>敏感数据管理</td>
+    <td>Sensitive data management</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -351,8 +351,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="3">备份与恢复</td>
-    <td>数据备份</td>
+    <td rowspan="3">Backup and restore</td>
+    <td>data backup</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -360,7 +360,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>数据恢复</td>
+    <td>Data Recovery</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -368,7 +368,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>备份集</td>
+    <td>backup set</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -376,8 +376,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>数据复制</td>
-    <td>数据复制</td>
+    <td>data replication</td>
+    <td>data replication</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -385,8 +385,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="2">数据库对比</td>
-    <td>数据对比</td>
+    <td rowspan="2">Database comparison</td>
+    <td>Data comparison</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -394,7 +394,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>结构对比</td>
+    <td>Structural comparison</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -402,8 +402,8 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>基础配置</td>
-    <td>数据源</td>
+    <td>Basic configuration</td>
+    <td>data source</td>
     <td>✔️</td>
     <td>❌</td>
     <td>❌</td>
@@ -411,9 +411,9 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td rowspan="2">告警权限</td>
-    <td rowspan="2">告警权限</td>
-    <td>管理告警</td>
+    <td rowspan="2">Alarm permission</td>
+    <td rowspan="2">Alarm permission</td>
+    <td>Manage alerts</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>❌</td>
@@ -421,7 +421,7 @@ sidebar_position: 4
     <td>❌</td>
   </tr>
   <tr>
-    <td>查看告警</td>
+    <td>View alerts</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -430,3 +430,4 @@ sidebar_position: 4
   </tr>
 </tbody>
 </table>
+

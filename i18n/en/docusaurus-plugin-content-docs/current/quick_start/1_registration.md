@@ -2,40 +2,37 @@
 sidebar_position: 1
 ---
 
-# 步骤一：注册 NineData 账号
+# Step 1: Register a NineData account
 
-本文引导您注册 NineData 账号。
+This article guides you to register a NineData account.
 
-### 操作步骤
+### Steps
 
-1. 打开 [NineData 注册页面](https://console.ninedata.cloud/user/register)。![registration](../image/registration.png)
+1. Open the [NineData registration page](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud/user/register) .[![registration](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/image/registration.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/image/registration.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-2. 输入您的手机号码并单击**获取验证码**，收到 NineData 系统发送的验证码后输入该验证码。
-
-   :::tip
-
-   当前仅支持中国大陆地区的手机号码。
-
-   :::
-
-3. 输入用户名和密码。
+2. Enter your mobile phone number and click **Get Verification Code** , enter the verification code after receiving the verification code sent by the NineData system.
 
    :::tip
 
-   密码强度的要求如下：
-
-   - 密码中可以包含英文字母、数字以及特殊字符。
-
-   - 长度为 8~16 个字符。
-
-   - 必须包含英文字母和数字。
-
-   - 不可以包含空字符（空格）。
+   Currently only mobile numbers in mainland China are supported.
 
    :::
 
-4. 输入电子邮箱和公司名称，阅读并勾选《服务条款》和《隐私条款》，单击**注册**，等待通过审核。通过以后，您可以[登录 NineData](2_login.md)。
+3. Enter username and password.
 
-### 下一步
+   :::tip
 
-[登录 NineData](2_login.md)
+   Password strength requirements are as follows:
+
+   - The password can contain English letters, numbers and special characters.
+   - The length is 8~16 characters.
+   - Must contain English letters and numbers.
+   - Cannot contain null characters (spaces).
+
+   :::
+
+4. Enter your email address and company name, read and check the "Terms of Service" and "Privacy Policy", click **Register** , and wait for approval. After passing, you can [log in to NineData](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/quick_start/2_login.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
+
+### Next step
+
+[LoginNineData](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/quick_start/2_login.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)

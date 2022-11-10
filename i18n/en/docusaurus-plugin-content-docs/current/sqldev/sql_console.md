@@ -2,79 +2,76 @@
 sidebar_position: 2
 ---
 
-# SQL 窗口
+# SQL window
 
-本文介绍如何使用 SQL 窗口。
+This article describes how to use the SQL window.
 
-### 前提条件
+### Preconditions
 
-已将目标需要管理的数据库添加到 NineData。如何添加，请参见[管理数据源](configuration/datasource.md)。
+The database that the target needs to manage has been added to NineData. How to add, see [Managing Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .
 
-### 操作步骤
+### Steps
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏单击 **SQL 开发**>**SQL 窗口**。
-   
-   :::tip
-   
-   如果之前登录过数据源且没有关闭，则会自动进入该数据源页面。
-   
-   :::
-   
-3. 单击**SQL 开发**下方文本框，会弹出您已添加的数据源，单击目标数据源，并单击**开始查询**，跳转到 SQL 窗口。
+2. **Click SQL Development** > **SQL Window** in the left navigation bar .
 
    :::tip
 
-   如果有多个数据源，您可以在框中输入全部或部分关键词进行精确查找或模糊查找。支持搜索的字段如下：
-
-   - 数据源名称
-
-   - IP 地址
-
-   ![search](./image/search.png "=200x")
+   If you have logged in to the data source before and have not closed it, you will automatically enter the data source page.
 
    :::
 
-4. 打开 SQL 窗口后，即可对数据源执行 SQL 开发操作。如下图所示：![execute_sql](./image/execute_sql.png)
-   SQL 窗口的详细使用方法，请参见[SQL 窗口功能介绍](#sql-窗口功能介绍)。
+3. Click the text box under **SQL Development** , the data source you have added will pop up, click the target data source, and click **Start Query** to jump to the SQL window.
 
    :::tip
 
-   如果目标数据源中添加了[敏感数据列](../configuration/sensitive.md)，您将无法完整查看敏感列的内容。如需查看，请先[申请敏感列权限](../account/manage_workflow.md#申请敏感数据权限)。![sensitive_data](./image/sensitive_data.png)
+   If there are multiple data sources, you can enter all or part of the keywords in the box for exact or fuzzy search. The fields that support searching are as follows:
+
+   - data source name
+   - IP address
+
+   [![search](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/search.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/search.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
    :::
 
-### SQL 窗口功能介绍
+4. Once the SQL window is open, you can perform SQL development operations on the data source. As shown in the figure below: [![execute_sql](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/execute_sql.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/execute_sql.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)For details on how to use the SQL window, please refer to the [introduction to the functions of the SQL window](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/sql_console.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#sql-窗口功能介绍) .
 
-![image-20220921114448614](./image/interface.png)
+   :::tip
 
-| 序号<div style={{width:'25pt'}}></div> | 功能<div style={{width:'90pt'}}></div> | 介绍                                                         |
-| :------------------------------------: | -------------------------------------- | ------------------------------------------------------------ |
-|                   1                    | SQL 窗口页签                            | 表示当前已打开的数据源 SQL 窗口，多个 SQL 窗口可以通过单击页签切换。<br />单击页签右侧的**X**可以关闭该 SQL 窗口。 |
-|                   2                    | 打开数据源                             | 选择并打开新的数据源 SQL 窗口。                                |
-|                   3                    | 数据源信息                             | 展示当前 SQL 窗口的数据源信息，包含环境、IP 地址以及端口号。    |
-|                   4                    | 刷新                                   | 可刷新当前数据源中的数据。                                   |
-|                   5                    | 数据库名称                             | 选中目标数据库以执行 SQL 操作。效果等同于`USE`语句。           |
-|                   6                    | 功能按钮                               | <ul><li>**执行**：执行选中的 SQL 语句。</li><li>**格式化**：调整选中 SQL 语句的结构，增强可读性。</li><li>**执行计划**：查看选中 SQL 语句的执行计划。</li><li>**保存 SQL**：将当前 SQL 窗口中的所有 SQL 语句保存至 SQL 列表，方便下次使用。</li><li>**查看 SQL**：查看已保存的 SQL，您可以将目标 SQL **插入**至当前的 SQL 窗口中。同时可以**编辑**或**删除**目标 SQL。</li><li>**执行历史**：查看目标数据源的 SQL 的执行历史。您可以选择日期过滤出某个时间段的执行历史，也可以通过关键词（SQL 语句、数据库名称、错误提示）搜索执行历史。</li></ul> |
-|                   7                    | 搜索表名                               | 可输入表名快速查找目标数据表。                               |
-|                   8                    | 数据库列表                             | 显示当前数据源中所有的数据库和数据表。支持如下功能：<ul><li>**查看库详情**：右键单击目标库，单击**查看库详情**，即可打开**数据库详情**页面。您可以在这里查看目标库中所有的**数据表**、**触发器**、**视图**、**存储过程**、**函数**以及**事件**。</li><li>**创建数据库**：右键单击任意数据库，单击**创建数据库**，在弹出的对话框中，输入**数据库名称**、**字符集**以及对应**比较规则**，单击**确定**，可视化创建数据库。</li><li>**查询表数据**：右键单击目标表，单击**查询表数据**，可自动查询该表中的数据，默认返回 100 行。</li><li>**查看表详情**：右键单击目标表，单击**查看表详情**，即可打开**数据表详情**页面。您可以在这里查看目标表中所有的**列名**、**索引**以及**触发器**。</li><li>**生成创建脚本**：右键单击目标库或表，单击**生成创建脚本**，即可生成创建的 SQL 语句。</li><li>**创建表**：右键单击目标库或库中任意表，单击**创建表**，可视化创建数据表。更多信息，请参见[设计表结构](table_structure.md)。</li><li>**编辑表**：右键单击目标表，单击**编辑表**，可对目标表结构进行编辑。更多信息，请参见[设计表结构](table_structure.md)。</li><li>**创建新查询**：右键单击目标库或表，单击**创建新查询**，可以打开新的 SQL 窗口页签。</li><li>**导出**：右键单击目标表，单击**导出**，支持以 SQL、CSV、JSON、XML 格式导出数据表。可导出范围为当前页或者全部数据（最多 10000 条）。</li><li>**查看用户列表**：右键单击数据库列表最下方的**用户**，单击**查看用户列表**，可查看当前数据源中所有的用户信息。</li><li>**刷新**：刷新当前数据源。</li></ul> |
-|                   9                    | SQL 编辑器                              | 支持如下功能：<ul><li>SQL 执行：支持单个语句或批量执行。</li><li>中断执行：SQL 执行过程中可以单击**停止查询**中断 SQL 的执行。</li><li>语法高亮</li><li>关键字和元数据自动提示</li></ul> |
-|                   10                   | 执行信息、结果集                       | 显示 SQL 的执行信息以及结果集。<ul><li>执行信息：包含执行时间、执行的 SQL 语句、执行状态、执行耗时等信息。</li><li>结果集：显示 SQL 的返回结果。同时，您可以在结果集中可视化地对数据库进行增删改操作，并且可以单击**导出**，以 SQL、CSV、JSON、XML 格式导出数据表。可导出范围为当前页或者全部数据（最多 10000 条）。</li></ul> |
+   [If a sensitive data column](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/sensitive.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) is added to the target data source , you will not be able to fully view the content of the sensitive column. To view, please [apply for sensitive column permission](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/manage_workflow.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#申请敏感数据权限) first .[![sensitive_data](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/sensitive_data.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/sensitive_data.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-### 常见问题
+   :::
 
-- 通过 SQL 窗口打开 MySQL 数据源时报错`The user specified as a definer (‘mysql.infoschema‘@‘localhost‘) does not exist`怎么办？
+### SQL window function introduction
 
-  答：在本地 MySQL 客户端中通过`root`账户创建`mysql.infoschema`用户并对其授权，命令如下：
+[![image-20220921114448614](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/sqldev/image/interface.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/image/interface.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
 
-  1. 创建：`mysql> CREATE USER 'mysql.infoschema'@'localhost' IDENTIFIED BY '<密码>';`
+| Serial number <div style={{width:'25pt'}}> | function <div style={{width:'90pt'}}> | introduce                                                    |
+| ------------------------------------------ | ------------------------------------- | ------------------------------------------------------------ |
+| 1                                          | SQL window tab                        | Indicates the currently opened data source SQL window. Multiple SQL windows can be switched by clicking the tab. **Click the X** to the right of the tab to close the SQL window. |
+| 2                                          | Open data source                      | Select and open the new data source SQL window.              |
+| 3                                          | Data source information               | Display the data source information of the current SQL window, including the environment, IP address and port number. |
+| 4                                          | refresh                               | The data in the current data source can be refreshed.        |
+| 5                                          | Name database                         | Check the target database to perform the SQL operation. The effect is equivalent to the `USE`statement. |
+| 6                                          | function button                       | **Execute** : Execute the selected SQL statement.**Formatting** : Adjust the structure of the selected SQL statement to enhance readability.**Execution plan** : View the execution plan of the selected SQL statement.**Save SQL** : Save all SQL statements in the current SQL window to the SQL list, which is convenient for next use.**View SQL** : View the saved SQL, you can insert the target SQL **into** the current SQL window. At the same time , the target SQL can be **edited** or **deleted .****Execution History** : View the execution history of SQL of the target data source. You can select a date to filter out the execution history of a certain time period, or search the execution history by keywords (SQL statement, database name, error message). |
+| 7                                          | search table name                     | You can enter the table name to quickly find the target data table. |
+| 8                                          | Database list                         | Displays all databases and data tables in the current data source. The following functions are supported:**View library details** : Right-click the target library and click **View Library Details** to open the **database details** page. **You can view all data tables** , **triggers** , **views** , **stored procedures** , **functions** and **events** in the target library here .**Create database** : Right-click any database, click **Create Database** , in the pop-up dialog box, enter the **database name** , **character set** and corresponding **comparison rules** , and click **OK** to create the database visually.**Query table data** : Right-click the target table and click **Query Table Data** to automatically query the data in the table, and return 100 rows by default.**View table details** : Right-click the target table and click **View Table Details** to open the **data table details** page. **You can view all column names** , **indexes** and **triggers** in the target table here .**Generate and create script** : Right-click the target library or table, and click **Generate and create script** to generate the created SQL statement.**Create Table** : Right-click the target library or any table in the library, and click **Create Table** to create a data table visually. For more information, see [Designing Table Structures](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/table_structure.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .**Edit Table** : Right-click the target table and click **Edit Table** to edit the structure of the target table. For more information, see [Designing Table Structures](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/sqldev/table_structure.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .**Create New Query** : Right-click the target database or table, and click **Create New Query** to open a new SQL window tab.**Export** : Right-click the target table and click **Export** . It supports exporting data tables in SQL, CSV, JSON, and XML formats. The range that can be exported is the current page or all data (up to 10,000 items).**View User List : Right-click the** **user** at the bottom of the database list and click **View User List** to view all user information in the current data source.**Refresh** : Refresh the current data source. |
+| 9                                          | SQL editor                            | The following functions are supported:SQL execution: supports single statement or batch execution.Interrupt execution: During SQL execution, you can click **Stop Query to** interrupt the execution of SQL.syntax highlightingKeyword and metadata autosuggestion |
+| 10                                         | Execution information, result set     | Displays SQL execution information and result sets.Execution information: Contains information such as execution time, executed SQL statements, execution status, and execution time.Result Set: Displays the returned results of the SQL. At the same time, you can visually add, delete, and modify the database in the result set, and you can click **Export** to export the data table in SQL, CSV, JSON, and XML formats. The range that can be exported is the current page or all data (up to 10,000 items). |
+
+### common problem
+
+- What should I do if an error is reported when opening the MySQL data source through the SQL window `The user specified as a definer (‘mysql.infoschema‘@‘localhost‘) does not exist`?
+
+  `root`Answer: To create a user through an account in the local MySQL client `mysql.infoschema`and authorize it, the command is as follows:
+
+  1. create:`mysql> CREATE USER 'mysql.infoschema'@'localhost' IDENTIFIED BY '<密码>';`
 
      :::tip
 
-     示例：`mysql> CREATE USER 'mysql.infoschema'@'localhost' IDENTIFIED BY '12345';`
+     Example:`mysql> CREATE USER 'mysql.infoschema'@'localhost' IDENTIFIED BY '12345';`
 
      :::
 
-  2. 授权：`mysql> GRANT ALL PRIVILEGES ON *.* TO 'mysql.infoschema'@'localhost';`
-
+  2. Authorization:`mysql> GRANT ALL PRIVILEGES ON *.* TO 'mysql.infoschema'@'localhost';`

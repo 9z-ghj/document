@@ -1,60 +1,43 @@
 ---
 sidebar_position: 3
 ---
-# 管理网关
+# Manage Gateway
 
-NineData 的网关是一种支持远程访问私网数据库的数据库连接服务。通过部署网关，您可以安全且低成本地将第三方云或本地的数据库接入至 NineData，无需申请外网地址，通过私网地址即可进行安全访问，本文介绍如何配置并管理网关。
+NineData's gateway is a database connection service that supports remote access to private network databases. By deploying a gateway, you can securely and inexpensively access a third-party cloud or local database to NineData without applying for an external network address, and you can access it securely through a private network address. This article describes how to configure and manage the gateway.
 
-### 创建网关
+### Create gateway
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**数据源管理**>**网关**。
+2. In the left navigation bar, click **Data Source Management** > **Gateways** .
 
-3. 单击页面右上角的**创建网关**。
+3. Click **Create Gateway** in the upper right corner of the page .
 
-4. 根据下表配置参数。
+4. Configure the parameters according to the table below.
 
-   | 参数         | 说明                                                         |
-   | ------------ | ------------------------------------------------------------ |
-   | **网关名称** | 网关的名称，为方便后期查找和管理，支持手动指定。             |
-   | **网关环境** | 选择需要部署网关的主机操作系统，显示对应的网关安装方法。支持如下操作系统：<ul><li>Windows(x86_64)</li><li>Linux(x86_64)</li><li>macOS</li></ul> |
+   | parameter               | illustrate                                                   |
+   | ----------------------- | ------------------------------------------------------------ |
+   | **Gateway name**        | The name of the gateway can be manually specified for the convenience of later search and management. |
+   | **Gateway environment** | Select the operating system of the host where the gateway needs to be deployed, and the corresponding gateway installation method is displayed. The following operating systems are supported:Windows(x86_64)Linux(x86_64)macOS |
 
-5. 根据下方显示的安装指南，在部署端的主机中安装并配置网关，配置完成后，页面右侧的**网关连接示意图**会从**等待本地网关启动中**变更成**本地网关连接成功**。
+5. According to the installation guide shown below, install and configure the gateway on the host on the deployment side. After the configuration is complete, the **gateway connection diagram on the right side of the page will** **change** from **waiting for the local gateway to start to** successfully connecting to the local gateway .
 
-6. 单击**已完成创建，返回列表**即可查看已创建的网关列表。
+6. Click **Finished Creation to return to the list** to view the list of gateways that have been created.
 
-### 查看并管理网关
+### View and manage gateways
 
-您可以在控制台中查看网关目前的状态，并对网关进行管理操作。
+You can view the current status of the gateway in the console and perform management operations on the gateway.
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-2. 在左侧导航栏，单击**数据源管理**>**网关**。
+2. In the left navigation bar, click **Data Source Management** > **Gateways** .
 
-3. 在**网关**页面，可以查看当前[用户](../account/intro_account.md#用户)（个人模式）或[组织](../account/intro_account.md#组织)（组织模式）下的所有网关。您可以进行如下操作：
+3. On the **Gateways** page, you can view all gateways under the current [user](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/intro_account.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#用户) (personal mode) or [organization](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/account/intro_account.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp#组织) (organizational mode). You can do the following:
 
-   | 操作<div style={{width:'50pt'}}></div> | 说明                                                         |
+   | Operation <div style={{width:'50pt'}}> | illustrate                                                   |
    | -------------------------------------- | ------------------------------------------------------------ |
-   | 查看网关详情                           | 单击网关 ID，或单击网关右侧**操作**列的![more](./image/more.png)>**详情**。**网关详情**页面包含如下内容：<ul><li>**基本信息**：网关的基本信息，包含**网关 ID**、**网关名称**、**状态**、**数据源数量**、**IP**、**安装路径**、**创建人**、**创建时间**等。</li><li>**监控**：网关所部署主机的 CPU 和内存利用率图表。</li><li>**日志**：网关相关日志。</li></ul> |
-   | 创建数据源                             | 找到**状态**为**正常**的网关，单击其右侧**操作**列的![more](./image/more.png)>**创建数据源**进行数据源的创建。更多信息，请参见[添加数据源](datasource.md)。 |
-   | 停止网关                               | 找到**状态**为**正常**的网关，单击其右侧**操作**列的**停止**，并在弹出的确认窗口中单击**停止网关**。<br />**注意**：网关停止后，该网关所部署主机中的网关进程将在几分钟内自动结束。 |
-   | 启动网关                               | 找到状态为**运行停止**的网关，单击其右侧**操作**列的**启动**，在弹出的**启动网关**窗口中，根据页面上的安装指南重新启动网关。 |
-   | 删除网关                               | 如果您不再需要某个网关，单击该网关右侧**操作**的![more](./image/more.png)>**删除**，并在弹出的确认窗口中单击**删除网关**。<br />**注意**：网关删除后无法恢复，请谨慎操作。 |
-
-<!--
-
-### 配置网关告警
-
-您可以对目标网关配置告警，在网关意外停止时通过短信、电话、电子邮箱，以及 Webhook 等途径通知您。
-
-**前提条件**
-
-已创建网关。
-
-**操作步骤**
-
-1. 登录[NineData 控制台](https://console.ninedata.cloud)。
-2. 在左侧导航栏，单击**数据源管理**>**网关**。
-3. 在网关列表中，单击需要配置告警的网关 ID 或单击网关右侧**操作**列的![more](./image/more.png)>**详情**。
-4. 在**网关详情**页面，单击右上角的**配置告警**。-->
+   | View gateway details                   | Click the gateway ID, or click > **Details in the** **Action** column to the right of the gateway . **The gateway details** page contains the following: [![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/configuration/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)**Basic information** : The basic information of the gateway, including **gateway ID** , **gateway name** , **status** , **number of data sources** , **IP** , **installation path** , **creator** , **creation time** , etc.**Monitoring** : Graphs of CPU and memory utilization of the hosts on which the gateway is deployed.**Logs** : Gateway related logs. |
+   | Create a data source                   | Find the gateway whose **status** is **normal** , and click > **Create Data Source in the** **operation** column on the right to create the data source . For more information, see [Adding Data Sources](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/datasource.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) .[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/configuration/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) |
+   | stop gateway                           | Find the gateway whose **status** is **normal , click** **Stop in the** **operation** column on the right, and click **Stop Gateway** in the pop-up confirmation window . **Note** : After a gateway is stopped, the gateway process on the host where the gateway is deployed will automatically end within a few minutes. |
+   | start gateway                          | Find the gateway whose status is **Stopped , click** **Start in the** **operation** column on the right, and in the **Start Gateway** window that pops up, restart the gateway according to the installation guide on the page. |
+   | delete gateway                         | If you no longer need a gateway, click > **Delete** **on** the right side of the gateway, and click **Delete Gateway** in the confirmation window that pops up . **Note** : After the gateway is deleted, it cannot be recovered, please operate with caution.[![more](https://github.com/9z-ghj/Docs/raw/v1_0_0/docs/configuration/image/more.png)](https://github-com.translate.goog/9z-ghj/Docs/blob/v1_0_0/docs/configuration/image/more.png?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) |

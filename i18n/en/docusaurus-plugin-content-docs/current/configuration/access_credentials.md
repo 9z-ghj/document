@@ -2,40 +2,37 @@
 sidebar_position: 4
 ---
 
-# 配置云厂商访问凭证
+# Configuring Cloud Vendor Access Credentials
 
-NineData 支持将云厂商的访问凭证信息添加到平台中，方便在 NineData 控制台中拉取对应云中的数据库实例等信息。
+NineData supports adding the cloud vendor's access credential information to the platform, which is convenient for pulling information such as database instances in the corresponding cloud from the NineData console.
 
-### 权限说明
+### Permission description
 
-当前支持配置访问凭证的对象云厂商有**阿里云**、**腾讯云**、**华为云**、**AWS**，需要各云厂商的访问凭证具备一定的权限，用作建立连接的用途。
+Currently, cloud vendors that support configuring access credentials include Alibaba **Cloud** , **Tencent Cloud** , **Huawei Cloud** , and **AWS** . The access credentials of each cloud vendor are required to have certain permissions for establishing connections.
 
-| 云厂商<div style={{width:"50px"}}></div> | 权限说明                                                     |
+| Cloud vendor<div style={{width:"50px"}}> | Permission description                                       |
 | ---------------------------------------- | ------------------------------------------------------------ |
-| 阿里云                                   | 用来为 NineData 创建私网连接的终端节点，查询私网连接（PrivateLink）、ECS、RDS、VPC、NAT 网关等一些必要信息，以建立 NineData 服务器与数据库之间的点对点网络连通性。 |
-| 腾讯云                                   | 用来为 NineData 创建私有连接的终端节点，查询私网连接、CVM、CDB、VPC 等一些必要信息，以建立 NineData 服务器与数据库之间的点对点网络连通性。 |
-| 华为云                                   | 用来为 NineData 创建 VPC 终端节点，查询 VPC 终端节点、ECS、RDS、VPC 等产品的一些必要信息，以建立 NineData 服务器与数据库之间的点对点网络连通性。 |
-| AWS                                      | 用来为 NineData 创建私有连接的终端节点，查询私网连接、EC2、RDS 等产品的一些必要信息，以建立 NineData 服务器与数据库之间的点对点网络连通性。 |
+| Ali Cloud                                | The terminal node used to create a private network connection for NineData, query some necessary information such as private network connection (PrivateLink), ECS, RDS, VPC, NAT gateway, etc., to establish point-to-point network connectivity between the NineData server and the database. |
+| Tencent Cloud                            | The terminal node used to create a private connection for NineData, query some necessary information such as private network connection, CVM, CDB, VPC, etc., to establish point-to-point network connectivity between the NineData server and the database. |
+| HUAWEI CLOUD                             | It is used to create a VPC endpoint for NineData, and query some necessary information about VPC endpoint, ECS, RDS, VPC and other products to establish point-to-point network connectivity between the NineData server and the database. |
+| AWS                                      | The terminal node used to create a private connection for NineData, to query some necessary information of products such as private network connection, EC2, RDS, etc., to establish point-to-point network connectivity between the NineData server and the database. |
 
+### Steps
 
+1. Log [in to the NineData console](https://translate.google.com/website?sl=auto&tl=en&hl=ja&client=webapp&u=https://console.ninedata.cloud) .
 
-### 操作步骤
+2. In the left navigation bar, click **Data Source Management** > **Cloud Vendor Access Credentials** .
 
-1. 登录 [NineData 控制台](https://console.ninedata.cloud)。
+3. On the **Cloud Vendor Access Credentials** page, click **Create Credentials** in the upper right corner .
 
-2. 在左侧导航栏单击**数据源管理**>**云厂商访问凭证**。
+4. On the **Create Credentials** page, configure according to the following table.
 
-3. 在**云厂商访问凭证**页面，单击右上角的**创建凭证**。
+   | parameter           | illustrate                                                   |
+   | ------------------- | ------------------------------------------------------------ |
+   | **Credential name** | Enter the credential name. In order to facilitate subsequent search and management, please try to use meaningful names. |
+   | **cloud vendors**   | Select the name of the cloud vendor whose credentials need to be added. Currently supports Alibaba **Cloud** , **Tencent Cloud** , **Huawei Cloud** , and **AWS** . |
+   | **Document Type**   | Select the type of credential to be added, which can be added through **Access Key** or **role** .**Access Key** : The identity of the sender of a request is verified by encrypting the Access Key (AK) and Access Key Secret (SK), which can be obtained in the console of the corresponding cloud vendor.**Role** : To authenticate the sender of a request by using the role name and role ARN, it needs to be created in the console of the corresponding cloud vendor. |
 
-4. 在**创建凭证**页面，按照下表进行配置。
+5. Click the **permission configuration instructions** , copy the content in the **configuration script** , and go to the corresponding cloud vendor to configure a custom permission policy.
 
-   | 参数         | 说明                                                         |
-   | ------------ | ------------------------------------------------------------ |
-   | **凭证名称** | 输入凭证名称。为了方便后续查找和管理，请尽量使用有意义的名称。 |
-   | **云厂商**   | 选择需要添加凭证的云厂商名称。当前支持**阿里云**、**腾讯云**、**华为云**、**AWS**。 |
-   | **凭证类型** | 选择需要添加的凭证类型，支持通过 **Access Key** 或**角色**进行添加。<ul><li>**Access Key**：通过使用 Access Key（AK）和 Access Key Secret（SK）加密的方法来验证某个请求的发送者身份，可以在对应云厂商的控制台中获取。</li><li>**角色**：通过使用角色名称和角色 ARN 验证某个请求的发送者身份，需要在对应云厂商的控制台中创建。</li></ul> |
-
-4. 单击**权限配置说明**，复制**配置脚本**中的内容，前往对应云厂商配置自定义权限策略。
-
-5. 单击**创建凭证**，即可完成云厂商访问凭证的创建。
-
+6. Click **Create Credentials** to complete the creation of cloud vendor access credentials.
