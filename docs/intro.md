@@ -5,11 +5,11 @@ slug: /
 
 # 什么是 NineData
 
-NineData 是集成了 SQL 开发、数据复制、数据备份、数据对比多个模块的云服务，支持<a class="tooltip tooltip-style2">混合云<span class="tooltip-content">自建库+云数据库的业务架构。</span></a>和<a class="tooltip tooltip-style2">多云<span class="tooltip-content">多个不同云厂商数据库组成的业务架构。</span></a>架构下的企业数据管理，大幅降低企业的数据运维难度和成本。
+NineData 是集成了 SQL 开发、数据复制、数据备份、数据对比多个模块的云服务，支持混合云（自建库+云数据库的业务架构）和多云（多个不同云厂商数据库组成的业务架构）架构下的企业数据管理，大幅降低企业的数据运维难度和成本。
 
 ### 视频介绍
 
-<iframe src="/video/NineData.mp4" width="100%" height="437" allowfullscreen="true" > </iframe>
+<iframe src="/video/NineData.mp4" width="100%" height="437" frameborder="0" allowfullscreen="true" >您的浏览器不支持播放该视频。</iframe>
 
 ### 背景信息
 

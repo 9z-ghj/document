@@ -1,6 +1,5 @@
 FROM nginx:latest
 MAINTAINER 9zCloud
 
-COPY static /usr/share/nginx/html
+COPY static/video /usr/share/nginx/html/video
 COPY build /usr/share/nginx/html
-

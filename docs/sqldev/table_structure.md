@@ -10,6 +10,7 @@ NineData 提供可视化表结构设计方案，您可以在 SQL 窗口中点击
 
 ### 前提条件
 
+- 数据源类型为 MySQL 或 MariaDB。
 - [组织](/account/intro_account.md#组织)模式下，拥有 SQL 窗口功能模块权限。
 - [组织](/account/intro_account.md#组织)模式下，拥有对目标数据源的读写权限。
 
