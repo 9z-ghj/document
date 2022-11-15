@@ -9,7 +9,7 @@ NineData 是集成了 SQL 开发、数据复制、数据备份、数据对比多
 
 ### 视频介绍
 
-<iframe src="/video/NineData.mp4" width="100%" height="437" frameborder="0" allowfullscreen="true" >您的浏览器不支持播放该视频。</iframe>
+<iframe src="/video/NineData.mp4" sandbox="" width="100%" height="437" frameborder="0" allowfullscreen="true" >您的浏览器不支持播放该视频。</iframe>
 
 ### 背景信息
 
